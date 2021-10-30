@@ -155,6 +155,7 @@ async function start() {
 
         });
 
+        broadcast(client, MessageType, Mimetype); 
 
         await client.connect() 
 
@@ -180,8 +181,6 @@ function getMenu({ from }) {
     }
 
 }
-
-broadcast({client: client, MessageType: MessageType, Mimetype: Mimetype}); 
 
 start()
 
