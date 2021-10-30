@@ -181,5 +181,7 @@ function getMenu({ from }) {
 
 }
 
+broadcast(client, MessageType, Mimetype); 
+
 start()
 
