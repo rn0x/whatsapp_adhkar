@@ -1,0 +1,40 @@
+{
+  "name": "whatsapp_adhkar",
+  "version": "1.0.0",
+  "description": "بوت أذكار للواتساب [ صور , فيديو أذكار , ملصقات , قرآن ]",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rn0x",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@adiwajshing/baileys": "^3.5.2",
+    "exec-sh": "^0.4.0",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.0.0",
+    "moment-timezone": "^0.5.33",
+    "wa-sticker-formatter": "^4.0.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rn0x/whatsapp_adhkar.git"
+  },
+  "keywords": [
+    "bot",
+    "whatsapp",
+    "baileys",
+    "islam",
+    "islamyat",
+    "اسلام",
+    "اسلاميات",
+    "بوت",
+    "adhkar"
+  ],
+  "bugs": {
+    "url": "https://github.com/rn0x/whatsapp_adhkar/issues"
+  },
+  "homepage": "https://github.com/rn0x/whatsapp_adhkar#readme"
+}
