@@ -11,7 +11,7 @@
   "author": "rn0x",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.2",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "exec-sh": "^0.4.0",
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
