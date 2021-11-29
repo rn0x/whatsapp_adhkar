@@ -9,7 +9,7 @@ export const menu = {
 
     const new_user = fs.readJsonSync('./db/new_user.json');
     const group_user = fs.readJsonSync('./db/group_user.json');
-    const body = messages.conversation
+    const body = messages.extendedTextMessage !== null ? messages.extendedTextMessage.text : messages.conversation
 
     
     if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){

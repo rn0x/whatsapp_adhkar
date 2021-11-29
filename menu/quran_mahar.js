@@ -5,7 +5,7 @@ export const quran_mahar = {
 
   async exec({ from, client, pushname, messages, MessageType, Mimetype }) {
 
-    const body = messages.conversation
+    const body = messages.extendedTextMessage !== null ? messages.extendedTextMessage.text : messages.conversation
 
     switch (body) {
 

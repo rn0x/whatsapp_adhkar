@@ -136,7 +136,7 @@ async function start() {
         client.on('chat-update', async (msg) => {
 
             if (msg.messages && msg.count && msg.hasNewMessage && client.contacts[msg.jid] !== undefined) {
-
+             
                 let Menufrom = getMenu({ from: msg.jid });
 
                 menu_number[Menufrom].menu_name.exec({

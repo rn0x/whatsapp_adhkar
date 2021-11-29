@@ -8,7 +8,7 @@ export const adhkar = {
 
     async exec({ from, client, pushname, messages, MessageType }) {
 
-        const body = messages.conversation
+        const body = messages.extendedTextMessage !== null ? messages.extendedTextMessage.text : messages.conversation
 
         if (body === '1'){
 
