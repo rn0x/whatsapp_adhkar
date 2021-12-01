@@ -19,7 +19,7 @@ export const Groups = {
 
         else if (body === '2'){
 
-            let GroupsMenu = fs.readJsonSync('./db/GroupsMenu.json');
+            let GroupsMenu = fs.readJsonSync(`./db/GroupsMenu.json`);
             var list_group = '            ═✪〘 المجموعات 〙✪═ \n\n'
             for (let lop of GroupsMenu) {
 

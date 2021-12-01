@@ -13,9 +13,9 @@ export const Group_Url = {
 
         if (body.length === 48 && body.includes('https://chat.whatsapp.com/') && GroupsMenu.some(e => e.url === body) === false){
 
-            let db_groups = fs.readJsonSync('./lib/db_groups.json');
+            let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync('./lib/db_groups.json',db_groups)
+            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups)
 
             let group_name = db_groups[0]
             let group_url = db_groups[1]
@@ -30,7 +30,6 @@ export const Group_Url = {
             GroupsMenu.push({name: group_name, url: group_url});
             fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu)
             await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
-            fs.writeJsonSync('./lib/db_groups.json', [])
             db_menu[from].menu_name = 9;
             await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
         }

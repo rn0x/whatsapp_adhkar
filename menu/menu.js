@@ -114,7 +114,7 @@ export const menu = {
     else if (body === '7'){
       
       db_menu[from].menu_name = 9;
-
+      fs.writeJsonSync(`./db/Group/${from}.json`,[])
       let menu_group = '1- نشر قروبك ✉️ \n'
       menu_group += '2- قائمة القروبات ⚜️\n'
       menu_group += '3- قروب عشوائي 🔄\n\n'

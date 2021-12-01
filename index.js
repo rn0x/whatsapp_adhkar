@@ -38,6 +38,7 @@ async function start() {
         if (fs.existsSync('./db') === false ) {
 
             fs.mkdirSync('./db');
+            fs.mkdirSync('./db/Group');
             fs.mkdirSync('./db/name_sticker')
 
             if (fs.existsSync('./db/group_user.json') === false || fs.existsSync('./db/new_user.json') === false || fs.existsSync('./db/GroupsMenu.json') === false) {

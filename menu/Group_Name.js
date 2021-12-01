@@ -12,9 +12,9 @@ export const Group_Name = {
         if (body.length <= 30){
 
             let group_name = 'من فضلك قم بكتابة رابط المجموعة 💬'
-            let db_groups = fs.readJsonSync('./lib/db_groups.json');
+            let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync('./lib/db_groups.json',db_groups)
+            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups)
 
             await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
             db_menu[from].menu_name = 11;
