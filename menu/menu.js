@@ -22,7 +22,8 @@ export const menu = {
       mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
       mesg += '4- صورة عشوائية 🖼️ \n'
       mesg += '5- قائمة الملصقات 🪧 \n'
-      mesg += '6- محاضرات عشوائية 🌾 \n\n\n\n'
+      mesg += '6- محاضرات عشوائية 🌾 \n'
+      mesg += '7- قائمة القروبات ⚜️ \n\n\n\n'
       mesg += 'إحصائيات البوت \n'
       mesg += `عدد المحادثات الحالية : ${client.chats.length}\n`
       mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
@@ -107,6 +108,19 @@ export const menu = {
       msg += `*الشيخ:* ${listlectures.Author} 🔊 `
 
       await client.sendMessage(from, { url: listlectures.FilePath }, MessageType.video, { caption: msg }).catch((erro) => console.log(erro));
+
+    }
+
+    else if (body === '7'){
+      
+      db_menu[from].menu_name = 9;
+
+      let menu_group = '1- نشر قروبك ✉️ \n'
+      menu_group += '2- قائمة القروبات ⚜️\n'
+      menu_group += '3- قروب عشوائي 🔄\n\n'
+      menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+     
+      await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
 
     }
 

@@ -40,10 +40,11 @@ async function start() {
             fs.mkdirSync('./db');
             fs.mkdirSync('./db/name_sticker')
 
-            if (fs.existsSync('./db/group_user.json') === false && fs.existsSync('./db/new_user.json') === false) {
+            if (fs.existsSync('./db/group_user.json') === false || fs.existsSync('./db/new_user.json') === false || fs.existsSync('./db/GroupsMenu.json') === false) {
 
                 fs.writeJsonSync('./db/group_user.json', []);
                 fs.writeJsonSync('./db/new_user.json', []);
+                fs.writeJsonSync('./db/GroupsMenu.json', []);
             }
             
         }
