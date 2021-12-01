@@ -39,7 +39,7 @@ export const Group_Name = {
             mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
             mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
             mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-        
+            fs.writeJsonSync(`./db/Group/${from}.json`, [])
             await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
         }
