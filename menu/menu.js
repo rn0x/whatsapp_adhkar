@@ -126,8 +126,9 @@ export const menu = {
 
     else if (body === 'dbjson'){
 
-      await client.sendMessage(from, { url: './db/group_user.json'  }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'group_user.json' }).catch((erro) => console.log(erro));
-      await client.sendMessage(from, { url: './db/new_user.json'  }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'new_user.json' }).catch((erro) => console.log(erro));
+      await client.sendMessage(from, { url: './db/group_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'group_user.json' }).catch((erro) => console.log(erro));
+      await client.sendMessage(from, { url: './db/new_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'new_user.json' }).catch((erro) => console.log(erro));
+      await client.sendMessage(from, { url: './db/GroupsMenu.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'GroupsMenu.json' }).catch((erro) => console.log(erro));
 
     }
 
