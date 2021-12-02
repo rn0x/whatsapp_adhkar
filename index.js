@@ -186,6 +186,8 @@ async function start() {
                     client: client,            
     
                 });
+
+                await client.chatRead(msg.jid ,'read');
             }
 
         });
