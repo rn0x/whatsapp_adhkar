@@ -152,7 +152,7 @@ async function start() {
                 menu_number[Menufrom].menu_name.exec({
     
                     messages: lop.message,
-                    download_msg: lop.message,
+                    download_msg: lop,
                     Mimetype: Mimetype ,
                     from: lop.key.remoteJid ,
                     MessageType: MessageType,
