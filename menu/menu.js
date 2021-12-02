@@ -139,16 +139,20 @@ export const menu = {
       
     }
 
-    else if (!new_user.includes(from) && !isGroup){
+    if (!new_user.includes(from) && !isGroup){
   
       let mesg = 'يبدو أنك أول مره تقوم بمراسلتي من فضلك أرسل كلمة خدمة او Hi لعرض خدمات البوت'
 
       new_user.push(from)
       fs.writeJsonSync('./db/new_user.json', new_user)
-      await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
+      if (body !== 'hi' || body !== 'Hi' || body !== 'خدمة' || body !== 'خدمه' || body !== '#') {
+
+        await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
+        
+      }
 
     }
-     
+    
   }
 
 };
