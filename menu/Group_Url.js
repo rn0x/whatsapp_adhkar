@@ -31,7 +31,7 @@ export const Group_Url = {
             fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu)
             await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
             fs.writeJsonSync(`./db/Group/${from}.json`, [])
-            db_menu[from].menu_name = 9;
+            MenuNmber(from, 9)
             await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
         }
 

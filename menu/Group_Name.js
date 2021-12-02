@@ -17,7 +17,7 @@ export const Group_Name = {
             fs.writeJsonSync(`./db/Group/${from}.json`,db_groups)
 
             await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
-            db_menu[from].menu_name = 11;
+            MenuNmber(from, 11)
         }
 
 
