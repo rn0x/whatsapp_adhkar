@@ -1,4 +1,4 @@
-import { WAConnection, MessageType, Mimetype } from '@adiwajshing/baileys';
+import { WAConnection, MessageType, Mimetype, ReconnectMode } from '@adiwajshing/baileys';
 import fs from 'fs-extra';
 import moment from 'moment-timezone';
 import broadcast from './lib/broadcast.js';
@@ -20,6 +20,7 @@ async function start() {
     try{
 
         const client = new WAConnection();
+        client.autoReconnect = ReconnectMode.onConnectionLost;
 
         client.on('open', () => {
 
@@ -142,6 +143,30 @@ async function start() {
 
         });
 
+        client.on('chats-received', async () => {
+    
+            const unread = await client.loadAllUnreadMessages();
+            for (const lop of unread) {
+
+                let Menufrom = getMenu({ from: lop.key.remoteJid });
+                menu_number[Menufrom].menu_name.exec({
+    
+                    messages: lop.message,
+                    download_msg: lop.message,
+                    Mimetype: Mimetype ,
+                    from: lop.key.remoteJid ,
+                    MessageType: MessageType,
+                    isGroup: lop.key.remoteJid.endsWith('@g.us'),
+                    pushname: client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : 'بدون إسم',
+                    client: client,            
+    
+                });
+                
+                await client.chatRead(lop.key.remoteJid ,'read')
+                
+            }         
+
+        });
 
         client.on('chat-update', async (msg) => {
 
