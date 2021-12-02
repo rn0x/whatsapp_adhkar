@@ -1,4 +1,4 @@
-import { db_menu } from '../lib/db_menu.js';
+import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
 import srk from 'wa-sticker-formatter'
 
@@ -11,14 +11,8 @@ export const maker_sticker = {
 
         if (messages.imageMessage && messages.imageMessage.mimetype === 'image/jpeg' || messages.documentMessage && messages.documentMessage.mimetype === 'image/png' ) {
             
-            let fs_json = await fs.readJson(`./db/name_sticker/${from}.json`)
-            .catch(err => {
-
-                fs.writeJsonSync(`./db/name_sticker/${from}.json`, `${pushname}`)
-                console.log(`The ${from}.json file has been created`)
-          
-            });
-            let name_sticker = fs_json ? fs_json : pushname
+            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let imagePath = await client.downloadMediaMessage(download_msg);
             let sticker = new srk.Sticker(imagePath, { type: 'full', pack: name_sticker });
             let sticker_menu = '1- ملصق عشوائي 🔄 \n'
@@ -35,13 +29,13 @@ export const maker_sticker = {
             await client.sendMessage(from, 'استمتع بالملصق الخاص بك 🎁', MessageType.text).catch((erro) => console.log(erro));
             await client.sendMessage(from, sticker_menu, MessageType.text).catch((erro) => console.log(erro));
 
-            db_menu[from].menu_name = 7;
+            MenuNmber(from, 7)
       
         }
 
         else if (body === '*'){
 
-            db_menu[from].menu_name = 7;
+            MenuNmber(from, 7)
 
             let sticker_menu = '1- ملصق عشوائي 🔄 \n'
             sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
@@ -57,7 +51,7 @@ export const maker_sticker = {
 
         else if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 
-            db_menu[from].menu_name = 0;
+            MenuNmber(from, 0)
 
             let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
             mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'

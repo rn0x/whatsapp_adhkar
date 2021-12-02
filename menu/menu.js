@@ -1,8 +1,7 @@
-import { db_menu } from '../lib/db_menu.js';
+import MenuNmber from '../lib/MenuNmber.js';
 import { video } from './video.js';
 import { photo } from './photo.js';
 import fs from 'fs-extra';
-
 export const menu = {
 
   async exec({ from, client, pushname, messages, isGroup, MessageType, Mimetype }) {
@@ -36,7 +35,7 @@ export const menu = {
 
     else if (body === '1'){
 
-      db_menu[from].menu_name = 1;
+      MenuNmber(from, 1)
 
       let quran_menu = 'قم بإختيار القارئ 🔊 \n\n'
       quran_menu += '1- أدريس أبكر \n'
@@ -51,7 +50,7 @@ export const menu = {
 
     else if (body === '2'){
 
-      db_menu[from].menu_name = 6;
+      MenuNmber(from, 6)
 
       let adhkar_menu = '1- أذكار الصباح ☀️ \n'
       adhkar_menu += '2- أذكار المساء 🌑 \n'
@@ -87,7 +86,7 @@ export const menu = {
 
     else if (body === '5'){
 
-      db_menu[from].menu_name = 7;
+      MenuNmber(from, 7)
 
       let sticker_menu = '1- ملصق عشوائي 🔄 \n'
       sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
@@ -113,7 +112,7 @@ export const menu = {
 
     else if (body === '7'){
       
-      db_menu[from].menu_name = 9;
+      MenuNmber(from, 9)
       fs.writeJsonSync(`./db/Group/${from}.json`,[])
       let menu_group = '1- نشر قروبك ✉️ \n'
       menu_group += '2- قائمة القروبات ⚜️\n'
@@ -129,6 +128,7 @@ export const menu = {
       await client.sendMessage(from, { url: './db/group_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'group_user.json' }).catch((erro) => console.log(erro));
       await client.sendMessage(from, { url: './db/new_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'new_user.json' }).catch((erro) => console.log(erro));
       await client.sendMessage(from, { url: './db/GroupsMenu.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'GroupsMenu.json' }).catch((erro) => console.log(erro));
+      await client.sendMessage(from, { url: './db/db.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'db.json' }).catch((erro) => console.log(erro));
 
     }
 

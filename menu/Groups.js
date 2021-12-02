@@ -1,4 +1,4 @@
-import { db_menu } from '../lib/db_menu.js';
+import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
 
 
@@ -11,7 +11,7 @@ export const Groups = {
 
         if (body === '1'){
 
-            db_menu[from].menu_name = 10;
+            MenuNmber(from, 10)
 
             let group_name = 'من فضلك ادخل إسم المجموعة 💬'
             await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
@@ -45,7 +45,7 @@ export const Groups = {
 
         else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 
-            db_menu[from].menu_name = 0;
+            MenuNmber(from, 0)
 
             let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
             mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'

@@ -1,4 +1,4 @@
-import { db_menu } from '../lib/db_menu.js';
+import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
 
 export const quran_menu = {
@@ -9,7 +9,7 @@ export const quran_menu = {
 
         if (body === '1'){
 
-            db_menu[from].menu_name = 2;
+            MenuNmber(from, 2)
 
             let quran_idr = fs.readFileSync('./media/text/quran_1.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
@@ -21,7 +21,7 @@ export const quran_menu = {
 
         else if (body === '2'){
 
-            db_menu[from].menu_name = 3;
+            MenuNmber(from, 3)
 
             let quran_idr = fs.readFileSync('./media/text/quran_2.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
@@ -33,7 +33,7 @@ export const quran_menu = {
 
         else if (body === '3'){
 
-            db_menu[from].menu_name = 4;
+            MenuNmber(from, 4)
 
             let quran_idr = fs.readFileSync('./media/text/quran_3.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
@@ -45,7 +45,7 @@ export const quran_menu = {
 
         else if (body === '4'){ 
             
-            db_menu[from].menu_name = 5;
+            MenuNmber(from, 5)
 
             let quran_idr = fs.readFileSync('./media/text/quran_4.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
@@ -57,7 +57,7 @@ export const quran_menu = {
 
         else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 
-            db_menu[from].menu_name = 0;
+            MenuNmber(from, 0)
 
             let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
             mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'

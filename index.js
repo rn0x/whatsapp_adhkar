@@ -5,8 +5,10 @@ import broadcast from './lib/broadcast.js';
 import execSh  from 'exec-sh';
 import figlet from 'figlet';
 import { menu_number } from './lib/menu_number.js';
-import { db_menu } from './lib/db_menu.js';
-
+import getMenu from './lib/getMenu.js';
+import MenuNmber from './lib/MenuNmber.js';
+import Folder from './lib/Folder.js';
+Folder()
 
 
 console.log(figlet.textSync('Bot Adhkar'));
@@ -20,11 +22,12 @@ async function start() {
     try{
 
         const client = new WAConnection();
+        const db = fs.readJsonSync('./db/db.json');
+
         client.autoReconnect = ReconnectMode.onConnectionLost;
 
         client.on('open', () => {
 
-            console.log (`credentials updated!`);
             fs.writeFileSync('./info.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'));
 
         });
@@ -35,21 +38,6 @@ async function start() {
             client.loadAuthInfo('./info.json'); 
           
         } 
-
-        if (fs.existsSync('./db') === false ) {
-
-            fs.mkdirSync('./db');
-            fs.mkdirSync('./db/Group');
-            fs.mkdirSync('./db/name_sticker')
-
-            if (fs.existsSync('./db/group_user.json') === false || fs.existsSync('./db/new_user.json') === false || fs.existsSync('./db/GroupsMenu.json') === false) {
-
-                fs.writeJsonSync('./db/group_user.json', []);
-                fs.writeJsonSync('./db/new_user.json', []);
-                fs.writeJsonSync('./db/GroupsMenu.json', []);
-            }
-            
-        }
 
         client.on('close', async (cls) =>{
 
@@ -148,7 +136,15 @@ async function start() {
             const unread = await client.loadAllUnreadMessages();
             for (const lop of unread) {
 
-                let Menufrom = getMenu({ from: lop.key.remoteJid });
+                let db = fs.readJsonSync('./db/db.json');
+                if (!db.includes(lop.key.remoteJid)) {
+
+                    MenuNmber(lop.key.remoteJid, 0);
+                    db.push(lop.key.remoteJid)
+                    fs.writeJsonSync('./db/db.json', db)
+
+                }
+                let Menufrom = await getMenu(lop.key.remoteJid)
                 menu_number[Menufrom].menu_name.exec({
     
                     messages: lop.message,
@@ -172,9 +168,20 @@ async function start() {
 
             if (msg.messages && msg.count && msg.hasNewMessage && client.contacts[msg.jid] !== undefined) {
              
-                let Menufrom = getMenu({ from: msg.jid });
+                
+                let db = fs.readJsonSync('./db/db.json');
 
-                menu_number[Menufrom].menu_name.exec({
+                if (!db.includes(msg.jid)) {
+
+                    MenuNmber(msg.jid, 0);
+                    db.push(msg.jid)
+                    fs.writeJsonSync('./db/db.json', db)
+
+                }
+
+                let Menufrom = await getMenu(msg.jid)
+
+                await menu_number[Menufrom].menu_name.exec({
     
                     messages: msg.messages.array[0].message,
                     download_msg: msg.messages.array[0],
@@ -187,7 +194,8 @@ async function start() {
     
                 });
 
-                await client.chatRead(msg.jid ,'read');
+                await client.chatRead(msg.jid ,'read')
+
             }
 
         });
@@ -204,20 +212,4 @@ async function start() {
 
 }
 
-function getMenu({ from }) {
-
-    if (db_menu[from]) {
-
-      return db_menu[from].menu_name;
-
-    } else {
-
-      db_menu[from] = { menu_name: 0 };
-      return db_menu[from].menu_name;
-
-    }
-
-}
-
 start()
-

@@ -1,4 +1,4 @@
-import { db_menu } from '../lib/db_menu.js';
+import MenuNmber from '../lib/MenuNmber.js';
 import { qurantext } from './qurantext.js';
 
 export const quran_alli = {
@@ -700,7 +700,7 @@ export const quran_alli = {
 
     if (body === "*"){
 
-      db_menu[from].menu_name = 1;
+      MenuNmber(from, 1)
 
       let quran_menu = 'قم بإختيار القارئ 🔊 \n\n'
       quran_menu += '1- أدريس أبكر \n'
@@ -715,7 +715,7 @@ export const quran_alli = {
 
     else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 
-      db_menu[from].menu_name = 0;
+      MenuNmber(from, 0)
 
       let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
       mesg += 'من فضلك قم بإرسال رقم الخدمة ✉️ \n\n\n'

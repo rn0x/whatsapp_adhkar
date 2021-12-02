@@ -1,4 +1,4 @@
-import { db_menu } from '../lib/db_menu.js';
+import MenuNmber from '../lib/MenuNmber.js';
 import { stickers } from './stickers.js';
 import fs from 'fs-extra';
 import srk from 'wa-sticker-formatter'
@@ -12,14 +12,8 @@ export const sticker_menu = {
 
         if (body === '1'){
 
-            let fs_json = await fs.readJson(`./db/name_sticker/${from}.json`)
-            .catch(err => {
-
-                fs.writeJsonSync(`./db/name_sticker/${from}.json`, `${pushname}`)
-                console.log(`The ${from}.json file has been created`)
-          
-            });
-            let name_sticker = fs_json ? fs_json : pushname
+            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let liststicker = stickers[Math.floor(Math.random() * stickers.length)]
             let sticker = new srk.Sticker(liststicker, { type: 'full', pack: name_sticker });
             await sticker.build();
@@ -31,14 +25,8 @@ export const sticker_menu = {
 
         else if (body === '2'){
 
-            let fs_json = await fs.readJson(`./db/name_sticker/${from}.json`)
-            .catch(err => {
-
-                fs.writeJsonSync(`./db/name_sticker/${from}.json`, `${pushname}`)
-                console.log(`The ${from}.json file has been created`)
-          
-            });
-            let name_sticker = fs_json ? fs_json : pushname
+            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let sticker_gm3h = [
 
                 'http://bot.rn0x.com/media/sticker/gm3h/1.webp',
@@ -70,14 +58,8 @@ export const sticker_menu = {
 
         else if (body === '3'){
 
-            let fs_json = await fs.readJson(`./db/name_sticker/${from}.json`)
-            .catch(err => {
-
-                fs.writeJsonSync(`./db/name_sticker/${from}.json`, `${pushname}`)
-                console.log(`The ${from}.json file has been created`)
-          
-            });
-            let name_sticker = fs_json ? fs_json : pushname
+            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let sticker_sbah = [
 
                 'http://bot.rn0x.com/media/sticker/sbah/1.webp',
@@ -108,14 +90,8 @@ export const sticker_menu = {
 
         else if (body === '4'){
 
-            let fs_json = await fs.readJson(`./db/name_sticker/${from}.json`)
-            .catch(err => {
-
-                fs.writeJsonSync(`./db/name_sticker/${from}.json`, `${pushname}`)
-                console.log(`The ${from}.json file has been created`)
-          
-            });
-            let name_sticker = fs_json ? fs_json : pushname
+            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let sticker_msa2 = [
 
                 'http://bot.rn0x.com/media/sticker/msa2/1.webp',
@@ -145,7 +121,7 @@ export const sticker_menu = {
 
         else if (body === '5'){
 
-            db_menu[from].menu_name = 8;
+            MenuNmber(from, 8)
 
             let sticker_menu = ' بإنتظار الصورة 🖼️ لتحويلها لملصق 🪧 \n\n\n'
             sticker_menu += '*【 للرجوع للخلف أرسل * 】* \n'
@@ -157,8 +133,9 @@ export const sticker_menu = {
         else if (body.startsWith('me') || body.startsWith('Me')){
       
             let name_sticker = body.slice(3)
+            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
             let mesg = `تم تغير الحقوق الى ${name_sticker} ✅`
-            fs.writeJsonSync(`./db/name_sticker/${from}.json`, name_sticker)
+            fs.writeJsonSync('./db/Sticker_Name.json', Object.assign({}, fs_json, {[from]:{"Name":name_sticker}}));
             await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
             
       
@@ -166,7 +143,7 @@ export const sticker_menu = {
 
         else if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 
-            db_menu[from].menu_name = 0;
+            MenuNmber(from, 0)
 
             let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
             mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
