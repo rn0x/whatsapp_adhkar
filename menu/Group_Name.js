@@ -7,7 +7,8 @@ export const Group_Name = {
 
     async exec({ from, client, pushname, messages, MessageType }) {
 
-        const body = messages && messages.conversation ? messages.conversatio : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : ''
+        const type = Object.keys(messages)[0]
+        const body = type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
 
         if (body.length <= 30){
 
