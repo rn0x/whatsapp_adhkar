@@ -8,7 +8,7 @@ export const sticker_menu = {
 
     async exec({ from, client, pushname, messages, MessageType }) {
 
-        const body = messages.extendedTextMessage !== null ? messages.extendedTextMessage.text : messages.conversation
+        const body = messages && messages.conversation ? messages.conversatio : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : ''
 
         if (body === '1'){
 

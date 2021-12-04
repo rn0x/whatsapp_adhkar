@@ -145,7 +145,7 @@ async function start() {
 
                 }
                 let Menufrom = await getMenu(lop.key.remoteJid)
-                menu_number[Menufrom].menu_name.exec({
+                await menu_number[Menufrom].menu_name.exec({
     
                     messages: lop.message,
                     download_msg: lop,
@@ -153,7 +153,7 @@ async function start() {
                     from: lop.key.remoteJid ,
                     MessageType: MessageType,
                     isGroup: lop.key.remoteJid.endsWith('@g.us'),
-                    pushname: client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : 'بدون إسم',
+                    pushname: client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid] ? client.contacts[lop.key.remoteJid].vname : ' ',
                     client: client,            
     
                 });
@@ -189,7 +189,7 @@ async function start() {
                     from: msg.jid ,
                     MessageType: MessageType,
                     isGroup: msg.jid.endsWith('@g.us'),
-                    pushname: client.contacts[msg.jid].notify ? client.contacts[msg.jid].notify : client.contacts[msg.jid].name ? client.contacts[msg.jid].name : 'بدون إسم',
+                    pushname: client.contacts[msg.jid] != undefined && client.contacts[msg.jid].notify ? client.contacts[msg.jid].notify : client.contacts[msg.jid] != undefined && client.contacts[msg.jid].name ? client.contacts[msg.jid].name : client.contacts[msg.jid] != undefined && client.contacts[msg.jid] ? client.contacts[msg.jid].vname : 'بدون إسم',
                     client: client,            
     
                 });

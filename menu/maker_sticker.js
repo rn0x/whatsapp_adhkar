@@ -7,7 +7,7 @@ export const maker_sticker = {
 
     async exec({ from, client, pushname, MessageType, messages, download_msg }) {
 
-        const body = messages.extendedTextMessage !== null ? messages.extendedTextMessage.text : messages.conversation
+        const body = messages && messages.conversation ? messages.conversatio : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : ''
 
         if (messages.imageMessage && messages.imageMessage.mimetype === 'image/jpeg' || messages.documentMessage && messages.documentMessage.mimetype === 'image/png' ) {
             

@@ -5,7 +5,7 @@ export const quran_almosa = {
 
   async exec({ from, client, pushname, messages, MessageType, Mimetype }) {
 
-    const body = messages.extendedTextMessage !== null ? messages.extendedTextMessage.text : messages.conversation
+    const body = messages && messages.conversation ? messages.conversatio : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : ''
 
     switch (body) {
 
