@@ -151,7 +151,7 @@ async function start() {
 
                 await menu_number[Menufrom].menu_name.exec({
     
-                    body: messages.conversatio ? messages.conversatio : messages.extendedTextMessage ? messages.extendedTextMessage.text : messages.imageMessage ? messages.imageMessage.caption : messages.videoMessage ? messages.videoMessage.caption : '',
+                    body: messages.conversation != null ? messages.conversation : messages.extendedTextMessage != null ? messages.extendedTextMessage.text : messages.imageMessage != null ? messages.imageMessage.caption : messages.videoMessage != null ? messages.videoMessage.caption : '',
                     messages: lop.message ,
                     download_msg: lop,
                     Mimetype: Mimetype ,
@@ -190,7 +190,7 @@ async function start() {
 
                 await menu_number[Menufrom].menu_name.exec({
     
-                    body: type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : '',
+                    body: type === "conversation" ? messages.conversation : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : '',
                     messages: msg.messages.array[0].message,
                     download_msg: msg.messages.array[0],
                     Mimetype: Mimetype ,
