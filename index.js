@@ -137,6 +137,8 @@ async function start() {
             for (const lop of unread) {
 
                 let db = fs.readJsonSync('./db/db.json');
+                let messages = lop.message
+
                 if (!db.includes(lop.key.remoteJid)) {
 
                     MenuNmber(lop.key.remoteJid, 0);
@@ -144,10 +146,13 @@ async function start() {
                     fs.writeJsonSync('./db/db.json', db)
 
                 }
+
                 let Menufrom = await getMenu(lop.key.remoteJid)
+
                 await menu_number[Menufrom].menu_name.exec({
     
-                    messages: lop.message,
+                    body: messages.conversatio ? messages.conversatio : messages.extendedTextMessage ? messages.extendedTextMessage.text : messages.imageMessage ? messages.imageMessage.caption : messages.videoMessage.caption ? messages.videoMessage.caption : '',
+                    messages: lop.message ,
                     download_msg: lop,
                     Mimetype: Mimetype ,
                     from: lop.key.remoteJid ,
@@ -170,6 +175,8 @@ async function start() {
              
                 
                 let db = fs.readJsonSync('./db/db.json');
+                let type = Object.keys(msg.messages.array[0].message)[0]
+                let messages = msg.messages.array[0].message
 
                 if (!db.includes(msg.jid)) {
 
@@ -183,6 +190,7 @@ async function start() {
 
                 await menu_number[Menufrom].menu_name.exec({
     
+                    body: type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : '',
                     messages: msg.messages.array[0].message,
                     download_msg: msg.messages.array[0],
                     Mimetype: Mimetype ,

@@ -4,13 +4,12 @@ import { photo } from './photo.js';
 import fs from 'fs-extra';
 export const menu = {
 
-  async exec({ from, client, pushname, messages, isGroup, MessageType, Mimetype }) {
+  async exec({ from, client, pushname, body, isGroup, MessageType, Mimetype }) {
 
     const new_user = fs.readJsonSync('./db/new_user.json');
     const group_user = fs.readJsonSync('./db/group_user.json');
     const LecturesJson = fs.readJsonSync('./menu/Lectures.json');
-    const type = Object.keys(messages)[0]
-    const body = type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
+    
     
     if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 

@@ -6,10 +6,9 @@ import srk from 'wa-sticker-formatter'
 
 export const sticker_menu = {
 
-    async exec({ from, client, pushname, messages, MessageType }) {
+    async exec({ from, client, pushname, body, MessageType }) {
 
-        const type = Object.keys(messages)[0]
-        const body = type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
+        
 
         if (body === '1'){
 

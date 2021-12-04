@@ -5,10 +5,8 @@ import srk from 'wa-sticker-formatter'
 
 export const maker_sticker = {
 
-    async exec({ from, client, pushname, MessageType, messages, download_msg }) {
+    async exec({ from, client, pushname, MessageType, messages, body, download_msg }) {
 
-        const type = Object.keys(messages)[0]
-        const body = type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
 
         if (messages.imageMessage && messages.imageMessage.mimetype === 'image/jpeg' || messages.documentMessage && messages.documentMessage.mimetype === 'image/png' ) {
             

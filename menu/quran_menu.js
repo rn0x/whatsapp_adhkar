@@ -3,10 +3,9 @@ import fs from 'fs-extra';
 
 export const quran_menu = {
 
-    async exec({ from, client, pushname, messages, MessageType, Mimetype }) {
+    async exec({ from, client, pushname, body, MessageType, Mimetype }) {
 
-        const type = Object.keys(messages)[0]
-        const body = type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
+        
 
         if (body === '1'){
 

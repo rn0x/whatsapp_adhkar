@@ -5,10 +5,9 @@ import fs from 'fs-extra';
 export const Group_Url = {
     
 
-    async exec({ from, client, pushname, messages, MessageType }) {
+    async exec({ from, client, pushname, body, MessageType }) {
 
-        const type = Object.keys(messages)[0]
-        const body = type === "conversation" ? messages.conversatio : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
+        
         const GroupsMenu = fs.readJsonSync('./db/GroupsMenu.json');
 
 
