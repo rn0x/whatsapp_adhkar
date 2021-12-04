@@ -151,7 +151,7 @@ async function start() {
 
                 await menu_number[Menufrom].menu_name.exec({
     
-                    body: messages.conversation != null ? messages.conversation : messages.extendedTextMessage != null ? messages.extendedTextMessage.text : messages.imageMessage != null ? messages.imageMessage.caption : messages.videoMessage != null ? messages.videoMessage.caption : '',
+                    body: messages && messages.conversation ? messages.conversation : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : '',
                     messages: lop.message ,
                     download_msg: lop,
                     Mimetype: Mimetype ,
