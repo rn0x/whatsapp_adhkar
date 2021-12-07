@@ -55,6 +55,30 @@ export const quran_menu = {
             
         }
 
+        else if (body === '5'){ 
+            
+            MenuNmber(from, 13)
+
+            let quran_idr = fs.readFileSync('./media/text/quran_5.txt',{encoding:'utf8', flag:'r'})
+            let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
+            home += '*【 للرجوع للخلف أرسل * 】*'
+            await client.sendMessage(from, quran_idr, MessageType.text).catch((erro) => console.log(erro));
+            await client.sendMessage(from, home, MessageType.text).catch((erro) => console.log(erro));     
+            
+        }
+
+        else if (body === '6'){ 
+            
+            MenuNmber(from, 14)
+
+            let quran_idr = fs.readFileSync('./media/text/quran_6.txt',{encoding:'utf8', flag:'r'})
+            let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
+            home += '*【 للرجوع للخلف أرسل * 】*'
+            await client.sendMessage(from, quran_idr, MessageType.text).catch((erro) => console.log(erro));
+            await client.sendMessage(from, home, MessageType.text).catch((erro) => console.log(erro));     
+            
+        }
+
         else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
 
             MenuNmber(from, 0)

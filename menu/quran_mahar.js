@@ -706,7 +706,9 @@ export const quran_mahar = {
       quran_menu += '1- أدريس أبكر \n'
       quran_menu += '2- ماهر المعيقلي \n'
       quran_menu += '3- عبدالله الموسى \n'
-      quran_menu += '4- علي جابر \n\n\n'
+      quran_menu += '4- علي جابر \n'
+      quran_menu += '5- عبدالرحمن السديس \n'
+      quran_menu += '6- خالد الجليل \n\n\n'
       quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
       
       await client.sendMessage(from, quran_menu, MessageType.text).catch((erro) => console.log(erro));

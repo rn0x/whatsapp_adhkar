@@ -40,7 +40,9 @@ export const menu = {
       quran_menu += '1- أدريس أبكر \n'
       quran_menu += '2- ماهر المعيقلي \n'
       quran_menu += '3- عبدالله الموسى \n'
-      quran_menu += '4- علي جابر \n\n\n'
+      quran_menu += '4- علي جابر \n'
+      quran_menu += '5- عبدالرحمن السديس \n'
+      quran_menu += '6- خالد الجليل \n\n\n'
       quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
       
       await client.sendMessage(from, quran_menu, MessageType.text).catch((erro) => console.log(erro));
@@ -119,6 +121,27 @@ export const menu = {
       menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
      
       await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
+
+    }
+
+    else if (body === '8'){
+      
+      MenuNmber(from, 12)
+      let msg = 'مشروع يهدف إلى خدمة القرآن الكريم وحفّاظِهِ وقارئيه، عن طريق توفير مَتْنٍ مختصرٍ شاملٍ لسور القرآن، وتوفير محتواه مقروؤاً ومرئياً \n'
+      msg += '*محتوياتُ (البِطَاقَات):*\n'
+      msg += 'وضعتُ ثمانيةَ (8) عناصرَ موحَّدَةً في كلِّ بطاقةِ تعريفٍ بالسورةِ، وجعلتُهَا مرتبةً ومُرَقَّمَةً، وكتبتُها بعباراتٍ واضحةٍ، وجُمَلٍ مختصرةٍ، وأسلوبٍ ميسرٍ ليسهُلَ حفظُهَا.\n\n'
+      msg += '1- آيَـــــــــــــــاتُـــــها \n'
+      msg += '2- مَعــــــنَـى اسْـــــــمِها \n'
+      msg += '3- سَبَبُ تَسْمِيَتِها \n'
+      msg += '4- أَسْـــــمَاؤُهـا \n'
+      msg += '5- مَقْصِدُها العَامُّ \n'
+      msg += '6- سَبَبُ نُزُولِهَا \n'
+      msg += '7- فَضْــــــلُها \n'
+      msg += '8- مُنَــاسَــبَاتُــها \n\n'
+      msg += '⚠️ لإراسل البطاقة صور وصوت قم بإرسال رقم السورة او إسم السورة \n\n\n'
+      msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+     
+      await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
