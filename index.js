@@ -24,6 +24,7 @@ async function start() {
         const client = new WAConnection();
         const db = fs.readJsonSync('./db/db.json');
 
+        client.setMaxListeners(0);
         client.autoReconnect = ReconnectMode.onConnectionLost;
 
         client.on('open', () => {
