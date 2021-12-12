@@ -129,20 +129,40 @@ async function start() {
 
         });
 
+        client.on('chats-received', async () => {
+
+            let unread = await client.loadAllUnreadMessages();
+            for (let lop of unread) {
+
+                let messages = lop.message
+                let Menufrom = await getMenu(lop.key.remoteJid)
+
+                await menu_number[Menufrom].menu_name.exec({
+
+                    body: messages && messages.conversation ? messages.conversation : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : '',
+                    messages: lop.message,
+                    download_msg: lop,
+                    Mimetype: Mimetype,
+                    from: lop.key.remoteJid,
+                    MessageType: MessageType,
+                    isGroup: lop.key.remoteJid.endsWith('@g.us'),
+                    pushname: client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid] ? client.contacts[lop.key.remoteJid].vname : ' ',
+                    client: client,
+
+                });
+
+                await client.chatRead(lop.key.remoteJid, 'read')
+
+            }
+
+        });
+
         client.on('chat-update', async (msg) => {
 
             if (msg.messages && msg.count && msg.hasNewMessage && client.contacts[msg.jid] !== undefined) {
 
-
-                let Menu = fs.readJsonSync('./db/Menu.json');
                 let type = Object.keys(msg.messages.array[0].message)[0]
                 let messages = msg.messages.array[0].message
-
-                if (!Object.keys(Menu).includes(msg.jid)) {
-
-                    MenuNmber(msg.jid, 0);
-                }
-
                 let Menufrom = await getMenu(msg.jid)
 
                 await menu_number[Menufrom].menu_name.exec({

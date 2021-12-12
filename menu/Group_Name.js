@@ -3,25 +3,25 @@ import fs from 'fs-extra';
 
 
 export const Group_Name = {
-    
+
 
     async exec({ from, client, pushname, body, MessageType }) {
 
-        let iftrue = body !== 'Hi' || body !== 'hi' || body !== 'خدمة' || body !== 'خدمه' || body !== '#'
+        let arraybody = ['Hi', 'hi', 'خدمة', 'خدمه', '#'];
 
-        if (body.length <= 30 && iftrue){
+        if (body.length <= 30 && arraybody.some(fx => body === fx) === false) {
 
             let group_name = 'من فضلك قم بكتابة رابط المجموعة 💬'
             let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups, { spaces: '\t' })
+            fs.writeJsonSync(`./db/Group/${from}.json`, db_groups, { spaces: '\t' })
 
             await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
             MenuNmber(from, 11)
         }
 
 
-        else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
+        else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
 
             MenuNmber(from, 0)
 
@@ -49,9 +49,9 @@ export const Group_Name = {
 
             let msg = 'يجب أن يكون الإسم أقل من 30 حرف ⚠️\n\n\n'
             msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-     
+
             await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
-        
+
         }
 
     }

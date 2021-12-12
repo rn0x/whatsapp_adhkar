@@ -1,6 +1,4 @@
 import MenuNmber from '../lib/MenuNmber.js';
-import { menu_number } from '../lib/menu_number.js';
-import getMenu from '../lib/getMenu.js';
 import { video } from './video.js';
 import { photo } from './photo.js';
 import fs from 'fs-extra';
@@ -154,41 +152,6 @@ export const menu = {
       await client.sendMessage(from, { url: './db/new_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'new_user.json' }).catch((erro) => console.log(erro));
       await client.sendMessage(from, { url: './db/GroupsMenu.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'GroupsMenu.json' }).catch((erro) => console.log(erro));
       await client.sendMessage(from, { url: './db/db.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'db.json' }).catch((erro) => console.log(erro));
-
-    }
-
-    else if (body === 'ready') {
-
-      let unread = await client.loadAllUnreadMessages();
-      for (let lop of unread) {
-
-        let Menu = fs.readJsonSync('./db/Menu.json');
-        let messages = lop.message
-
-        if (!Object.keys(Menu).includes(lop.key.remoteJid)) {
-
-          MenuNmber(lop.key.remoteJid, 0);
-        }
-
-        let Menufrom = await getMenu(lop.key.remoteJid)
-
-        await menu_number[Menufrom].menu_name.exec({
-
-          body: messages && messages.conversation ? messages.conversation : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : '',
-          messages: lop.message,
-          download_msg: lop,
-          Mimetype: Mimetype,
-          from: lop.key.remoteJid,
-          MessageType: MessageType,
-          isGroup: lop.key.remoteJid.endsWith('@g.us'),
-          pushname: client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid] ? client.contacts[lop.key.remoteJid].vname : ' ',
-          client: client,
-
-        });
-
-        await client.chatRead(lop.key.remoteJid, 'read')
-
-      }
 
     }
 
