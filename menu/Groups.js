@@ -3,13 +3,13 @@ import fs from 'fs-extra';
 
 
 export const Groups = {
-    
+
 
     async exec({ from, client, pushname, body, MessageType }) {
 
-        
 
-        if (body === '1'){
+
+        if (body === '1') {
 
             MenuNmber(from, 10)
 
@@ -17,7 +17,7 @@ export const Groups = {
             await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
         }
 
-        else if (body === '2'){
+        else if (body === '2') {
 
             let GroupsMenu = fs.readJsonSync(`./db/GroupsMenu.json`);
             var list_group = '            ═✪〘 المجموعات 〙✪═ \n\n'
@@ -29,21 +29,34 @@ export const Groups = {
             list_group += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
             await client.sendMessage(from, list_group, MessageType.text, { detectLinks: false }).catch((erro) => console.log(erro));
-            
-            
+
+
         }
 
-        else if (body === '3'){
+        else if (body === '3') {
 
-            let GroupsMenu = fs.readJsonSync('./db/GroupsMenu.json');
-            let listgroups = GroupsMenu[Math.floor(Math.random() * GroupsMenu.length)]
-            let msg = `إسم المجموعة: ${listgroups.name} \n`
-            msg += `${listgroups.url}`
-            await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
-            
+            let GroupsMenu = await fs.readJson('./db/GroupsMenu.json').catch((error) => console.log(error));
+            let listgroups = await GroupsMenu[Math.floor(Math.random() * GroupsMenu.length)]
+            let name = listgroups && listgroups.name ? listgroups.name : null
+            let url = listgroups && listgroups.url ? listgroups.url : null
+
+            if (name !== null && url !== null) {
+
+                let msg = `إسم المجموعة: ${listgroups.name} \n`
+                msg += `${listgroups.url}`
+                await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
+
+
+            }
+
+            else {
+
+                await client.sendMessage(from, 'حالياً لايوجد مجموعات يمكنك إضافة مجموعتك من خلال إرسال الرقم 1', MessageType.text).catch((erro) => console.log(erro));
+            }
+
         }
 
-        else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
+        else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
 
             MenuNmber(from, 0)
 
@@ -62,7 +75,7 @@ export const Groups = {
             mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
             mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
             mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-        
+
             await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
         }

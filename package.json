@@ -12,7 +12,6 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.3",
-    "exec-sh": "^0.4.0",
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
     "moment-timezone": "^0.5.33",

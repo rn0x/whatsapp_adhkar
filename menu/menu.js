@@ -1,4 +1,6 @@
 import MenuNmber from '../lib/MenuNmber.js';
+import { menu_number } from '../lib/menu_number.js';
+import getMenu from '../lib/getMenu.js';
 import { video } from './video.js';
 import { photo } from './photo.js';
 import fs from 'fs-extra';
@@ -9,9 +11,9 @@ export const menu = {
     const new_user = fs.readJsonSync('./db/new_user.json');
     const group_user = fs.readJsonSync('./db/group_user.json');
     const LecturesJson = fs.readJsonSync('./menu/Lectures.json');
-    
-    
-    if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
+
+
+    if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
 
       let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
       mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
@@ -28,12 +30,12 @@ export const menu = {
       mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
       mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
       mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-      
+
       await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '1'){
+    else if (body === '1') {
 
       MenuNmber(from, 1)
 
@@ -45,12 +47,12 @@ export const menu = {
       quran_menu += '5- عبدالرحمن السديس \n'
       quran_menu += '6- خالد الجليل \n\n\n'
       quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-      
+
       await client.sendMessage(from, quran_menu, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '2'){
+    else if (body === '2') {
 
       MenuNmber(from, 6)
 
@@ -67,26 +69,26 @@ export const menu = {
       adhkar_menu += '11- أذكار الطعام 🥣 \n'
       adhkar_menu += '12- دُعَاءُ خَتْمِ القُرْآنِ الكَريمِ 📖 \n\n\n'
       adhkar_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-     
+
       await client.sendMessage(from, adhkar_menu, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '3'){
+    else if (body === '3') {
 
       let listvideo = video[Math.floor(Math.random() * video.length)]
       await client.sendMessage(from, { url: listvideo }, MessageType.video).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '4'){
+    else if (body === '4') {
 
       let listphoto = photo[Math.floor(Math.random() * photo.length)]
       await client.sendMessage(from, { url: listphoto }, MessageType.image, { thumbnail: Buffer.alloc(0) }).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '5'){
+    else if (body === '5') {
 
       MenuNmber(from, 7)
 
@@ -97,12 +99,12 @@ export const menu = {
       sticker_menu += '5- صانع الملصقات 🪧 \n\n'
       sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
       sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-     
+
       await client.sendMessage(from, sticker_menu, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '6'){
+    else if (body === '6') {
 
       let listlectures = LecturesJson[Math.floor(Math.random() * LecturesJson.length)]
       let msg = `✽\n\n${listlectures.Lectures}\n\n`
@@ -112,21 +114,21 @@ export const menu = {
 
     }
 
-    else if (body === '7'){
-      
+    else if (body === '7') {
+
       MenuNmber(from, 9)
-      fs.writeJsonSync(`./db/Group/${from}.json`,[])
+      fs.writeJsonSync(`./db/Group/${from}.json`, [])
       let menu_group = '1- نشر قروبك ✉️ \n'
       menu_group += '2- قائمة القروبات ⚜️\n'
       menu_group += '3- قروب عشوائي 🔄\n\n'
       menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-     
+
       await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === '8'){
-      
+    else if (body === '8') {
+
       MenuNmber(from, 12)
       let msg = 'مشروع يهدف إلى خدمة القرآن الكريم وحفّاظِهِ وقارئيه، عن طريق توفير مَتْنٍ مختصرٍ شاملٍ لسور القرآن، وتوفير محتواه مقروؤاً ومرئياً \n\n'
       msg += '*محتوياتُ (البِطَاقَات):*\n\n'
@@ -141,12 +143,12 @@ export const menu = {
       msg += '8- مُنَــاسَــبَاتُــها \n\n'
       msg += '⚠️ لإرسال البطاقة صورة وصوت قم بإرسال رقم السورة او إسم السورة \n\n\n'
       msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-     
+
       await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
 
     }
 
-    else if (body === 'dbjson'){
+    else if (body === 'dbjson') {
 
       await client.sendMessage(from, { url: './db/group_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'group_user.json' }).catch((erro) => console.log(erro));
       await client.sendMessage(from, { url: './db/new_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'new_user.json' }).catch((erro) => console.log(erro));
@@ -155,15 +157,50 @@ export const menu = {
 
     }
 
+    else if (body === 'ready') {
+
+      let unread = await client.loadAllUnreadMessages();
+      for (let lop of unread) {
+
+        let Menu = fs.readJsonSync('./db/Menu.json');
+        let messages = lop.message
+
+        if (!Object.keys(Menu).includes(lop.key.remoteJid)) {
+
+          MenuNmber(lop.key.remoteJid, 0);
+        }
+
+        let Menufrom = await getMenu(lop.key.remoteJid)
+
+        await menu_number[Menufrom].menu_name.exec({
+
+          body: messages && messages.conversation ? messages.conversation : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : '',
+          messages: lop.message,
+          download_msg: lop,
+          Mimetype: Mimetype,
+          from: lop.key.remoteJid,
+          MessageType: MessageType,
+          isGroup: lop.key.remoteJid.endsWith('@g.us'),
+          pushname: client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid] ? client.contacts[lop.key.remoteJid].vname : ' ',
+          client: client,
+
+        });
+
+        await client.chatRead(lop.key.remoteJid, 'read')
+
+      }
+
+    }
+
     else if (!group_user.includes(from) && isGroup) {
 
       group_user.push(from)
       fs.writeJsonSync('./db/group_user.json', group_user)
-      
+
     }
 
-    else if (!new_user.includes(from) && !isGroup){
-  
+    else if (!new_user.includes(from) && !isGroup) {
+
       let mesg = 'يبدو أنك أول مره تقوم بمراسلتي من فضلك أرسل كلمة خدمة او Hi لعرض خدمات البوت'
 
       new_user.push(from)
@@ -171,7 +208,7 @@ export const menu = {
       await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
     }
-     
+
   }
 
 };
