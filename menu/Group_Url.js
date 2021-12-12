@@ -15,7 +15,7 @@ export const Group_Url = {
 
             let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups)
+            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups, { spaces: '\t' })
 
             let group_name = db_groups[0]
             let group_url = db_groups[1]
@@ -28,9 +28,9 @@ export const Group_Url = {
             menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
             GroupsMenu.push({name: group_name, url: group_url});
-            fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu)
+            fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu, { spaces: '\t' })
             await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
-            fs.writeJsonSync(`./db/Group/${from}.json`, [])
+            fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
             MenuNmber(from, 9)
             await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
         }
@@ -55,7 +55,7 @@ export const Group_Url = {
             mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
             mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
             mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-            fs.writeJsonSync(`./db/Group/${from}.json`, [])
+            fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
             await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
         }
@@ -74,7 +74,7 @@ export const Group_Url = {
                 let msg = 'لقد تم نشر هذه المجموعة بالفعل ⚠️\n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
                 await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
-                fs.writeJsonSync('./lib/db_groups.json', [])
+                fs.writeJsonSync('./lib/db_groups.json', [], { spaces: '\t' })
 
             }
         

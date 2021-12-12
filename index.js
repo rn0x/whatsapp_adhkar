@@ -80,7 +80,7 @@ async function start() {
 
                 let del = group_user.indexOf(group);
                 group_user.splice(del, 1)
-                fs.writeJsonSync('./db/group_user.json', group_user)
+                fs.writeJsonSync('./db/group_user.json', group_user, { spaces: '\t' })
             }
 
             else if (up.action === 'demote' && client.contacts[user] != undefined) {

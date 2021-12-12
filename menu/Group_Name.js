@@ -7,14 +7,14 @@ export const Group_Name = {
 
     async exec({ from, client, pushname, body, MessageType }) {
 
-        
+        let iftrue = body !== 'Hi' || body !== 'hi' || body !== 'خدمة' || body !== 'خدمه' || body !== '#'
 
-        if (body.length <= 30){
+        if (body.length <= 30 && iftrue){
 
             let group_name = 'من فضلك قم بكتابة رابط المجموعة 💬'
             let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups)
+            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups, { spaces: '\t' })
 
             await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
             MenuNmber(from, 11)
@@ -40,7 +40,7 @@ export const Group_Name = {
             mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
             mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
             mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-            fs.writeJsonSync(`./db/Group/${from}.json`, [])
+            fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
             await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
         }

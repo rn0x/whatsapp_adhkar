@@ -195,7 +195,7 @@ export const menu = {
     else if (!group_user.includes(from) && isGroup) {
 
       group_user.push(from)
-      fs.writeJsonSync('./db/group_user.json', group_user)
+      fs.writeJsonSync('./db/group_user.json', group_user, { spaces: '\t' })
 
     }
 
@@ -204,7 +204,7 @@ export const menu = {
       let mesg = 'يبدو أنك أول مره تقوم بمراسلتي من فضلك أرسل كلمة خدمة او Hi لعرض خدمات البوت'
 
       new_user.push(from)
-      fs.writeJsonSync('./db/new_user.json', new_user)
+      fs.writeJsonSync('./db/new_user.json', new_user, { spaces: '\t' })
       await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
     }
