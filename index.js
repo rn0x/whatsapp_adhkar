@@ -5,7 +5,6 @@ import broadcast from './lib/broadcast.js';
 import figlet from 'figlet';
 import { menu_number } from './lib/menu_number.js';
 import getMenu from './lib/getMenu.js';
-import MenuNmber from './lib/MenuNmber.js';
 import Folder from './lib/Folder.js';
 Folder()
 
@@ -95,40 +94,6 @@ async function start() {
 
         });
 
-        client.on('group-update', async (up) => {
-
-            let group = up.jid
-            let desc = up.desc
-            let announce = up.announce
-            let restrict = up.restrict
-
-            if (announce === false) {
-
-                await client.sendMessage(group, `القروب متاح للكتابة من الجميع ✅`, MessageType.text)
-            }
-
-            else if (announce === true) {
-
-                await client.sendMessage(group, `القروب متاح للكتابة من المشرفين فقط ⚠️`, MessageType.text)
-            }
-
-            else if (restrict === false) {
-
-                await client.sendMessage(group, `يمكن لإي شخص التعديل على إعدادات القروب ⚠️`, MessageType.text)
-            }
-
-            else if (restrict === true) {
-
-                await client.sendMessage(group, `يمكن للمشرفين فقط التعديل على إعدادات القروب ✅`, MessageType.text)
-            }
-
-            else if (desc) {
-
-                await client.sendMessage(group, `تم تغيير وصف القروب ✅ \n\n${desc}`, MessageType.text)
-            }
-
-        });
-
         client.on('chats-received', async () => {
 
             let unread = await client.loadAllUnreadMessages();
@@ -189,9 +154,9 @@ async function start() {
 
         await client.connect()
 
-    } catch (err) {
+    } catch (error) {
 
-        console.log(err.toString());
+        console.log(error);
 
     }
 
