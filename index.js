@@ -60,36 +60,13 @@ async function start() {
 
             let group = up.jid
             let user = up.participants[0]
-            let number = user.split('@s.whatsapp.net', 1)
-            let pushname = client.contacts[user] != undefined && client.contacts[user].notify ? client.contacts[user].notify : client.contacts[user] != undefined && client.contacts[user].name ? client.contacts[user].name : number
             let group_user = await fs.readJson('./db/group_user.json');
 
-            if (up.action === 'add' && client.contacts[user] != undefined) {
-
-                await client.sendMessage(group, `مرحباً بك ${pushname} 👋`, MessageType.text)
-
-            }
-
-            else if (up.action === 'remove' && client.contacts[user] != undefined) {
-
-                await client.sendMessage(group, `مع السلامة ${pushname} 👋`, MessageType.text)
-            }
-
-            else if (up.action === 'remove' && user === client.user.jid) {
+            if (up.action === 'remove' && user === client.user.jid) {
 
                 let del = group_user.indexOf(group);
                 group_user.splice(del, 1)
                 fs.writeJsonSync('./db/group_user.json', group_user, { spaces: '\t' })
-            }
-
-            else if (up.action === 'demote' && client.contacts[user] != undefined) {
-
-                await client.sendMessage(group, `تم إزالة مرتبة الإشراف من العضو ${pushname} ✅`, MessageType.text)
-            }
-
-            else if (up.action === 'promote' && client.contacts[user] != undefined) {
-
-                await client.sendMessage(group, `تم ترقية ${pushname} الى مشرف ✅`, MessageType.text)
             }
 
         });
