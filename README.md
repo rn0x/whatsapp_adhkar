@@ -14,16 +14,19 @@
 
 
 ### مميزات إضافية
-<b>1- نظام أشتراك في خدمة البرودكاست ✅</b><br>
+<b>1- إرسال تلقائي لجميع القروبات المتواجد فيها البوت ✅</b><br>
 <b>2- منشئ ملصقات 🪧</b><br>
 <b>3- محاضرات إسلامية</b><br>
-<b> 4- قريباً </b><br>
+<b>4- بطاقات القرآن الكريم</b><br>
+<b>5- نشر روابط قروبات + خاصية إضافة روابط القروبات</b><br>
+<b>6- قريباً </b><br>
 
 ### أوامر التثبيت لنظام Ubuntu , Linux Mint , Debian [ terminal ]
 
 ```bash
    > sudo apt-get install nodejs
    > sudo apt-get install git
+   > sudo apt-get install ffmpeg
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
@@ -42,6 +45,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```bash
    > choco install nodejs.install
    > choco install git
+   > choco install ffmpeg
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
@@ -62,7 +66,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
   apk add --no-cache \
   chromium
    > apk add --update nodejs npm
-   > apk add git
+   > apk add git ffmpeg
+   > apk add 
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
