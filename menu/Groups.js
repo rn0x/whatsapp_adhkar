@@ -49,9 +49,10 @@ export const Groups = {
 
             }
 
-            else {
+            else if (name === null && url === null) {
 
                 await client.sendMessage(from, 'حالياً لايوجد مجموعات يمكنك إضافة مجموعتك من خلال إرسال الرقم 1', MessageType.text).catch((erro) => console.log(erro));
+
             }
 
         }
