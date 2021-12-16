@@ -66,8 +66,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
   apk add --no-cache \
   chromium
    > apk add --update nodejs npm
-   > apk add git ffmpeg
-   > apk add 
+   > apk add git
+   > apk add ffmpeg
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
