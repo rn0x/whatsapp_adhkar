@@ -27,7 +27,7 @@ export const Group_Url = {
             menu_group += '3- قروب عشوائي 🔄\n\n'
             menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            GroupsMenu.push({name: group_name, url: group_url});
+            GroupsMenu.unshift({name: group_name, url: group_url});
             fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu, { spaces: '\t' })
             await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
             fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
