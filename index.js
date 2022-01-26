@@ -1,142 +1,134 @@
-import { WAConnection, MessageType, Mimetype, ReconnectMode } from '@adiwajshing/baileys';
-import fs from 'fs-extra';
+import wa from '@open-wa/wa-automate';
 import moment from 'moment-timezone';
 import broadcast from './lib/broadcast.js';
 import figlet from 'figlet';
 import { menu_number } from './lib/menu_number.js';
 import getMenu from './lib/getMenu.js';
 import Folder from './lib/Folder.js';
-Folder()
+import Hi from './menu/Hi.js';
 
+Folder();
 
 console.log(figlet.textSync('Bot Adhkar'));
-console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'))
-console.log("               Telegram @BinAttia \n")
+console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
+console.log("               Telegram @BinAttia \n");
 
+const options = {
+    multiDevice: true,
+    authTimeout: 0,
+    blockCrashLogs: true,
+    useChrome: true,
+    autoRefresh:true,
+    cacheEnabled:true,
+    qrRefreshS: 18,
+    throwErrorOnTosBlock: false,
+    deleteSessionDataOnLogout: false,
+    skipUpdateCheck: false,
+    bypassCSP:true,
+    disableSpins: true,
+    headless: true,
+    hostNotificationLang: 'PT_BR',
+    logConsole: false,
+    popup: true,
+    qrTimeout: 0,
+    sessionId: 'Bot Adhkar'
+};
 
-async function start() {
-
+wa.create(options)
+.then(async client => {
+    
     try {
 
-        const client = new WAConnection();
+        await client.onStateChanged(async (state) => {
 
-        client.setMaxListeners(0);
-        client.autoReconnect = ReconnectMode.onConnectionLost;
+            if (state === 'CONNECTED') {
 
-        client.on('open', () => {
+                for (let lop of await client.getAllUnreadMessages()) {
 
-            fs.writeFileSync('./info.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'));
+                    let from = lop.from;
+                    let id = lop.id
+                    let body = lop.body;
+                    let messages = lop;
+                    let Menufrom = await getMenu(from);
+                    let pushname = ' ';
+                    let isGroupMsg = lop.isGroupMsg;
+    
+                    await menu_number[Menufrom !== undefined ? Menufrom : 0].menu_name.exec({
+    
+                        body: body,
+                        messages: messages,
+                        id: id,
+                        from: from,
+                        isGroup: isGroupMsg,
+                        pushname: pushname ,
+                        client: client,
+        
+                    });
 
-        });
-
-
-        if (fs.existsSync('./info.json')) {
-
-            client.loadAuthInfo('./info.json');
-
-        }
-
-        client.on('close', async (cls) => {
-
-            if (cls.reason === 'unknown' && cls.isReconnecting === true) {
-
-                if (fs.existsSync('./info.json')) {
-
-                    fs.removeSync('./info.json');
+                    await client.sendSeen(from);
+                    
                 }
+
+
             }
 
-            else if (cls.reason === 'invalid_session' && cls.isReconnecting === false) {
+            else if (state === "CONFLICT" || state ==="UNLAUNCHED") {
 
-                if (fs.existsSync('./info.json')) {
-
-                    fs.removeSync('./info.json');
-                }
+                console.log(state);
+                await client.forceRefocus();
             }
 
+            else if (state ==='UNPAIRED') {
+
+                console.log('Client Logoff');
+                console.log(state);
+            }
+
+        })
+
+        await client.onMessage(async (msg) => {
+
+            let from = msg.from;
+            let id = msg.id
+            let body = msg.body;
+            let messages = msg;
+            let Menufrom = await getMenu(from);
+            let pushname = msg.sender.pushname ? msg.sender.pushname : msg.sender.verifiedName ? msg.sender.verifiedName : msg.sender.formattedName ? msg.sender.formattedName : ' ';
+            let isGroupMsg = msg.isGroupMsg;
+            let number_arabic = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩']
+
+            await menu_number[Menufrom].menu_name.exec({
+
+                body: body,
+                messages: messages,
+                id: id,
+                from: from,
+                isGroup: isGroupMsg,
+                pushname: pushname,
+                client: client,
+
+            });
+
+            Hi(client, body, from, pushname, id);
+
+            if (isGroupMsg === false && number_arabic.some(fx => body === fx)) {
+
+                let msg = 'من فضلك استعمل الأرقم الإنجليزية ⚠️'
+
+                await client.reply(from, msg, id).catch((erro) => console.log(erro));
+
+            }
+
+            await client.sendSeen(from)
         });
 
-        client.on('group-participants-update', async (up) => {
 
-            let group = up.jid
-            let user = up.participants[0]
-            let group_user = await fs.readJson('./db/group_user.json');
-
-            if (up.action === 'remove' && user === client.user.jid) {
-
-                let del = group_user.indexOf(group);
-                group_user.splice(del, 1)
-                fs.writeJsonSync('./db/group_user.json', group_user, { spaces: '\t' })
-            }
-
-        });
-
-        client.on('chats-received', async () => {
-
-            let unread = await client.loadAllUnreadMessages();
-            for (let lop of unread) {
-
-                let messages = lop.message
-                let Menufrom = await getMenu(lop.key.remoteJid)
-
-                await menu_number[Menufrom].menu_name.exec({
-
-                    body: messages && messages.conversation ? messages.conversation : messages && messages.extendedTextMessage ? messages.extendedTextMessage.text : messages && messages.imageMessage ? messages.imageMessage.caption : messages && messages.videoMessage ? messages.videoMessage.caption : '',
-                    messages: lop.message,
-                    download_msg: lop,
-                    Mimetype: Mimetype,
-                    from: lop.key.remoteJid,
-                    MessageType: MessageType,
-                    isGroup: lop.key.remoteJid.endsWith('@g.us'),
-                    pushname: client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].notify ? client.contacts[lop.key.remoteJid].notify : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid].name ? client.contacts[lop.key.remoteJid].name : client.contacts[lop.key.remoteJid] != undefined && client.contacts[lop.key.remoteJid] ? client.contacts[lop.key.remoteJid].vname : ' ',
-                    client: client,
-
-                });
-
-                await client.chatRead(lop.key.remoteJid, 'read')
-
-            }
-
-        });
-
-        client.on('chat-update', async (msg) => {
-
-            if (msg.messages && msg.count && msg.hasNewMessage && client.contacts[msg.jid] !== undefined) {
-
-                let type = Object.keys(msg.messages.array[0].message)[0]
-                let messages = msg.messages.array[0].message
-                let Menufrom = await getMenu(msg.jid)
-
-                await menu_number[Menufrom].menu_name.exec({
-
-                    body: type === "conversation" ? messages.conversation : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : '',
-                    messages: msg.messages.array[0].message,
-                    download_msg: msg.messages.array[0],
-                    Mimetype: Mimetype,
-                    from: msg.jid,
-                    MessageType: MessageType,
-                    isGroup: msg.jid.endsWith('@g.us'),
-                    pushname: client.contacts[msg.jid] != undefined && client.contacts[msg.jid].notify ? client.contacts[msg.jid].notify : client.contacts[msg.jid] != undefined && client.contacts[msg.jid].name ? client.contacts[msg.jid].name : client.contacts[msg.jid] != undefined && client.contacts[msg.jid] ? client.contacts[msg.jid].vname : 'بدون إسم',
-                    client: client,
-
-                });
-
-                await client.chatRead(msg.jid, 'read')
-
-            }
-
-        });
-
-        broadcast(client, MessageType, Mimetype);
-
-        await client.connect()
-
+        broadcast(client);
+        
     } catch (error) {
 
         console.log(error);
-
+        
     }
-
-}
-
-start()
+})
+.catch((error) =>console.log(error));

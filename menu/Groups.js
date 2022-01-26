@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 export const Groups = {
 
 
-    async exec({ from, client, pushname, body, MessageType }) {
+    async exec({ from, client, body, id }) {
 
 
 
@@ -14,7 +14,7 @@ export const Groups = {
             MenuNmber(from, 10)
 
             let group_name = 'من فضلك ادخل إسم المجموعة 💬'
-            await client.sendMessage(from, group_name, MessageType.text).catch((erro) => console.log(erro));
+            await client.reply(from, group_name, id).catch((erro) => console.log(erro));
         }
 
         else if (body === '2') {
@@ -28,7 +28,7 @@ export const Groups = {
             }
             list_group += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, list_group, MessageType.text, { detectLinks: false }).catch((erro) => console.log(erro));
+            await client.reply(from, list_group, id).catch((erro) => console.log(erro));
 
 
         }
@@ -44,40 +44,16 @@ export const Groups = {
 
                 let msg = `إسم المجموعة: ${listgroups.name} \n`
                 msg += `${listgroups.url}`
-                await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((erro) => console.log(erro));
 
 
             }
 
             else if (name === null && url === null) {
 
-                await client.sendMessage(from, 'حالياً لايوجد مجموعات يمكنك إضافة مجموعتك من خلال إرسال الرقم 1', MessageType.text).catch((erro) => console.log(erro));
+                await client.reply(from, 'حالياً لايوجد مجموعات يمكنك إضافة مجموعتك من خلال إرسال الرقم 1', id).catch((erro) => console.log(erro));
 
             }
-
-        }
-
-        else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
-
-            MenuNmber(from, 0)
-
-            let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
-            mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
-            mesg += '1- قائمة القرآن الكريم 📖 \n'
-            mesg += '2- قائمة الأذكار 📿 \n'
-            mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
-            mesg += '4- صورة عشوائية 🖼️ \n'
-            mesg += '5- قائمة الملصقات 🪧 \n'
-            mesg += '6- محاضرات عشوائية 🌾 \n'
-            mesg += '7- قائمة القروبات ⚜️ \n'
-            mesg += '8- بطاقات القرآن 🎴 \n\n\n\n'
-            mesg += 'إحصائيات البوت \n'
-            mesg += `عدد المحادثات الحالية : ${client.chats.length}\n`
-            mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
-            mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
-            mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-
-            await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
 
         }
 

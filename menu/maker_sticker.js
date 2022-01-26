@@ -1,34 +1,78 @@
+import { decryptMedia } from '@open-wa/wa-automate';
 import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
-import srk from 'wa-sticker-formatter'
 
 
 export const maker_sticker = {
 
-    async exec({ from, client, pushname, MessageType, messages, body, download_msg }) {
+    async exec({ from, client, pushname, messages, body, id }) {
 
 
-        if (messages.imageMessage && messages.imageMessage.mimetype === 'image/jpeg' || messages.documentMessage && messages.documentMessage.mimetype === 'image/png' ) {
+        if (messages.isMedia === true) {
+
+            if (messages.mimetype == 'image/jpeg') {
+
+                let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+                let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
+                let imagePath = await decryptMedia(messages)
+                let imageBase64 = `data:${messages.mimetype};base64,${imagePath.toString('base64')}`
+                let sticker_menu = '1- ملصق عشوائي 🔄 \n'
+                sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
+                sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
+                sticker_menu += '4- ملصقات مساء الخير 🌑 \n'
+                sticker_menu += '5- صانع الملصقات 🪧 \n\n'
+                sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
+                sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+    
+                await client.sendImageAsSticker(from, imageBase64, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁').catch((erro) => console.log(erro));
+                await client.reply(from, sticker_menu).catch((erro) => console.log(erro));
+    
+                MenuNmber(from, 7)
+            }
+
+            else if (messages.mimetype == 'image/gif') {
+
+                let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+                let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
+                let imagePath = await decryptMedia(messages)
+                let videoBase64 = `data:${messages.mimetype};base64,${imagePath.toString('base64')}`
+                let sticker_menu = '1- ملصق عشوائي 🔄 \n'
+                sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
+                sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
+                sticker_menu += '4- ملصقات مساء الخير 🌑 \n'
+                sticker_menu += '5- صانع الملصقات 🪧 \n\n'
+                sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
+                sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+    
+                await client.sendMp4AsSticker(from, videoBase64, {fps: 10, startTime: '00:00:00.0', endTime : '00:00:05.0', loop: 0, crop: false}, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁', id).catch((erro) => console.log(erro));
+                await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+    
+                MenuNmber(from, 7)
+            }
+
+            else if (messages.mimetype == 'video/mp4') {
+
+                let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+                let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
+                let imagePath = await decryptMedia(messages)
+                let videoBase64 = `data:${messages.mimetype};base64,${imagePath.toString('base64')}`
+                let sticker_menu = '1- ملصق عشوائي 🔄 \n'
+                sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
+                sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
+                sticker_menu += '4- ملصقات مساء الخير 🌑 \n'
+                sticker_menu += '5- صانع الملصقات 🪧 \n\n'
+                sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
+                sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+    
+                await client.sendMp4AsSticker(from, videoBase64, {fps: 10, startTime: '00:00:00.0', endTime : '00:00:05.0', loop: 0, crop: false}, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁', id).catch((erro) => console.log(erro));
+                await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+    
+                MenuNmber(from, 7)
+            }
             
-            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
-            let imagePath = await client.downloadMediaMessage(download_msg);
-            let sticker = new srk.Sticker(imagePath, { type: 'full', pack: name_sticker });
-            let sticker_menu = '1- ملصق عشوائي 🔄 \n'
-            sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
-            sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
-            sticker_menu += '4- ملصقات مساء الخير 🌑 \n'
-            sticker_menu += '5- صانع الملصقات 🪧 \n\n'
-            sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
-            sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-
-            await sticker.build();
-            let bufferImage = await sticker.get();
-            await client.sendMessage(from, bufferImage, MessageType.sticker)
-            await client.sendMessage(from, 'استمتع بالملصق الخاص بك 🎁', MessageType.text).catch((erro) => console.log(erro));
-            await client.sendMessage(from, sticker_menu, MessageType.text).catch((erro) => console.log(erro));
-
-            MenuNmber(from, 7)
       
         }
 
@@ -44,31 +88,7 @@ export const maker_sticker = {
             sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
             sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
      
-            await client.sendMessage(from, sticker_menu, MessageType.text).catch((erro) => console.log(erro));
-            
-        }
-
-        else if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
-
-            MenuNmber(from, 0)
-
-            let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
-            mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
-            mesg += '1- قائمة القرآن الكريم 📖 \n'
-            mesg += '2- قائمة الأذكار 📿 \n'
-            mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
-            mesg += '4- صورة عشوائية 🖼️ \n'
-            mesg += '5- قائمة الملصقات 🪧 \n'
-            mesg += '6- محاضرات عشوائية 🌾 \n'
-            mesg += '7- قائمة القروبات ⚜️ \n'
-            mesg += '8- بطاقات القرآن 🎴 \n\n\n\n'
-            mesg += 'إحصائيات البوت \n'
-            mesg += `عدد المحادثات الحالية : ${client.chats.length}\n`
-            mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
-            mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
-            mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-            
-            await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
+            await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
             
         }
 

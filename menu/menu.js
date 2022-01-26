@@ -4,36 +4,13 @@ import { photo } from './photo.js';
 import fs from 'fs-extra';
 export const menu = {
 
-  async exec({ from, client, pushname, body, isGroup, MessageType, Mimetype }) {
+  async exec({ from, client, pushname, body, isGroup, id }) {
 
     const new_user = fs.readJsonSync('./db/new_user.json');
     const group_user = fs.readJsonSync('./db/group_user.json');
     const LecturesJson = fs.readJsonSync('./menu/Lectures.json');
 
-
-    if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
-
-      let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
-      mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
-      mesg += '1- قائمة القرآن الكريم 📖 \n'
-      mesg += '2- قائمة الأذكار 📿 \n'
-      mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
-      mesg += '4- صورة عشوائية 🖼️ \n'
-      mesg += '5- قائمة الملصقات 🪧 \n'
-      mesg += '6- محاضرات عشوائية 🌾 \n'
-      mesg += '7- قائمة القروبات ⚜️ \n'
-      mesg += '8- بطاقات القرآن 🎴 \n\n\n\n'
-      mesg += 'إحصائيات البوت \n'
-      mesg += `عدد المحادثات الحالية : ${client.chats.length}\n`
-      mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
-      mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
-      mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-
-      await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
-
-    }
-
-    else if (body === '1') {
+    if (body === '1') {
 
       MenuNmber(from, 1)
 
@@ -46,7 +23,7 @@ export const menu = {
       quran_menu += '6- خالد الجليل \n\n\n'
       quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.sendMessage(from, quran_menu, MessageType.text).catch((erro) => console.log(erro));
+      await client.reply(from, quran_menu, id).catch((erro) => console.log(erro));
 
     }
 
@@ -68,21 +45,21 @@ export const menu = {
       adhkar_menu += '12- دُعَاءُ خَتْمِ القُرْآنِ الكَريمِ 📖 \n\n\n'
       adhkar_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.sendMessage(from, adhkar_menu, MessageType.text).catch((erro) => console.log(erro));
+      await client.reply(from, adhkar_menu, id).catch((erro) => console.log(erro));
 
     }
 
     else if (body === '3') {
 
       let listvideo = video[Math.floor(Math.random() * video.length)]
-      await client.sendMessage(from, { url: listvideo }, MessageType.video).catch((erro) => console.log(erro));
+      await client.sendFileFromUrl(from, listvideo, id).catch((erro) => console.log(erro));
 
     }
 
     else if (body === '4') {
 
       let listphoto = photo[Math.floor(Math.random() * photo.length)]
-      await client.sendMessage(from, { url: listphoto }, MessageType.image, { thumbnail: Buffer.alloc(0) }).catch((erro) => console.log(erro));
+      await client.sendFileFromUrl(from, listphoto, id).catch((erro) => console.log(erro));
 
     }
 
@@ -97,8 +74,7 @@ export const menu = {
       sticker_menu += '5- صانع الملصقات 🪧 \n\n'
       sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
       sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-
-      await client.sendMessage(from, sticker_menu, MessageType.text).catch((erro) => console.log(erro));
+      await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
 
     }
 
@@ -108,7 +84,7 @@ export const menu = {
       let msg = `✽\n\n${listlectures.Lectures}\n\n`
       msg += `*الشيخ:* ${listlectures.Author} 🔊 `
 
-      await client.sendMessage(from, { url: listlectures.FilePath }, MessageType.video, { caption: msg }).catch((erro) => console.log(erro));
+      await client.sendFileFromUrl(from, listlectures.FilePath, 'video.mp4', msg).catch((erro) => console.log(erro));
 
     }
 
@@ -121,7 +97,7 @@ export const menu = {
       menu_group += '3- قروب عشوائي 🔄\n\n'
       menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
+      await client.reply(from, menu_group, id).catch((erro) => console.log(erro));
 
     }
 
@@ -142,16 +118,34 @@ export const menu = {
       msg += '⚠️ لإرسال البطاقة صورة وصوت قم بإرسال رقم السورة او إسم السورة \n\n\n'
       msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
+      await client.reply(from, msg, id).catch((erro) => console.log(erro));
+
+    }
+    else if (body === '9') {
+
+      MenuNmber(from, 15)
+      let hisn_almuslim_json = fs.readJsonSync('./menu/hisn_almuslim.json')
+      let key = Object.keys(hisn_almuslim_json);
+      let msg = 'من فضلك قم بإرسال رقم الدعاء او الذكر من القائمة التالية ✉️\n\n'
+      let number = 1
+      
+      for (let lop of key) {
+      
+        msg += `${number ++}- ${lop}\n`
+          
+      }
+      
+      msg += '\n\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+
+      await client.reply(from, msg , id).catch((erro) => console.log(erro));
 
     }
 
     else if (body === 'dbjson') {
 
-      await client.sendMessage(from, { url: './db/group_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'group_user.json' }).catch((erro) => console.log(erro));
-      await client.sendMessage(from, { url: './db/new_user.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'new_user.json' }).catch((erro) => console.log(erro));
-      await client.sendMessage(from, { url: './db/GroupsMenu.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'GroupsMenu.json' }).catch((erro) => console.log(erro));
-      await client.sendMessage(from, { url: './db/db.json' }, MessageType.document, { mimetype: Mimetype.pdf, filename: 'db.json' }).catch((erro) => console.log(erro));
+      await client.sendFile(from, './db/group_user.json', 'group_user.json', '', id).catch((erro) => console.log(erro));
+      await client.sendFile(from, './db/new_user.json', 'new_user.json', '', id).catch((erro) => console.log(erro));
+      await client.sendFile(from, './db/GroupsMenu.json', 'GroupsMenu.json', '', id).catch((erro) => console.log(erro));
 
     }
 
@@ -170,7 +164,7 @@ export const menu = {
 
       new_user.push(from)
       fs.writeJsonSync('./db/new_user.json', new_user, { spaces: '\t' })
-      await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
+      await client.sendText(from, mesg).catch((erro) => console.log(erro));
 
     }
 

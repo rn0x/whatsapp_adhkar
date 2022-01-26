@@ -1,12 +1,10 @@
-import MenuNmber from '../lib/MenuNmber.js';
 import { stickers } from './stickers.js';
 import fs from 'fs-extra';
-import srk from 'wa-sticker-formatter'
-
+import MenuNmber from '../lib/MenuNmber.js';
 
 export const sticker_menu = {
 
-    async exec({ from, client, pushname, body, MessageType }) {
+    async exec({ from, client, pushname, body, id }) {
 
 
 
@@ -15,11 +13,8 @@ export const sticker_menu = {
             let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
             let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let liststicker = stickers[Math.floor(Math.random() * stickers.length)]
-            let sticker = new srk.Sticker(liststicker, { type: 'full', pack: name_sticker });
-            await sticker.build();
-            let bufferImage = await sticker.get();
 
-            await client.sendMessage(from, bufferImage, MessageType.sticker).catch((erro) => console.log(erro));
+            await client.sendImageAsSticker(from, liststicker, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
 
         } else if (body === '2') {
 
@@ -43,14 +38,11 @@ export const sticker_menu = {
 
             for (let lop of sticker_gm3h) {
 
-                let sticker = new srk.Sticker(lop, { type: 'full', pack: name_sticker });
-                await sticker.build();
-                let bufferImage = await sticker.get();
-                await client.sendMessage(from, bufferImage, MessageType.sticker).catch((erro) => console.log(erro));
+                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
 
             }
 
-            await client.sendMessage(from, 'استمتع بالملصقات الخاصة بك 🎁', MessageType.text);
+            await client.reply(from, 'استمتع بالملصقات الخاصة بك 🎁');
 
         } else if (body === '3') {
 
@@ -73,14 +65,11 @@ export const sticker_menu = {
 
             for (let lop of sticker_sbah) {
 
-                let sticker = new srk.Sticker(lop, { type: 'full', pack: name_sticker });
-                await sticker.build();
-                let bufferImage = await sticker.get();
-                await client.sendMessage(from, bufferImage, MessageType.sticker).catch((erro) => console.log(erro));
+                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
 
             }
 
-            await client.sendMessage(from, 'استمتع بالملصقات الخاصة بك 🎁', MessageType.text);
+            await client.reply(from, 'استمتع بالملصقات الخاصة بك 🎁');
 
         } else if (body === '4') {
 
@@ -102,55 +91,50 @@ export const sticker_menu = {
 
             for (let lop of sticker_msa2) {
 
-                let sticker = new srk.Sticker(lop, { type: 'full', pack: name_sticker });
-                await sticker.build();
-                let bufferImage = await sticker.get();
-                await client.sendMessage(from, bufferImage, MessageType.sticker).catch((erro) => console.log(erro));
+                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
 
             }
 
-            await client.sendMessage(from, 'استمتع بالملصقات الخاصة بك 🎁', MessageType.text);
+            await client.reply(from, 'استمتع بالملصقات الخاصة بك 🎁');
 
-        } else if (body === '5') {
+        } 
+        
+        else if (body === '5') {
 
-            MenuNmber(from, 8)
+             MenuNmber(from, 8)
 
-            let sticker_menu = ' بإنتظار الصورة 🖼️ لتحويلها لملصق 🪧 \n\n\n'
+            let sticker_menu = 'ارجو عدم استعمال الخدمة فيما لايرضي الله عز وجل \n\n'
+            sticker_menu += ' بإنتظار الصورة او الفيديو 🖼️ لتحويلها لملصق 🪧 \n\n\n'
             sticker_menu += '*【 للرجوع للخلف أرسل * 】* \n'
             sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+         //   let msg = 'الخدمة مغلقة مؤقتاً'
 
-            await client.sendMessage(from, sticker_menu, MessageType.text).catch((erro) => console.log(erro));
-        } else if (body.startsWith('me') || body.startsWith('Me')) {
+            await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+        } 
+        
+        else if (body.startsWith('me') || body.startsWith('Me')) {
 
-            let name_sticker = body.slice(3)
-            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-            let mesg = `تم تغير الحقوق الى ${name_sticker} ✅`
-            fs.writeJsonSync('./db/Sticker_Name.json', Object.assign({}, fs_json, {
-                [from]: { "Name": name_sticker } }));
-            await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
+            let arraybody = ['Hi', 'hi', 'خدمة', 'خدمه', '#'];
+
+            if (body.length <= 20 && arraybody.some(fx => body === fx) === false) {
+
+                let name_sticker = body.slice(3)
+                let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
+                let mesg = `تم تغير الحقوق الى ${name_sticker} ✅`
+                fs.writeJsonSync('./db/Sticker_Name.json', Object.assign({}, fs_json, {[from]: { "Name": name_sticker } }));
+                await client.reply(from, mesg, id).catch((erro) => console.log(erro));
 
 
-        } else if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
+            }
 
-            MenuNmber(from, 0)
+            else {
 
-            let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
-            mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
-            mesg += '1- قائمة القرآن الكريم 📖 \n'
-            mesg += '2- قائمة الأذكار 📿 \n'
-            mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
-            mesg += '4- صورة عشوائية 🖼️ \n'
-            mesg += '5- قائمة الملصقات 🪧 \n'
-            mesg += '6- محاضرات عشوائية 🌾 \n'
-            mesg += '7- قائمة القروبات ⚜️ \n'
-            mesg += '8- بطاقات القرآن 🎴 \n\n\n\n'
-            mesg += 'إحصائيات البوت \n'
-            mesg += `عدد المحادثات الحالية : ${client.chats.length}\n`
-            mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
-            mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
-            mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
+                let msg = 'يجب أن تكون الحقوق أقل من 20 حرف ⚠️\n\n\n'
+                msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((erro) => console.log(erro));
+
+            }
 
         }
 

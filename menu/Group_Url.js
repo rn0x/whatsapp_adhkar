@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 export const Group_Url = {
     
 
-    async exec({ from, client, pushname, body, MessageType }) {
+    async exec({ from, client, body, id }) {
 
         
         const GroupsMenu = fs.readJsonSync('./db/GroupsMenu.json');
@@ -29,35 +29,10 @@ export const Group_Url = {
 
             GroupsMenu.unshift({name: group_name, url: group_url});
             fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu, { spaces: '\t' })
-            await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
+            await client.reply(from, msg, id).catch((erro) => console.log(erro));
             fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
             MenuNmber(from, 9)
-            await client.sendMessage(from, menu_group, MessageType.text).catch((erro) => console.log(erro));
-        }
-
-
-        else if (body === 'Hi' || body === 'hi' || body === 'خدمة' || body === 'خدمه' || body === '#'){
-
-            MenuNmber(from, 0)
-
-            let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
-            mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
-            mesg += '1- قائمة القرآن الكريم 📖 \n'
-            mesg += '2- قائمة الأذكار 📿 \n'
-            mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
-            mesg += '4- صورة عشوائية 🖼️ \n'
-            mesg += '5- قائمة الملصقات 🪧 \n'
-            mesg += '6- محاضرات عشوائية 🌾 \n'
-            mesg += '7- قائمة القروبات ⚜️ \n'
-            mesg += '8- بطاقات القرآن 🎴 \n\n\n\n'
-            mesg += 'إحصائيات البوت \n'
-            mesg += `عدد المحادثات الحالية : ${client.chats.length}\n`
-            mesg += `عدد جهات الإتصال : ${Object.keys(client.contacts).length}\n\n`
-            mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
-            mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
-            fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
-            await client.sendMessage(from, mesg, MessageType.text).catch((erro) => console.log(erro));
-
+            await client.reply(from, menu_group, id).catch((erro) => console.log(erro));
         }
 
         else {
@@ -66,14 +41,14 @@ export const Group_Url = {
 
                 let msg = 'الرابط غير صحيح تأكد من كتابة الرابط بشكل صحيح وان لايحتوي على مسافات ⚠️ \n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-                await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((erro) => console.log(erro));
             }
 
             if (GroupsMenu.some(e => e.url === body) === true) {
 
                 let msg = 'لقد تم نشر هذه المجموعة بالفعل ⚠️\n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-                await client.sendMessage(from, msg, MessageType.text).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((erro) => console.log(erro));
                 fs.writeJsonSync('./lib/db_groups.json', [], { spaces: '\t' })
 
             }
