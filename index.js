@@ -43,6 +43,8 @@ wa.create(options)
 
             if (state === 'CONNECTED') {
 
+                console.log(moment.tz("Asia/Riyadh").format('LT') + ' : '+state);
+
                 for (let lop of await client.getAllUnreadMessages()) {
 
                     let from = lop.from;
