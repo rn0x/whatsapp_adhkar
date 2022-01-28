@@ -25,8 +25,8 @@ export const maker_sticker = {
                 sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
     
                 await client.sendImageAsSticker(from, imageBase64, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
-                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁').catch((erro) => console.log(erro));
-                await client.reply(from, sticker_menu).catch((erro) => console.log(erro));
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((erro) => console.log(erro));
+                await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
     
                 MenuNmber(from, 7)
             }
@@ -46,7 +46,7 @@ export const maker_sticker = {
                 sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
     
                 await client.sendMp4AsSticker(from, videoBase64, {fps: 10, startTime: '00:00:00.0', endTime : '00:00:05.0', loop: 0, crop: false}, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
-                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁', id).catch((erro) => console.log(erro));
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((erro) => console.log(erro));
                 await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
     
                 MenuNmber(from, 7)
@@ -67,7 +67,7 @@ export const maker_sticker = {
                 sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
     
                 await client.sendMp4AsSticker(from, videoBase64, {fps: 10, startTime: '00:00:00.0', endTime : '00:00:05.0', loop: 0, crop: false}, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
-                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁', id).catch((erro) => console.log(erro));
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((erro) => console.log(erro));
                 await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
     
                 MenuNmber(from, 7)
