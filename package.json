@@ -11,7 +11,7 @@
   "author": "rn0x",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@open-wa/wa-automate": "^4.30.7",
+    "@open-wa/wa-automate": "^4.30.10",
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
     "moment-timezone": "^0.5.34"
