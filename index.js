@@ -14,22 +14,19 @@ console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
 console.log("               Telegram @BinAttia \n");
 
 const options = {
-    multiDevice: true,
+    multiDevice: false,
     authTimeout: 0,
     blockCrashLogs: true,
     useChrome: true,
     autoRefresh:true,
     cacheEnabled:true,
-    qrRefreshS: 18,
+    qrRefreshS: 0,
     throwErrorOnTosBlock: false,
     deleteSessionDataOnLogout: false,
     skipUpdateCheck: false,
     bypassCSP:true,
-    disableSpins: true,
     headless: true,
-    hostNotificationLang: 'PT_BR',
     logConsole: false,
-    popup: true,
     qrTimeout: 0,
     sessionId: 'Bot Adhkar'
 };
