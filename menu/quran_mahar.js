@@ -19,8 +19,11 @@ export const quran_mahar = {
             case 'البقرة':
             case '2':
 
+                let msg_2 = 'لايمكن إرسال المقطع الصوتي لان حجمة كبير جداً !\n'
+                msg_2 += '*يمكن تحميله من خلال الرابط التالي :*\n\n'
+                msg_2 +='http://bot.altaqwaa.org/media/quran_mp3/quran_mahar/002.mp3'
                 await client.reply(from, qurantext.q2, id).catch((erro) => console.log(erro));
-                await client.sendFile(from, "http://bot.altaqwaa.org/media/quran_mp3/quran_mahar/002.mp3", 'file.mp3', 'file.mp3', id).catch((erro) => console.log(erro));
+                await client.reply(from, msg_2, id).catch((erro) => console.log(erro));
                 break;
             case 'آل عمران':
             case '3':
