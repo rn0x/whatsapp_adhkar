@@ -27,6 +27,7 @@ const options = {
     bypassCSP:true,
     headless: true,
     logConsole: false,
+    //executablePath: '/usr/bin/google-chrome-stable', //  اذا كان نظامك لينكس قم بإلغاء التعليق من هذا السطر // linux
     qrTimeout: 0,
     sessionId: 'Bot Adhkar'
 };
