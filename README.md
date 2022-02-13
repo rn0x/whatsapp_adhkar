@@ -23,6 +23,11 @@
 
 ### أوامر التثبيت لنظام Ubuntu , Linux Mint , Debian [ terminal ]
 
+<b> اذا كان نظامك لينكس قم بإلغاء التعليق من هذا السطر </b><br>
+<a href="https://github.com/rn0x/whatsapp_adhkar/blob/main/index.js#L30">index.js - 30</a>
+
+
+
 ```bash
    > sudo apt-get install nodejs
    > sudo apt-get install git
