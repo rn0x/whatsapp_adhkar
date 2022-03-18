@@ -14,34 +14,70 @@ console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
 console.log("               Telegram @BinAttia \n");
 
 const options = {
-    multiDevice: false,
+    multiDevice: true,
     authTimeout: 0,
     blockCrashLogs: true,
     useChrome: true,
-    autoRefresh:true,
-    cacheEnabled:true,
+    autoRefresh: true,
+    cacheEnabled: true,
     qrRefreshS: 0,
     throwErrorOnTosBlock: false,
     deleteSessionDataOnLogout: false,
     skipUpdateCheck: false,
-    bypassCSP:true,
+    bypassCSP: true,
     headless: true,
     logConsole: false,
-    //executablePath: '/usr/bin/google-chrome-stable', //  اذا كان نظامك لينكس قم بإلغاء التعليق من هذا السطر // linux
+    //executablePath: "/usr/bin/google-chrome-stable", //  اذا كان نظامك لينكس قم بإلغاء التعليق من هذا السطر // linux
+    //executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", //  اذا كان نظامك ويندوز قم بإلغاء التعليق من هذا السطر // windows
     qrTimeout: 0,
-    sessionId: 'Bot Adhkar'
+    sessionId: 'Bot_Adhkar'
 };
 
 wa.create(options)
-.then(async client => {
-    
-    try {
+    .then(async client => {
 
-        await client.onStateChanged(async (state) => {
+        try {
 
-            if (state === 'CONNECTED') {
+            await client.onAnyMessage(async (msg) => {
 
-                console.log(moment.tz("Asia/Riyadh").format('LT') + ' : '+state);
+                let from = msg.from;
+                let id = msg.id
+                let body = msg.body;
+                let messages = msg;
+                let Menufrom = await getMenu(from);
+                let pushname = msg.sender && msg.sender.pushname ? msg.sender.pushname : msg.sender && msg.sender.verifiedName ? msg.sender.verifiedName : msg.sender && msg.sender.formattedName ? msg.sender.formattedName : ' ';
+                let isGroupMsg = msg.isGroupMsg;
+                let number_arabic = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩']
+
+                await menu_number[Menufrom !== undefined ? Menufrom : 0].menu_name.exec({
+
+                    body: body,
+                    messages: messages,
+                    id: id,
+                    from: from,
+                    isGroup: isGroupMsg,
+                    pushname: pushname,
+                    client: client,
+
+                });
+
+                Hi(client, body, from, pushname, id);
+
+                if (isGroupMsg === false && number_arabic.some(fx => body === fx)) {
+
+                    let msg = 'من فضلك استعمل الأرقم الإنجليزية ⚠️'
+
+                    await client.reply(from, msg, id).catch((erro) => console.log(erro));
+
+                }
+
+                await client.sendSeen(from)
+            });
+
+
+            broadcast(client);
+
+            setInterval(async () => {
 
                 for (let lop of await client.getAllUnreadMessages()) {
 
@@ -52,83 +88,31 @@ wa.create(options)
                     let Menufrom = await getMenu(from);
                     let pushname = ' ';
                     let isGroupMsg = lop.isGroupMsg;
-    
+
                     await menu_number[Menufrom !== undefined ? Menufrom : 0].menu_name.exec({
-    
+
                         body: body,
                         messages: messages,
                         id: id,
                         from: from,
                         isGroup: isGroupMsg,
-                        pushname: pushname ,
+                        pushname: pushname,
                         client: client,
-        
+
                     });
 
                     await client.sendSeen(from);
-                    
+
                 }
 
+            }, 180000);
 
-            }
+        } catch (error) {
 
-            else if (state === "CONFLICT" || state ==="UNLAUNCHED") {
+            console.log(error);
 
-                console.log(state);
-                await client.forceRefocus();
-            }
-
-            else if (state ==='UNPAIRED') {
-
-                console.log('Client Logoff');
-                console.log(state);
-            }
-
-        })
-
-        await client.onMessage(async (msg) => {
-
-            let from = msg.from;
-            let id = msg.id
-            let body = msg.body;
-            let messages = msg;
-            let Menufrom = await getMenu(from);
-            let pushname = msg.sender.pushname ? msg.sender.pushname : msg.sender.verifiedName ? msg.sender.verifiedName : msg.sender.formattedName ? msg.sender.formattedName : ' ';
-            let isGroupMsg = msg.isGroupMsg;
-            let number_arabic = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩']
-
-            await menu_number[Menufrom].menu_name.exec({
-
-                body: body,
-                messages: messages,
-                id: id,
-                from: from,
-                isGroup: isGroupMsg,
-                pushname: pushname,
-                client: client,
-
-            });
-
-            Hi(client, body, from, pushname, id);
-
-            if (isGroupMsg === false && number_arabic.some(fx => body === fx)) {
-
-                let msg = 'من فضلك استعمل الأرقم الإنجليزية ⚠️'
-
-                await client.reply(from, msg, id).catch((erro) => console.log(erro));
-
-            }
-
-            await client.sendSeen(from)
-        });
-
-
-        broadcast(client);
-        
-    } catch (error) {
-
+        }
+    })
+    .catch((error) => {
         console.log(error);
-        
-    }
-})
-.catch((error) =>console.log(error));
+    });

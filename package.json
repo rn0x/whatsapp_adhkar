@@ -1,17 +1,21 @@
 {
   "name": "whatsapp_adhkar",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "بوت أذكار للواتساب [ صور , فيديو أذكار , ملصقات , قرآن ]",
   "type": "module",
   "main": "index.js",
+  "author": {
+    "name": "Ryan Almalki",
+    "email": "rn0xx711@gmail.com",
+    "url": "https://github.com/rn0x"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "rn0x",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@open-wa/wa-automate": "^4.31.6",
+    "@open-wa/wa-automate": "^4.32.14",
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
     "moment-timezone": "^0.5.34"
