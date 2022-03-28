@@ -17,7 +17,6 @@ async function Bot_Adhkar() {
         console.log(figlet.textSync('Bot Adhkar'));
         console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
         console.log("               Telegram @BinAttia \n");
-        fs.writeJsonSync('./db/start.json', { start: false });
 
         const options = {
             multiDevice: true,
