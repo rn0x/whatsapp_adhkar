@@ -112,7 +112,7 @@ export const sticker_menu = {
         //     await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
         // } 
         
-        else if (await body.startsWith('me') !== undefined || await body.startsWith('Me') !== undefined) {
+        else if (body.startsWith('me') || body.startsWith('Me')) {
 
             let arraybody = ['Hi', 'hi', 'خدمة', 'خدمه', '#'];
 

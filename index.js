@@ -1,4 +1,5 @@
 import wa from '@open-wa/wa-automate';
+import fs from 'fs-extra';
 import moment from 'moment-timezone';
 import broadcast from './lib/broadcast.js';
 import figlet from 'figlet';
@@ -6,41 +7,53 @@ import { menu_number } from './lib/menu_number.js';
 import getMenu from './lib/getMenu.js';
 import Folder from './lib/Folder.js';
 import Hi from './menu/Hi.js';
-
 Folder();
 
-console.log(figlet.textSync('Bot Adhkar'));
-console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
-console.log("               Telegram @BinAttia \n");
 
-const options = {
-    multiDevice: true,
-    authTimeout: 0,
-    blockCrashLogs: true,
-    useChrome: true,
-    autoRefresh: true,
-    cacheEnabled: true,
-    qrRefreshS: 0,
-    throwErrorOnTosBlock: false,
-    deleteSessionDataOnLogout: false,
-    skipUpdateCheck: false,
-    bypassCSP: true,
-    headless: true,
-    logConsole: false,
-    restartOnCrash: Bot_Adhkar,
-    //executablePath: "/usr/bin/google-chrome-stable", //  اذا كان نظامك لينكس قم بإلغاء التعليق من هذا السطر // linux
-    //executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", //  اذا كان نظامك ويندوز قم بإلغاء التعليق من هذا السطر // windows
-    qrTimeout: 0,
-    sessionId: 'Bot_Adhkar'
-};
 
-wa.create(options)
-    .then(async client => await Bot_Adhkar(client))
-    .catch(e => console.log(e))
+if (fs.existsSync('./db/start.json')) {
 
-var Bot_Adhkar = async (client) => {
+    let json = fs.readJsonSync('./db/start.json'); 
+
+    if (json.start === false) {
+
+        fs.writeJsonSync('./db/start.json', { start: true });
+    
+    }
+    
+}
+
+
+
+async function Bot_Adhkar() {
 
     try {
+
+        console.log(figlet.textSync('Bot Adhkar'));
+        console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
+        console.log("               Telegram @BinAttia \n");
+        fs.writeJsonSync('./db/start.json', { start: false });
+
+        const options = {
+            multiDevice: true,
+            authTimeout: 0,
+            blockCrashLogs: true,
+            useChrome: true,
+            autoRefresh: true,
+            cacheEnabled: true,
+            qrRefreshS: 0,
+            throwErrorOnTosBlock: false,
+            deleteSessionDataOnLogout: false,
+            skipUpdateCheck: false,
+            bypassCSP: true,
+            headless: true,
+            logConsole: false,
+            executablePath: process.platform === "win32" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : "/usr/bin/google-chrome-stable",
+            qrTimeout: 0,
+            sessionId: 'Bot_Adhkar'
+        };
+
+        let client = await wa.create(options);
 
         await client.onAnyMessage(async (msg) => {
 
@@ -113,8 +126,23 @@ var Bot_Adhkar = async (client) => {
 
     } catch (error) {
 
-        console.log(error);
+        console.log(error.toString());
+        fs.writeJsonSync('./db/start.json', { start: true });
 
     }
 
 }
+
+
+setInterval(async () => {
+
+    let json = fs.readJsonSync('./db/start.json');
+
+    if (json.start) {
+
+        await Bot_Adhkar();
+
+    }
+
+}, 1000);
+

@@ -80,8 +80,8 @@ export const menu = {
     else if (body === '6') {
 
       let listlectures = LecturesJson[Math.floor(Math.random() * LecturesJson.length)]
-      let msg = `✽\n\n${listlectures.Lectures}\n\n`
-      msg += `*الشيخ:* ${listlectures.Author} 🔊 `
+      let msg = `✽${listlectures.Lectures}`
+      msg += `${listlectures.Author ? `\n\n*الشيخ:* ${listlectures.Author} 🔊` : ''}`
 
       await client.sendFileFromUrl(from, listlectures.FilePath, 'video.mp4', msg).catch((erro) => console.log(erro));
 
