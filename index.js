@@ -10,22 +10,6 @@ import Hi from './menu/Hi.js';
 import Error from './menu/error.js';
 Folder();
 
-
-
-if (fs.existsSync('./db/start.json')) {
-
-    let json = fs.readJsonSync('./db/start.json'); 
-
-    if (json.start === false) {
-
-        fs.writeJsonSync('./db/start.json', { start: true });
-    
-    }
-    
-}
-
-
-
 async function Bot_Adhkar() {
 
     try {
@@ -133,16 +117,4 @@ async function Bot_Adhkar() {
 
 }
 
-
-setInterval(async () => {
-
-    let json = fs.readJsonSync('./db/start.json');
-
-    if (json.start) {
-
-        await Bot_Adhkar();
-
-    }
-
-}, 1000);
-
+Bot_Adhkar();
