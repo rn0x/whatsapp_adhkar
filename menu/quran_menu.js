@@ -1,5 +1,6 @@
 import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
+import Error from './error.js';
 
 export const quran_menu = {
 
@@ -14,8 +15,8 @@ export const quran_menu = {
             let quran_idr = fs.readFileSync('./media/text/quran_1.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
             home += '*【 للرجوع للخلف أرسل * 】*'
-            await client.reply(from, quran_idr, id).catch((erro) => console.log(erro));
-            await client.reply(from, home, id).catch((erro) => console.log(erro));
+            await client.reply(from, quran_idr, id).catch((error) => Error(error));
+            await client.reply(from, home, id).catch((error) => Error(error));
             
         }
 
@@ -26,8 +27,8 @@ export const quran_menu = {
             let quran_idr = fs.readFileSync('./media/text/quran_2.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
             home += '*【 للرجوع للخلف أرسل * 】*'
-            await client.reply(from, quran_idr, id).catch((erro) => console.log(erro));
-            await client.reply(from, home, id).catch((erro) => console.log(erro));
+            await client.reply(from, quran_idr, id).catch((error) => Error(error));
+            await client.reply(from, home, id).catch((error) => Error(error));
 
         }
 
@@ -38,8 +39,8 @@ export const quran_menu = {
             let quran_idr = fs.readFileSync('./media/text/quran_3.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
             home += '*【 للرجوع للخلف أرسل * 】*'
-            await client.reply(from, quran_idr, id).catch((erro) => console.log(erro));
-            await client.reply(from, home, id).catch((erro) => console.log(erro));
+            await client.reply(from, quran_idr, id).catch((error) => Error(error));
+            await client.reply(from, home, id).catch((error) => Error(error));
             
         }
 
@@ -50,8 +51,8 @@ export const quran_menu = {
             let quran_idr = fs.readFileSync('./media/text/quran_4.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
             home += '*【 للرجوع للخلف أرسل * 】*'
-            await client.reply(from, quran_idr, id).catch((erro) => console.log(erro));
-            await client.reply(from, home, id).catch((erro) => console.log(erro));     
+            await client.reply(from, quran_idr, id).catch((error) => Error(error));
+            await client.reply(from, home, id).catch((error) => Error(error));     
             
         }
 
@@ -62,8 +63,8 @@ export const quran_menu = {
             let quran_idr = fs.readFileSync('./media/text/quran_5.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
             home += '*【 للرجوع للخلف أرسل * 】*'
-            await client.reply(from, quran_idr, id).catch((erro) => console.log(erro));
-            await client.reply(from, home, id).catch((erro) => console.log(erro));     
+            await client.reply(from, quran_idr, id).catch((error) => Error(error));
+            await client.reply(from, home, id).catch((error) => Error(error));     
             
         }
 
@@ -74,8 +75,8 @@ export const quran_menu = {
             let quran_idr = fs.readFileSync('./media/text/quran_6.txt',{encoding:'utf8', flag:'r'})
             let home = '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*\n'
             home += '*【 للرجوع للخلف أرسل * 】*'
-            await client.reply(from, quran_idr, id).catch((erro) => console.log(erro));
-            await client.reply(from, home, id).catch((erro) => console.log(erro));     
+            await client.reply(from, quran_idr, id).catch((error) => Error(error));
+            await client.reply(from, home, id).catch((error) => Error(error));     
             
         }
 

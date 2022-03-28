@@ -1,6 +1,6 @@
 {
   "name": "whatsapp_adhkar",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "بوت أذكار للواتساب [ صور , فيديو أذكار , ملصقات , قرآن ]",
   "type": "module",
   "main": "index.js",
@@ -13,9 +13,9 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "AGPL-3.0",
+  "license": "MIT",
   "dependencies": {
-    "@open-wa/wa-automate": "^4.32.14",
+    "@open-wa/wa-automate": "^4.32.17",
     "figlet": "^1.5.2",
     "fs-extra": "^10.0.0",
     "moment-timezone": "^0.5.34"

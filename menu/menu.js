@@ -2,6 +2,8 @@ import MenuNmber from '../lib/MenuNmber.js';
 import { video } from './video.js';
 import { photo } from './photo.js';
 import fs from 'fs-extra';
+import Error from './error.js';
+
 export const menu = {
 
   async exec({ from, client, pushname, body, isGroup, id }) {
@@ -23,7 +25,7 @@ export const menu = {
       quran_menu += '6- خالد الجليل \n\n\n'
       quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.reply(from, quran_menu, id).catch((erro) => console.log(erro));
+      await client.reply(from, quran_menu, id).catch((error) => Error(error));
 
     }
 
@@ -45,21 +47,21 @@ export const menu = {
       adhkar_menu += '12- دُعَاءُ خَتْمِ القُرْآنِ الكَريمِ 📖 \n\n\n'
       adhkar_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.reply(from, adhkar_menu, id).catch((erro) => console.log(erro));
+      await client.reply(from, adhkar_menu, id).catch((error) => Error(error));
 
     }
 
     else if (body === '3') {
 
       let listvideo = video[Math.floor(Math.random() * video.length)]
-      await client.sendFileFromUrl(from, listvideo, id).catch((erro) => console.log(erro));
+      await client.sendFileFromUrl(from, listvideo, id).catch((error) => Error(error));
 
     }
 
     else if (body === '4') {
 
       let listphoto = photo[Math.floor(Math.random() * photo.length)]
-      await client.sendFileFromUrl(from, listphoto, id).catch((erro) => console.log(erro));
+      await client.sendFileFromUrl(from, listphoto, id).catch((error) => Error(error));
 
     }
 
@@ -73,7 +75,7 @@ export const menu = {
       sticker_menu += '4- ملصقات مساء الخير 🌑 \n\n'
       sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
       sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-      await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+      await client.reply(from, sticker_menu, id).catch((error) => Error(error));
 
     }
 
@@ -83,7 +85,7 @@ export const menu = {
       let msg = `✽${listlectures.Lectures}`
       msg += `${listlectures.Author ? `\n\n*الشيخ:* ${listlectures.Author} 🔊` : ''}`
 
-      await client.sendFileFromUrl(from, listlectures.FilePath, 'video.mp4', msg).catch((erro) => console.log(erro));
+      await client.sendFileFromUrl(from, listlectures.FilePath, 'video.mp4', msg).catch((error) => Error(error));
 
     }
 
@@ -96,7 +98,7 @@ export const menu = {
       menu_group += '3- قروب عشوائي 🔄\n\n'
       menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.reply(from, menu_group, id).catch((erro) => console.log(erro));
+      await client.reply(from, menu_group, id).catch((error) => Error(error));
 
     }
 
@@ -117,7 +119,7 @@ export const menu = {
       msg += '⚠️ لإرسال البطاقة صورة وصوت قم بإرسال رقم السورة او إسم السورة \n\n\n'
       msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.reply(from, msg, id).catch((erro) => console.log(erro));
+      await client.reply(from, msg, id).catch((error) => Error(error));
 
     }
     else if (body === '9') {
@@ -136,15 +138,15 @@ export const menu = {
       
       msg += '\n\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-      await client.reply(from, msg , id).catch((erro) => console.log(erro));
+      await client.reply(from, msg , id).catch((error) => Error(error));
 
     }
 
     else if (body === 'dbjson') {
 
-      await client.sendFile(from, './db/group_user.json', 'group_user.json', '', id).catch((erro) => console.log(erro));
-      await client.sendFile(from, './db/new_user.json', 'new_user.json', '', id).catch((erro) => console.log(erro));
-      await client.sendFile(from, './db/GroupsMenu.json', 'GroupsMenu.json', '', id).catch((erro) => console.log(erro));
+      await client.sendFile(from, './db/group_user.json', 'group_user.json', '', id).catch((error) => Error(error));
+      await client.sendFile(from, './db/new_user.json', 'new_user.json', '', id).catch((error) => Error(error));
+      await client.sendFile(from, './db/GroupsMenu.json', 'GroupsMenu.json', '', id).catch((error) => Error(error));
 
     }
 
@@ -163,7 +165,7 @@ export const menu = {
 
       new_user.push(from)
       fs.writeJsonSync('./db/new_user.json', new_user, { spaces: '\t' })
-      await client.sendText(from, mesg).catch((erro) => console.log(erro));
+      await client.sendText(from, mesg).catch((error) => Error(error));
 
     }
 

@@ -1,6 +1,7 @@
 import { stickers } from './stickers.js';
 import fs from 'fs-extra';
 import MenuNmber from '../lib/MenuNmber.js';
+import Error from './error.js';
 
 export const sticker_menu = {
 
@@ -14,7 +15,7 @@ export const sticker_menu = {
             let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let liststicker = stickers[Math.floor(Math.random() * stickers.length)]
 
-            await client.sendImageAsSticker(from, liststicker, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
+            await client.sendImageAsSticker(from, liststicker, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
 
         } else if (body === '2') {
 
@@ -38,7 +39,7 @@ export const sticker_menu = {
 
             for (let lop of sticker_gm3h) {
 
-                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
+                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
 
             }
 
@@ -65,7 +66,7 @@ export const sticker_menu = {
 
             for (let lop of sticker_sbah) {
 
-                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
+                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
 
             }
 
@@ -91,7 +92,7 @@ export const sticker_menu = {
 
             for (let lop of sticker_msa2) {
 
-                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((erro) => console.log(erro));
+                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
 
             }
 
@@ -109,7 +110,7 @@ export const sticker_menu = {
         //     sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
         //  //   let msg = 'الخدمة مغلقة مؤقتاً'
 
-        //     await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+        //     await client.reply(from, sticker_menu, id).catch((error) => Error(error));
         // } 
         
         else if (body.startsWith('me') || body.startsWith('Me')) {
@@ -122,7 +123,7 @@ export const sticker_menu = {
                 let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
                 let mesg = `تم تغير الحقوق الى ${name_sticker} ✅`
                 fs.writeJsonSync('./db/Sticker_Name.json', Object.assign({}, fs_json, {[from]: { "Name": name_sticker } }));
-                await client.reply(from, mesg, id).catch((erro) => console.log(erro));
+                await client.reply(from, mesg, id).catch((error) => Error(error));
 
 
             }
@@ -132,7 +133,7 @@ export const sticker_menu = {
                 let msg = 'يجب أن تكون الحقوق أقل من 20 حرف ⚠️\n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-                await client.reply(from, msg, id).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((error) => Error(error));
 
             }
 

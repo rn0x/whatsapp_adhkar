@@ -7,6 +7,7 @@ import { menu_number } from './lib/menu_number.js';
 import getMenu from './lib/getMenu.js';
 import Folder from './lib/Folder.js';
 import Hi from './menu/Hi.js';
+import Error from './menu/error.js';
 Folder();
 
 
@@ -126,8 +127,7 @@ async function Bot_Adhkar() {
 
     } catch (error) {
 
-        console.log(error.toString());
-        fs.writeJsonSync('./db/start.json', { start: true });
+        Error(error);
 
     }
 

@@ -1,6 +1,6 @@
 import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
-
+import Error from './error.js';
 
 export const Group_Name = {
 
@@ -14,7 +14,7 @@ export const Group_Name = {
             db_groups.push(body);
             fs.writeJsonSync(`./db/Group/${from}.json`, db_groups, { spaces: '\t' })
 
-            await client.reply(from, group_name, id).catch((erro) => console.log(erro));
+            await client.reply(from, group_name, id).catch((error) => Error(error));
             MenuNmber(from, 11)
         }
 
@@ -22,7 +22,7 @@ export const Group_Name = {
 
             fs.writeJsonSync(`./db/Group/${from}.json`, []);
             let msg = 'من فضلك أعد كتابة إسم المجموعة 💬'
-            await client.reply(from, msg, id).catch((erro) => console.log(erro));
+            await client.reply(from, msg, id).catch((error) => Error(error));
         }
 
         else {
@@ -30,7 +30,7 @@ export const Group_Name = {
             let msg = 'يجب أن يكون الإسم أقل من 30 حرف ⚠️\n\n\n'
             msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.reply(from, msg, id).catch((erro) => console.log(erro));
+            await client.reply(from, msg, id).catch((error) => Error(error));
 
         }
 

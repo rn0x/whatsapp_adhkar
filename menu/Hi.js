@@ -1,4 +1,5 @@
 import MenuNmber from '../lib/MenuNmber.js';
+import Error from './error.js';
 
 export default async function Hi(client, body, from, pushname, id) {
 
@@ -30,7 +31,7 @@ export default async function Hi(client, body, from, pushname, id) {
     mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
     mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖'
 
-    await client.reply(from, mesg, id).catch((erro) => console.log(erro));
+    await client.reply(from, mesg, id).catch((error) => Error(error));
 
   }
 }

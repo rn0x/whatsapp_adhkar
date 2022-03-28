@@ -1,6 +1,5 @@
-import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
-
+import Error from './error.js';
 
 export const hisn_almuslim = {
 
@@ -30,7 +29,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -52,7 +51,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -74,7 +73,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -96,7 +95,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -118,7 +117,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -140,7 +139,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -162,7 +161,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -184,7 +183,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -206,7 +205,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -228,7 +227,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -250,7 +249,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -272,7 +271,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -294,7 +293,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -316,7 +315,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -338,7 +337,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -360,7 +359,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -382,7 +381,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -404,7 +403,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -426,7 +425,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -448,7 +447,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -470,7 +469,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -492,7 +491,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -514,7 +513,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -536,7 +535,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -558,7 +557,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -580,7 +579,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -602,7 +601,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -624,7 +623,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -646,7 +645,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -668,7 +667,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -690,7 +689,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -712,7 +711,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -734,7 +733,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -756,7 +755,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -778,7 +777,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -800,7 +799,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -822,7 +821,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -844,7 +843,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -866,7 +865,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -888,7 +887,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -910,7 +909,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -932,7 +931,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -954,7 +953,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -976,7 +975,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -998,7 +997,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1020,7 +1019,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1042,7 +1041,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1064,7 +1063,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1086,7 +1085,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1108,7 +1107,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1130,7 +1129,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1152,7 +1151,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1174,7 +1173,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1196,7 +1195,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1218,7 +1217,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1240,7 +1239,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1262,7 +1261,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1284,7 +1283,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1306,7 +1305,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1328,7 +1327,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1350,7 +1349,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1372,7 +1371,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1394,7 +1393,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1416,7 +1415,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1438,7 +1437,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1460,7 +1459,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1482,7 +1481,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1504,7 +1503,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1526,7 +1525,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1548,7 +1547,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1570,7 +1569,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1592,7 +1591,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1614,7 +1613,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1636,7 +1635,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1658,7 +1657,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1680,7 +1679,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1702,7 +1701,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1724,7 +1723,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1746,7 +1745,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1768,7 +1767,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1790,7 +1789,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1812,7 +1811,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1834,7 +1833,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1856,7 +1855,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1878,7 +1877,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1900,7 +1899,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1922,7 +1921,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1944,7 +1943,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1966,7 +1965,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -1988,7 +1987,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2010,7 +2009,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2032,7 +2031,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2054,7 +2053,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2076,7 +2075,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2098,7 +2097,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2120,7 +2119,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2142,7 +2141,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2164,7 +2163,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2186,7 +2185,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2208,7 +2207,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2230,7 +2229,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2252,7 +2251,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2274,7 +2273,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2296,7 +2295,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2318,7 +2317,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2340,7 +2339,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2362,7 +2361,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2384,7 +2383,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2406,7 +2405,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2428,7 +2427,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2450,7 +2449,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2472,7 +2471,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2494,7 +2493,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2516,7 +2515,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2538,7 +2537,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2560,7 +2559,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2582,7 +2581,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2604,7 +2603,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2626,7 +2625,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2648,7 +2647,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2670,7 +2669,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2692,7 +2691,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2714,7 +2713,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2736,7 +2735,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2758,7 +2757,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2780,7 +2779,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2802,7 +2801,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2824,7 +2823,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2846,7 +2845,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2868,7 +2867,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2890,7 +2889,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2912,7 +2911,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2934,7 +2933,7 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
@@ -2956,13 +2955,13 @@ export const hisn_almuslim = {
                         
                 }
             
-                await client.reply(from, msg , id).catch((erro) => console.log(erro));
+                await client.reply(from, msg , id).catch((error) => Error(error));
             }
             
             
         } catch (error) {
     
-            console.log(error);
+            Error(error);
             
         }
         

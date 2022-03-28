@@ -1,6 +1,6 @@
 import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
-
+import Error from './error.js';
 
 export const Group_Url = {
     
@@ -29,10 +29,10 @@ export const Group_Url = {
 
             GroupsMenu.unshift({name: group_name, url: group_url});
             fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu, { spaces: '\t' })
-            await client.reply(from, msg, id).catch((erro) => console.log(erro));
+            await client.reply(from, msg, id).catch((error) => Error(error));
             fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
             MenuNmber(from, 9)
-            await client.reply(from, menu_group, id).catch((erro) => console.log(erro));
+            await client.reply(from, menu_group, id).catch((error) => Error(error));
         }
 
         else {
@@ -41,14 +41,14 @@ export const Group_Url = {
 
                 let msg = 'الرابط غير صحيح تأكد من كتابة الرابط بشكل صحيح وان لايحتوي على مسافات ⚠️ \n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-                await client.reply(from, msg, id).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((error) => Error(error));
             }
 
             if (GroupsMenu.some(e => e.url === body) === true) {
 
                 let msg = 'لقد تم نشر هذه المجموعة بالفعل ⚠️\n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-                await client.reply(from, msg, id).catch((erro) => console.log(erro));
+                await client.reply(from, msg, id).catch((error) => Error(error));
                 fs.writeJsonSync('./lib/db_groups.json', [], { spaces: '\t' })
 
             }

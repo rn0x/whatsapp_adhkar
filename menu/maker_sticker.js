@@ -1,7 +1,7 @@
 import { decryptMedia } from '@open-wa/wa-automate';
 import MenuNmber from '../lib/MenuNmber.js';
 import fs from 'fs-extra';
-
+import Error from './error.js';
 
 export const maker_sticker = {
 
@@ -25,8 +25,8 @@ export const maker_sticker = {
                 sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
     
                 await client.sendImageAsSticker(from, imageBase64, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
-                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((erro) => console.log(erro));
-                await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((error) => Error(error));
+                await client.reply(from, sticker_menu, id).catch((error) => Error(error));
     
                 MenuNmber(from, 7)
             }
@@ -46,8 +46,8 @@ export const maker_sticker = {
                 sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
     
                 await client.sendMp4AsSticker(from, videoBase64, {fps: 10, startTime: '00:00:00.0', endTime : '00:00:05.0', loop: 0, crop: false}, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
-                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((erro) => console.log(erro));
-                await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((error) => Error(error));
+                await client.reply(from, sticker_menu, id).catch((error) => Error(error));
     
                 MenuNmber(from, 7)
             }
@@ -67,8 +67,8 @@ export const maker_sticker = {
                 sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
     
                 await client.sendMp4AsSticker(from, videoBase64, {fps: 10, startTime: '00:00:00.0', endTime : '00:00:05.0', loop: 0, crop: false}, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker});
-                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((erro) => console.log(erro));
-                await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+                await client.reply(from, 'استمتع بالملصق الخاص بك 🎁',id).catch((error) => Error(error));
+                await client.reply(from, sticker_menu, id).catch((error) => Error(error));
     
                 MenuNmber(from, 7)
             }
@@ -88,7 +88,7 @@ export const maker_sticker = {
             sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
             sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
      
-            await client.reply(from, sticker_menu, id).catch((erro) => console.log(erro));
+            await client.reply(from, sticker_menu, id).catch((error) => Error(error));
             
         }
 
