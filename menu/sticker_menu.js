@@ -100,18 +100,18 @@ export const sticker_menu = {
 
         } 
         
-        // else if (body === '5') {
+        else if (body === '5') {
 
-        //      MenuNmber(from, 8)
+             MenuNmber(from, 8)
 
-        //     let sticker_menu = 'ارجو عدم استعمال الخدمة فيما لايرضي الله عز وجل \n\n'
-        //     sticker_menu += ' بإنتظار الصورة او الفيديو 🖼️ لتحويلها لملصق 🪧 \n\n\n'
-        //     sticker_menu += '*【 للرجوع للخلف أرسل * 】* \n'
-        //     sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-        //  //   let msg = 'الخدمة مغلقة مؤقتاً'
+            let sticker_menu = 'ارجو عدم استعمال الخدمة فيما لايرضي الله عز وجل \n\n'
+            sticker_menu += ' بإنتظار الصورة او الفيديو 🖼️ لتحويلها لملصق 🪧 \n\n\n'
+            sticker_menu += '*【 للرجوع للخلف أرسل * 】* \n'
+            sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+         //   let msg = 'الخدمة مغلقة مؤقتاً'
 
-        //     await client.reply(from, sticker_menu, id).catch((error) => Error(error));
-        // } 
+            await client.reply(from, sticker_menu, id).catch((error) => Error(error));
+        } 
         
         else if (body.startsWith('me') || body.startsWith('Me')) {
 

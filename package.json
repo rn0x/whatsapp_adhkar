@@ -1,6 +1,6 @@
 {
   "name": "whatsapp_adhkar",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "بوت أذكار للواتساب [ صور , فيديو أذكار , ملصقات , قرآن ]",
   "type": "module",
   "main": "index.js",

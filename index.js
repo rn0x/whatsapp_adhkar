@@ -1,5 +1,4 @@
 import wa from '@open-wa/wa-automate';
-import fs from 'fs-extra';
 import moment from 'moment-timezone';
 import broadcast from './lib/broadcast.js';
 import figlet from 'figlet';
@@ -64,7 +63,8 @@ async function Bot_Adhkar() {
 
             Hi(client, body, from, pushname, id);
 
-            if (isGroupMsg === false && number_arabic.some(fx => body === fx)) {
+            if (isGroupMsg === false && number_arabic.some(fx => body.includes(fx))) {
+                
 
                 let msg = 'من فضلك استعمل الأرقم الإنجليزية ⚠️'
 
@@ -103,10 +103,11 @@ async function Bot_Adhkar() {
                 });
 
                 await client.sendSeen(from);
+                await new Promise(r => setTimeout(r, 5000));
 
             }
 
-        }, 180000);
+        }, 260000);
 
     } catch (error) {
 
