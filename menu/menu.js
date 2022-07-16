@@ -74,7 +74,6 @@ const menu = {
       sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
       sticker_menu += '4- ملصقات مساء الخير 🌑 \n\n'
       sticker_menu += '5- صانع الملصقات 🪧 \n\n\n'
-      sticker_menu += '⚠️ لتغير حقوق الملصق قم بإرسال كلمة Me متبوعة بالحقوق \n```Me Bot Adhkar```\n\n\n'
       sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
       await client.sendMessage(from, { text: sticker_menu }, { quoted: id }).catch((error) => Error(error));
 

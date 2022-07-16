@@ -129,7 +129,7 @@ async function whatsapp_altaqwaa() {
 
     client.ev.on('messages.upsert', async m => {
 
-        if (!m.messages[0].key.fromMe && m.type === 'notify') {
+        if (!m.messages[0].key.fromMe && m.type === 'notify' && m.messages[0] !== null) {
 
             let type = Object.keys(m.messages[0].message)[0]
             let messages = m.messages[0].message
