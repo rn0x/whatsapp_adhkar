@@ -143,7 +143,6 @@ async function whatsapp_altaqwaa() {
                 download_msg: m.messages[0],
                 from: from,
                 id: m.messages[0],
-                MessageType: MessageType,
                 isGroup: from.endsWith('@g.us'),
                 pushname: m.messages[0].pushName ? m.messages[0].pushName : 'بدون إسم',
                 client: client,
