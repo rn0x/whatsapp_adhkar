@@ -1,9 +1,10 @@
-import { stickers } from './stickers.js';
-import fs from 'fs-extra';
-import MenuNmber from '../lib/MenuNmber.js';
-import Error from './error.js';
+const { stickers } = require('./stickers.js');
+const fs = require('fs-extra');
+const returnMenu = require('../lib/returnMenu.js');
+const Error = require('../lib/error.js');
+const formatSticker = require('wa-sticker-formatter');
 
-export const sticker_menu = {
+const sticker_menu = {
 
     async exec({ from, client, pushname, body, id }) {
 
@@ -11,16 +12,14 @@ export const sticker_menu = {
 
         if (body === '1') {
 
-            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let liststicker = stickers[Math.floor(Math.random() * stickers.length)]
-
-            await client.sendImageAsSticker(from, liststicker, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
+            let sticker = new formatSticker.Sticker(liststicker, { type: 'full', pack: 'سبحان الله وبحمده سبحان الله العظيم' });
+            await sticker.build();
+            let imagePath = await sticker.get();
+            await client.sendMessage(from, { sticker: imagePath }, { quoted: id }).catch((error) => Error(error));
 
         } else if (body === '2') {
 
-            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let sticker_gm3h = [
 
                 'http://bot.altaqwaa.org/media/sticker/gm3h/1.webp',
@@ -39,16 +38,18 @@ export const sticker_menu = {
 
             for (let lop of sticker_gm3h) {
 
-                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
+                let sticker = new formatSticker.Sticker(lop, { type: 'full', pack: 'سبحان الله وبحمده سبحان الله العظيم' });
+                await sticker.build();
+                let imagePath = await sticker.get();
+
+                await client.sendMessage(from, { sticker: imagePath }, { quoted: id }).catch((error) => Error(error));
 
             }
 
-            await client.reply(from, 'استمتع بالملصقات الخاصة بك 🎁');
+            await client.sendMessage(from, { text: 'استمتع بالملصقات الخاصة بك 🎁' });
 
         } else if (body === '3') {
 
-            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let sticker_sbah = [
 
                 'http://bot.altaqwaa.org/media/sticker/sbah/1.webp',
@@ -66,16 +67,16 @@ export const sticker_menu = {
 
             for (let lop of sticker_sbah) {
 
-                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
+                let sticker = new formatSticker.Sticker(lop, { type: 'full', pack: 'سبحان الله وبحمده سبحان الله العظيم' });
+                await sticker.build();
+                let imagePath = await sticker.get();
+                await client.sendMessage(from, { sticker: imagePath }, { quoted: id }).catch((error) => Error(error));
 
             }
 
-            await client.reply(from, 'استمتع بالملصقات الخاصة بك 🎁');
+            await client.sendMessage(from, { text: 'استمتع بالملصقات الخاصة بك 🎁' });
 
         } else if (body === '4') {
-
-            let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-            let name_sticker = fs_json[from] !== undefined ? fs_json[from].Name : pushname
             let sticker_msa2 = [
 
                 'http://bot.altaqwaa.org/media/sticker/msa2/1.webp',
@@ -92,53 +93,34 @@ export const sticker_menu = {
 
             for (let lop of sticker_msa2) {
 
-                await client.sendImageAsSticker(from, lop, {author: '@adhk2r_bot 🤖', keepScale: true, pack: name_sticker}).catch((error) => Error(error));
+                let sticker = new formatSticker.Sticker(lop, { type: 'full', pack: 'سبحان الله وبحمده سبحان الله العظيم' });
+                await sticker.build();
+                let imagePath = await sticker.get();
+                await client.sendMessage(from, { sticker: imagePath }, { quoted: id }).catch((error) => Error(error));
 
             }
 
-            await client.reply(from, 'استمتع بالملصقات الخاصة بك 🎁');
+            await client.sendMessage(from, { text: 'استمتع بالملصقات الخاصة بك 🎁' });
 
-        } 
-        
+        }
+
         else if (body === '5') {
 
-             MenuNmber(from, 8)
+            returnMenu(from, 8)
 
             let sticker_menu = 'ارجو عدم استعمال الخدمة فيما لايرضي الله عز وجل \n\n'
-            sticker_menu += ' بإنتظار الصورة او الفيديو 🖼️ لتحويلها لملصق 🪧 \n\n\n'
+            sticker_menu += ' بإنتظار الصورة 🖼️ لتحويلها لملصق 🪧 \n\n'
             sticker_menu += '*【 للرجوع للخلف أرسل * 】* \n'
             sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-         //   let msg = 'الخدمة مغلقة مؤقتاً'
+            //   let msg = 'الخدمة مغلقة مؤقتاً'
 
-            await client.reply(from, sticker_menu, id).catch((error) => Error(error));
-        } 
-        
-        else if (body.startsWith('me') || body.startsWith('Me')) {
-
-            let arraybody = ['Hi', 'hi', 'خدمة', 'خدمه', '#'];
-
-            if (body.length <= 20 && arraybody.some(fx => body === fx) === false) {
-
-                let name_sticker = body.slice(3)
-                let fs_json = fs.readJsonSync('./db/Sticker_Name.json');
-                let mesg = `تم تغير الحقوق الى ${name_sticker} ✅`
-                fs.writeJsonSync('./db/Sticker_Name.json', Object.assign({}, fs_json, {[from]: { "Name": name_sticker } }));
-                await client.reply(from, mesg, id).catch((error) => Error(error));
-
-
-            }
-
-            else {
-
-                let msg = 'يجب أن تكون الحقوق أقل من 20 حرف ⚠️\n\n\n'
-                msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-
-                await client.reply(from, msg, id).catch((error) => Error(error));
-
-            }
-
+            await client.sendMessage(from, { text: sticker_menu }, { quoted: id }).catch((error) => Error(error));
         }
 
     }
 
+}
+
+module.exports = {
+    sticker_menu: sticker_menu
 }

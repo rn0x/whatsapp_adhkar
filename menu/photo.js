@@ -1,4 +1,4 @@
-export const photo = [
+const photo = [
 
     'http://bot.altaqwaa.org/media/photo/001.png',
     'http://bot.altaqwaa.org/media/photo/003.png',
@@ -359,3 +359,7 @@ export const photo = [
     'http://bot.altaqwaa.org/media/photo/t49.jpg',
     'http://bot.altaqwaa.org/media/photo/t50.jpg',
 ]
+
+module.exports = {
+    photo: photo
+}

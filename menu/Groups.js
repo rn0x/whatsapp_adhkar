@@ -1,8 +1,8 @@
-import MenuNmber from '../lib/MenuNmber.js';
-import fs from 'fs-extra';
-import Error from './error.js';
+const returnMenu = require('../lib/returnMenu.js');
+const fs = require('fs-extra');
+const Error = require('../lib/error.js');
 
-export const Groups = {
+const Groups = {
 
 
     async exec({ from, client, body, id }) {
@@ -11,10 +11,10 @@ export const Groups = {
 
         if (body === '1') {
 
-            MenuNmber(from, 10)
+            returnMenu(from,   10)
 
             let group_name = 'من فضلك ادخل إسم المجموعة 💬'
-            await client.reply(from, group_name, id).catch((error) => Error(error));
+            await client.sendMessage(from, { text: group_name }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === '2') {
@@ -28,7 +28,7 @@ export const Groups = {
             }
             list_group += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.reply(from, list_group, id).catch((error) => Error(error));
+            await client.sendMessage(from, { text: list_group }, { quoted: id }).catch((error) => Error(error));
 
 
         }
@@ -44,14 +44,14 @@ export const Groups = {
 
                 let msg = `إسم المجموعة: ${listgroups.name} \n`
                 msg += `${listgroups.url}`
-                await client.reply(from, msg, id).catch((error) => Error(error));
+                await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
 
 
             }
 
             else if (name === null && url === null) {
 
-                await client.reply(from, 'حالياً لايوجد مجموعات يمكنك إضافة مجموعتك من خلال إرسال الرقم 1', id).catch((error) => Error(error));
+                await client.sendMessage(from, { text: 'حالياً لايوجد مجموعات يمكنك إضافة مجموعتك من خلال إرسال الرقم 1' }, { quoted: id }).catch((error) => Error(error));
 
             }
 
@@ -59,4 +59,8 @@ export const Groups = {
 
     }
 
+}
+
+module.exports = {
+    Groups: Groups
 }

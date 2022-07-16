@@ -1,11 +1,11 @@
 {
   "name": "whatsapp_adhkar",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "بوت أذكار للواتساب [ صور , فيديو أذكار , ملصقات , قرآن ]",
-  "type": "module",
   "main": "index.js",
+  "type": "commonjs",
   "author": {
-    "name": "Ryan Almalki",
+    "name": "rn0x",
     "email": "rn0xx711@gmail.com",
     "url": "https://github.com/rn0x"
   },
@@ -13,28 +13,22 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@open-wa/wa-automate": "^4.32.17",
-    "figlet": "^1.5.2",
-    "fs-extra": "^10.0.0",
-    "moment-timezone": "^0.5.34"
+    "@adiwajshing/baileys": "^4.2.0",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@hapi/boom": "^10.0.0",
+    "fs-extra": "^10.1.0",
+    "moment-timezone": "^0.5.34",
+    "pino": "^8.1.0",
+    "qrcode-terminal": "^0.12.0",
+    "wa-sticker-formatter": "^4.3.2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rn0x/whatsapp_adhkar.git"
   },
-  "keywords": [
-    "bot",
-    "whatsapp",
-    "baileys",
-    "islam",
-    "islamyat",
-    "اسلام",
-    "اسلاميات",
-    "بوت",
-    "adhkar"
-  ],
   "bugs": {
     "url": "https://github.com/rn0x/whatsapp_adhkar/issues"
   },

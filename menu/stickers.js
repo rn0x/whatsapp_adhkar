@@ -1,4 +1,4 @@
-export const stickers = [
+const stickers = [
     'http://bot.altaqwaa.org/media/sticker/001.webp',
     'http://bot.altaqwaa.org/media/sticker/002.webp',
     'http://bot.altaqwaa.org/media/sticker/003.webp',
@@ -195,3 +195,7 @@ export const stickers = [
     'http://bot.altaqwaa.org/media/sticker/208.webp'
 
 ]
+
+module.exports = {
+    stickers: stickers
+}

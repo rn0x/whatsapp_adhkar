@@ -1,6 +1,6 @@
-import fs from 'fs-extra';
+const fs = require('fs-extra');
 
-export const adhkar_all = [
+const adhkar_all = [
     fs.readFileSync('./media/text/adhkar/a1.txt',{encoding:'utf8', flag:'r'}),
     fs.readFileSync('./media/text/adhkar/a2.txt',{encoding:'utf8', flag:'r'}),
     fs.readFileSync('./media/text/adhkar/a3.txt',{encoding:'utf8', flag:'r'}),
@@ -111,3 +111,7 @@ export const adhkar_all = [
     fs.readFileSync('./media/text/adhkar/a106.txt',{encoding:'utf8', flag:'r'}),
     fs.readFileSync('./media/text/adhkar/a107.txt',{encoding:'utf8', flag:'r'}),
 ]
+
+module.exports = {
+    adhkar_all: adhkar_all
+}

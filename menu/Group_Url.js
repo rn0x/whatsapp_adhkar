@@ -1,8 +1,8 @@
-import MenuNmber from '../lib/MenuNmber.js';
-import fs from 'fs-extra';
-import Error from './error.js';
+const returnMenu = require('../lib/returnMenu.js');
+const fs = require('fs-extra');
+const Error = require('../lib/error.js');
 
-export const Group_Url = {
+const Group_Url = {
     
 
     async exec({ from, client, body, id }) {
@@ -15,7 +15,7 @@ export const Group_Url = {
 
             let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups, { spaces: '\t' })
+            fs.writeJsonSync(`./db/Group/${from}.json`,db_groups)
 
             let group_name = db_groups[0]
             let group_url = db_groups[1]
@@ -28,11 +28,11 @@ export const Group_Url = {
             menu_group += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
             GroupsMenu.unshift({name: group_name, url: group_url});
-            fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu, { spaces: '\t' })
-            await client.reply(from, msg, id).catch((error) => Error(error));
-            fs.writeJsonSync(`./db/Group/${from}.json`, [], { spaces: '\t' })
-            MenuNmber(from, 9)
-            await client.reply(from, menu_group, id).catch((error) => Error(error));
+            fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu)
+            await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
+            fs.writeJsonSync(`./db/Group/${from}.json`, [])
+            returnMenu(from,   9)
+            await client.sendMessage(from, { text: menu_group }, { quoted: id }).catch((error) => Error(error));
         }
 
         else {
@@ -41,15 +41,15 @@ export const Group_Url = {
 
                 let msg = 'الرابط غير صحيح تأكد من كتابة الرابط بشكل صحيح وان لايحتوي على مسافات ⚠️ \n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-                await client.reply(from, msg, id).catch((error) => Error(error));
+                await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
             }
 
             if (GroupsMenu.some(e => e.url === body) === true) {
 
                 let msg = 'لقد تم نشر هذه المجموعة بالفعل ⚠️\n\n\n'
                 msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
-                await client.reply(from, msg, id).catch((error) => Error(error));
-                fs.writeJsonSync('./lib/db_groups.json', [], { spaces: '\t' })
+                await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
+                fs.writeJsonSync('./lib/db_groups.json', [])
 
             }
         
@@ -57,4 +57,8 @@ export const Group_Url = {
 
     }
 
+}
+
+module.exports = {
+    Group_Url: Group_Url
 }

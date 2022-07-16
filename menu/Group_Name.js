@@ -1,8 +1,8 @@
-import MenuNmber from '../lib/MenuNmber.js';
-import fs from 'fs-extra';
-import Error from './error.js';
+const returnMenu = require('../lib/returnMenu.js');
+const fs = require('fs-extra');
+const Error = require('../lib/error.js');
 
-export const Group_Name = {
+const Group_Name = {
 
 
     async exec({ from, client, body, id }) {
@@ -12,17 +12,17 @@ export const Group_Name = {
             let group_name = 'من فضلك قم بكتابة رابط المجموعة 💬'
             let db_groups = fs.readJsonSync(`./db/Group/${from}.json`);
             db_groups.push(body);
-            fs.writeJsonSync(`./db/Group/${from}.json`, db_groups, { spaces: '\t' })
+            fs.writeJsonSync(`./db/Group/${from}.json`, db_groups)
 
-            await client.reply(from, group_name, id).catch((error) => Error(error));
-            MenuNmber(from, 11)
+            await client.sendMessage(from, { text: group_name }, { quoted: id }).catch((error) => Error(error));
+            returnMenu(from,   11)
         }
 
         else if (fs.existsSync(`./db/Group/${from}.json`) === false) {
 
             fs.writeJsonSync(`./db/Group/${from}.json`, []);
             let msg = 'من فضلك أعد كتابة إسم المجموعة 💬'
-            await client.reply(from, msg, id).catch((error) => Error(error));
+            await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
         }
 
         else {
@@ -30,10 +30,14 @@ export const Group_Name = {
             let msg = 'يجب أن يكون الإسم أقل من 30 حرف ⚠️\n\n\n'
             msg += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.reply(from, msg, id).catch((error) => Error(error));
+            await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
 
         }
 
     }
 
+}
+
+module.exports = {
+    Group_Name: Group_Name
 }

@@ -1,120 +1,184 @@
-import wa from '@open-wa/wa-automate';
-import moment from 'moment-timezone';
-import broadcast from './lib/broadcast.js';
-import figlet from 'figlet';
-import { menu_number } from './lib/menu_number.js';
-import getMenu from './lib/getMenu.js';
-import Folder from './lib/Folder.js';
-import Hi from './menu/Hi.js';
-import Error from './menu/error.js';
-Folder();
 
-async function Bot_Adhkar() {
-
-    try {
-
-        console.log(figlet.textSync('Bot Adhkar'));
-        console.log("                  Start " + moment.tz("Asia/Riyadh").format('LT'));
-        console.log("               Telegram @BinAttia \n");
-
-        const options = {
-            multiDevice: true,
-            authTimeout: 0,
-            blockCrashLogs: true,
-            useChrome: true,
-            autoRefresh: true,
-            cacheEnabled: true,
-            qrRefreshS: 0,
-            throwErrorOnTosBlock: false,
-            deleteSessionDataOnLogout: false,
-            skipUpdateCheck: false,
-            bypassCSP: true,
-            headless: true,
-            logConsole: false,
-            executablePath: process.platform === "win32" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : "/usr/bin/google-chrome-stable",
-            qrTimeout: 0,
-            sessionId: 'Bot_Adhkar'
-        };
-
-        let client = await wa.create(options);
-
-        await client.onAnyMessage(async (msg) => {
-
-            let from = msg.from;
-            let id = msg.id
-            let body = msg.body;
-            let messages = msg;
-            let Menufrom = await getMenu(from);
-            let pushname = msg.sender && msg.sender.pushname ? msg.sender.pushname : msg.sender && msg.sender.verifiedName ? msg.sender.verifiedName : msg.sender && msg.sender.formattedName ? msg.sender.formattedName : ' ';
-            let isGroupMsg = msg.isGroupMsg;
-            let number_arabic = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩']
-
-            await menu_number[Menufrom !== undefined ? Menufrom : 0].menu_name.exec({
-
-                body: body,
-                messages: messages,
-                id: id,
-                from: from,
-                isGroup: isGroupMsg,
-                pushname: pushname,
-                client: client,
-
-            });
-
-            Hi(client, body, from, pushname, id);
-
-            if (isGroupMsg === false && number_arabic.some(fx => body.includes(fx))) {
-                
-
-                let msg = 'من فضلك استعمل الأرقم الإنجليزية ⚠️'
-
-                await client.reply(from, msg, id).catch((erro) => console.log(erro));
-
-            }
-
-            await client.sendSeen(from)
-        });
+const { default: makeWASocket, DisconnectReason, useSingleFileAuthState, makeInMemoryStore } = require('@adiwajshing/baileys');
+const { Boom } = require('@hapi/boom');
+const { state, saveState } = useSingleFileAuthState('session.json');
+const pino = require('pino');
+const fs = require('fs-extra');
+const returnMenu = require('./lib/returnMenu.js');
+const db = require('./lib/db.js');
+const { menu_number } = require('./lib/menu_number.js');
+const Hi = require('./menu/Hi.js');
+const broadcast = require('./lib/broadcast.js');
 
 
-        broadcast(client);
+async function whatsapp_altaqwaa() {
 
-        setInterval(async () => {
+    db();
 
-            for (let lop of await client.getAllUnreadMessages()) {
+    const store = makeInMemoryStore({
+        logger: pino().child({
+            level: 'silent',
+            stream: 'store'
+        })
+    });
 
-                let from = lop.from;
-                let id = lop.id
-                let body = lop.body;
-                let messages = lop;
-                let Menufrom = await getMenu(from);
-                let pushname = ' ';
-                let isGroupMsg = lop.isGroupMsg;
+    const client = makeWASocket({
+        logger: pino({
+            level: 'silent'
+        }),
+        printQRInTerminal: true,
+        browser: ['whatsapp_altaqwaa', 'Chrome', '1.0.0'],
+        auth: state
+    });
 
-                await menu_number[Menufrom !== undefined ? Menufrom : 0].menu_name.exec({
+    store.bind(client.ev)
 
-                    body: body,
-                    messages: messages,
-                    id: id,
-                    from: from,
-                    isGroup: isGroupMsg,
-                    pushname: pushname,
-                    client: client,
+    client.setStatus = (status) => {
+        client.query({
+            tag: 'iq',
+            attrs: {
+                to: '@s.whatsapp.net',
+                type: 'set',
+                xmlns: 'status',
+            },
+            content: [{
+                tag: 'status',
+                attrs: {},
+                content: Buffer.from(status, 'utf-8')
+            }]
+        })
+        return status
+    }
+    client.public = true
+
+    client.ev.on('connection.update', async (update) => {
+
+        const { connection, lastDisconnect } = update
+
+        if (connection === 'close') {
+
+            let contact_status = new Boom(lastDisconnect?.error)?.output.statusCode
+
+            // reconnect if not logged out
+            if (contact_status === DisconnectReason.badSession) {
+                console.log(`Bad Session File, Please Delete Session and Scan Again`);
+                await client.logout().catch(e => {
+
+                    console.log(e.output.payload.message);
+
+                    if (e.output.payload.message === 'Connection Closed') {
+
+                        fs.removeSync('./session.json');
+                        whatsapp_altaqwaa();
+                    }
 
                 });
+            } else if (contact_status === DisconnectReason.connectionClosed) {
+                console.log("Connection closed, reconnecting....");
+                whatsapp_altaqwaa();
+            } else if (contact_status === DisconnectReason.connectionLost) {
+                console.log("Connection Lost from Server, reconnecting...");
+                whatsapp_altaqwaa();
+            } else if (contact_status === DisconnectReason.connectionReplaced) {
+                console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+                await client.logout().catch(e => {
 
-                await client.sendSeen(from);
-                await new Promise(r => setTimeout(r, 5000));
+                    console.log(e.output.payload.message);
 
-            }
+                    if (e.output.payload.message === 'Connection Closed') {
 
-        }, 260000);
+                        fs.removeSync('./session.json');
+                        whatsapp_altaqwaa();
+                    }
 
-    } catch (error) {
+                });
+            } else if (contact_status === DisconnectReason.loggedOut) {
+                console.log(`Device Logged Out, Please Scan Again And Run.`);
+                await client.logout().catch(e => {
 
-        Error(error);
+                    console.log(e.output.payload.message);
 
+                    if (e.output.payload.message === 'Connection Closed') {
+
+                        fs.removeSync('./session.json');
+                        whatsapp_altaqwaa();
+                    }
+
+                });
+            } else if (contact_status === DisconnectReason.restartRequired) {
+                console.log("Restart Required, Restarting...");
+                whatsapp_altaqwaa();
+            } else if (contact_status === DisconnectReason.timedOut) {
+                console.log("Connection TimedOut, Reconnecting...");
+                whatsapp_altaqwaa();
+            } else client.end(`Unknown DisconnectReason: ${contact_status}|${connection}`)
+
+        }
+
+        else if (connection === 'open') {
+
+            console.log('opened connection');
+
+        }
+
+    });
+
+
+
+    client.ev.on('creds.update', saveState);
+
+    client.ev.on('messages.upsert', async m => {
+
+        if (!m.messages[0].key.fromMe && m.type === 'notify') {
+
+            let type = Object.keys(m.messages[0].message)[0]
+            let messages = m.messages[0].message
+            let from = m.messages[0].key.remoteJid
+            let body = type === "conversation" ? messages.conversation : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
+            await Hi(client, body, from, m.messages[0].pushName ? m.messages[0].pushName : 'بدون إسم', m.messages[0])
+
+            await menu_number[await getMenu(from)].menu_name.exec({
+                body: body,
+                messages: messages,
+                download_msg: m.messages[0],
+                from: from,
+                id: m.messages[0],
+                MessageType: MessageType,
+                isGroup: from.endsWith('@g.us'),
+                pushname: m.messages[0].pushName ? m.messages[0].pushName : 'بدون إسم',
+                client: client,
+            });
+
+            await client.sendReadReceipt(from, m.messages[0].key.participant, [from]);
+            console.log(`replying to: ${from}\nmessage: ${(body !== '') ? body : 'null'}`);
+        }
+
+    });
+
+    broadcast(client);
+
+}
+
+
+async function getMenu(from) {
+
+    let db_menu = await fs.readJson('./db/Menu.json');
+
+    if (Object.keys(db_menu).includes(from)) {
+
+        return db_menu[from].menu_name;
+
+    }
+
+    else {
+
+        returnMenu(from, 0);
+        return 0
     }
 
 }
 
-Bot_Adhkar();
+
+
+
+whatsapp_altaqwaa().catch(e => console.log(e));
