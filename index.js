@@ -8,6 +8,7 @@ const db = require('./lib/db.js');
 const { menu_number } = require('./lib/menu_number.js');
 const Hi = require('./menu/Hi.js');
 const broadcast = require('./lib/broadcast.js');
+const Error = require('./lib/error.js');
 
 
 async function whatsapp_altaqwaa() {
@@ -80,17 +81,7 @@ async function whatsapp_altaqwaa() {
                 whatsapp_altaqwaa();
             } else if (contact_status === DisconnectReason.connectionReplaced) {
                 console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-                await client.logout().catch(e => {
-
-                    console.log(e.output.payload.message);
-
-                    if (e.output.payload.message === 'Connection Closed') {
-
-                        fs.removeSync('./session.json');
-                        whatsapp_altaqwaa();
-                    }
-
-                });
+                await client.logout().catch(e => console.log(e.output.payload.message));
             } else if (contact_status === DisconnectReason.loggedOut) {
                 console.log(`Device Logged Out, Please Scan Again And Run.`);
                 await client.logout().catch(e => {
@@ -160,7 +151,7 @@ async function whatsapp_altaqwaa() {
 
 async function getMenu(from) {
 
-    let db_menu = await fs.readJson('./db/Menu.json');
+    let db_menu = await fs.readJson('./db/Menu.json').catch(e => console.log(e));
 
     if (Object.keys(db_menu).includes(from)) {
 
@@ -179,4 +170,4 @@ async function getMenu(from) {
 
 
 
-whatsapp_altaqwaa().catch(e => console.log(e));
+whatsapp_altaqwaa().catch(error => Error(error));
