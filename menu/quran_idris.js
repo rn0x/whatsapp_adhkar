@@ -35,7 +35,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/002.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'آل عمران' || body === '3') {
@@ -53,7 +53,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/003.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'النساء' || body === '4') {
@@ -71,7 +71,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/004.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'المائدة' || body === '5') {
@@ -89,7 +89,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/005.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنعام' || body === '6') {
@@ -107,7 +107,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/006.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأعراف' || body === '7') {
@@ -125,7 +125,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/007.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنفال' || body === '8') {
@@ -143,7 +143,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/008.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'التوبة' || body === '9') {
@@ -161,7 +161,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/009.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'يونس' || body === '10') {
@@ -179,7 +179,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/010.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'هود' || body === '11') {
@@ -197,7 +197,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/011.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'يوسف' || body === '12') {
@@ -215,7 +215,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/012.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الرعد' || body === '13') {
@@ -233,7 +233,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/013.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'إبراهيم' || body === '14') {
@@ -251,7 +251,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/014.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الحجر' || body === '15') {
@@ -269,7 +269,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/015.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'النحل' || body === '16') {
@@ -287,7 +287,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/016.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الإسراء' || body === '17') {
@@ -305,7 +305,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/017.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الكهف' || body === '18') {
@@ -323,7 +323,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/018.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'مريم' || body === '19') {
@@ -341,7 +341,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/019.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'طه' || body === '20') {
@@ -359,7 +359,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/020.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنبياء' || body === '21') {
@@ -377,7 +377,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/021.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الحج' || body === '22') {
@@ -395,7 +395,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/022.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'المؤمنون' || body === '23') {
@@ -413,7 +413,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/023.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'النور' || body === '24') {
@@ -431,7 +431,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/024.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الفرقان' || body === '25') {
@@ -449,7 +449,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/025.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الشعراء' || body === '26') {
@@ -467,7 +467,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/026.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'النمل' || body === '27') {
@@ -485,7 +485,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/027.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'القصص' || body === '28') {
@@ -503,7 +503,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/028.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'العنكبوت' || body === '29') {
@@ -521,7 +521,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/029.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الروم' || body === '30') {
@@ -539,7 +539,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/030.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'لقمان' || body === '31') {
@@ -587,7 +587,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/033.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'سبأ' || body === '34') {
@@ -605,7 +605,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/034.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'فاطر' || body === '35') {
@@ -623,7 +623,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/035.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'يس' || body === '36') {
@@ -641,7 +641,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/036.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الصافات' || body === '37') {
@@ -659,7 +659,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/037.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'ص' || body === '38') {
@@ -677,7 +677,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/038.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الزمر' || body === '39') {
@@ -695,7 +695,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/039.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'غافر' || body === '40') {
@@ -713,7 +713,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/040.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'فصلت' || body === '41') {
@@ -731,7 +731,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/041.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الشورى' || body === '42') {
@@ -749,7 +749,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/042.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الزخرف' || body === '43') {
@@ -767,7 +767,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/043.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الدخان' || body === '44') {
@@ -950,7 +950,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/058.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الحشر' || body === '59') {
@@ -968,7 +968,7 @@ const quran_idris = {
             message_mp3 += 'http://server6.mp3quran.net/abkr/059.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الممتحنة' || body === '60') {

@@ -35,7 +35,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/002.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'آل عمران' || body === '3') {
@@ -53,7 +53,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/003.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنعام' || body === '6') {
@@ -71,7 +71,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/006.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأعراف' || body === '7') {
@@ -89,7 +89,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/007.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنفال' || body === '8') {
@@ -122,7 +122,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/009.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'يونس' || body === '10') {
@@ -140,7 +140,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/010.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'هود' || body === '11') {
@@ -173,7 +173,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/012.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الرعد' || body === '13') {
@@ -191,7 +191,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/013.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'إبراهيم' || body === '14') {
@@ -209,7 +209,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/014.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الحجر' || body === '15') {
@@ -242,7 +242,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/016.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الإسراء' || body === '17') {
@@ -275,7 +275,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/018.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'مريم' || body === '19') {
@@ -308,7 +308,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/020.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنبياء' || body === '21') {
@@ -356,7 +356,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/023.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الفرقان' || body === '25') {
@@ -419,7 +419,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/029.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'لقمان' || body === '31') {
@@ -482,7 +482,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/035.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'يس' || body === '36') {
@@ -545,7 +545,7 @@ const quran_almosa = {
             message_mp3 += 'http://server14.mp3quran.net/mousa/Rewayat-Hafs-A-n-Assem/045.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from,  { text: message_mp3 }, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأحقاف' || body === '46') {
