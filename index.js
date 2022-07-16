@@ -1,4 +1,3 @@
-
 const { default: makeWASocket, DisconnectReason, useSingleFileAuthState, makeInMemoryStore } = require('@adiwajshing/baileys');
 const { Boom } = require('@hapi/boom');
 const { state, saveState } = useSingleFileAuthState('session.json');
@@ -129,9 +128,9 @@ async function whatsapp_altaqwaa() {
 
     client.ev.on('messages.upsert', async m => {
 
-        if (!m.messages[0].key.fromMe && m.type === 'notify' && m.messages[0] !== null) {
+        if (!m.messages[0].key.fromMe && m.type === 'notify') {
 
-            let type = Object.keys(m.messages[0].message)[0]
+            let type = Object.keys(m.messages[0].message || {})[0]
             let messages = m.messages[0].message
             let from = m.messages[0].key.remoteJid
             let body = type === "conversation" ? messages.conversation : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''

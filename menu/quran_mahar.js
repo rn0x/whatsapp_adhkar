@@ -35,7 +35,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/002.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'آل عمران' || body === '3') {
@@ -53,7 +53,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/003.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'النساء' || body === '4') {
@@ -71,7 +71,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/004.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'المائدة' || body === '5') {
@@ -89,7 +89,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/005.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنعام' || body === '6') {
@@ -107,7 +107,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/006.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأعراف' || body === '7') {
@@ -125,7 +125,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/007.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الأنفال' || body === '8') {
@@ -158,7 +158,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/009.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'يونس' || body === '10') {
@@ -236,7 +236,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/014.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'الحجر' || body === '15') {
@@ -314,7 +314,7 @@ const quran_mahar = {
             message_mp3 += 'http://server12.mp3quran.net/maher/019.mp3'
 
             await client.sendMessage(from,  { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from,  message_mp3, id).catch((error) => Error(error));
+            await client.sendMessage(from,  message_mp3, { quoted: id }).catch((error) => Error(error));
         }
 
         else if (body === 'طه' || body === '20') {
