@@ -125,9 +125,10 @@ async function whatsapp_altaqwaa() {
             let messages = m.messages[0].message
             let from = m.messages[0].key.remoteJid
             let body = type === "conversation" ? messages.conversation : type === "extendedTextMessage" ? messages.extendedTextMessage.text : type === "imageMessage" ? messages.imageMessage.caption : type === "videoMessage" ? messages.videoMessage.caption : ''
-            await Hi(client, body, from, m.messages[0].pushName ? m.messages[0].pushName : 'بدون إسم', m.messages[0])
+            let GetMenu = await getMenu(from).catch(error => Error(error));
+            await Hi(client, body, from, m.messages[0].pushName ? m.messages[0].pushName : 'بدون إسم', m.messages[0]);
 
-            await menu_number[await getMenu(from)].menu_name.exec({
+            await menu_number[GetMenu || 0].menu_name.exec({
                 body: body,
                 messages: messages,
                 download_msg: m.messages[0],
@@ -138,7 +139,8 @@ async function whatsapp_altaqwaa() {
                 client: client,
             });
 
-            await client.sendReadReceipt(from, m.messages[0].key.participant, [from]);
+          //  await client.sendReadReceipt(from, m.messages[0].key.participant, [from]);
+            await client.readMessages([m.messages[0].key]);
             console.log(`replying to: ${from}\nmessage: ${(body !== '') ? body : 'null'}`);
         }
 
@@ -151,7 +153,7 @@ async function whatsapp_altaqwaa() {
 
 async function getMenu(from) {
 
-    let db_menu = await fs.readJson('./db/Menu.json').catch(e => console.log(e));
+    let db_menu = await fs.readJson('./db/Menu.json').catch(error => Error(error));
 
     if (Object.keys(db_menu).includes(from)) {
 

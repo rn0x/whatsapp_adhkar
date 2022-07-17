@@ -1,6 +1,11 @@
 # Whatsapp_Adhkar
 
-<b>بوت أذكار للواتساب يحتوي على القران الكريم كامل (4) قراء ويحتوي على صور وفيديوهات إسلامية ويحتوي على أذكار متنوعة ويحتوي على نظام برودكاست لإرسال الاّذكار بشكل تلقائي للمشتركين </b><br>
+<p align="center">
+  <img align="center" src="/github/1.png" alt="whatsapp_adhkar">
+</p>
+
+
+<b>بوت أذكار للواتساب يحتوي على القران الكريم كامل (4) قراء ويحتوي على صور وفيديوهات إسلامية ويحتوي على أذكار متنوعة ويحتوي على نظام برودكاست لإرسال الاّذكار بشكل تلقائي للقروبات </b><br>
 <br><br>
 
 
@@ -22,10 +27,6 @@
 <b>6- قريباً </b><br>
 
 ### أوامر التثبيت لنظام Ubuntu , Linux Mint , Debian [ terminal ]
-
-<b> اذا كان نظامك لينكس قم بإلغاء التعليق من هذا السطر </b><br>
-<a href="https://github.com/rn0x/whatsapp_adhkar/blob/main/index.js#L30">index.js - 30</a>
-
 
 
 ```bash
@@ -70,17 +71,32 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
   apk update && \
   apk add --no-cache \
   chromium
-   > apk add --update nodejs npm
-   > apk add git
-   > apk add ffmpeg
+   > apk add --update nodejs npm git ffmpeg
+   > npm cache clean --force
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
    > npm start
 ```
 
+### صور من داخل البوت
 
 <p align="center">
-  <img align="center" src="/github/1.jpeg" alt="whatsapp_adhkar" width="654" height="620">
+  <img align="center" src="/github/1.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/2.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/3.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/4.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/5.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/6.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/7.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/8.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/9.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/10.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/11.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/12.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/13.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/14.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/15.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/16.jpg" alt="بوت أذكار للواتساب"><br>
 </p>
 
