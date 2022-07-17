@@ -1,7 +1,7 @@
 # Whatsapp_Adhkar
 
 <p align="center">
-  <img align="center" src="/github/1.png" alt="whatsapp_adhkar">
+  <img align="center" src="/github/termux.png" alt="whatsapp_adhkar">
 </p>
 
 
