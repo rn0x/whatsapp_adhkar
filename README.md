@@ -82,6 +82,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ### صور من داخل البوت
 
 <p align="center">
+
   <img align="center" src="/github/1.jpg" alt="بوت أذكار للواتساب"><br>
   <img align="center" src="/github/2.jpg" alt="بوت أذكار للواتساب"><br>
   <img align="center" src="/github/3.jpg" alt="بوت أذكار للواتساب"><br>
@@ -98,5 +99,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
   <img align="center" src="/github/14.jpg" alt="بوت أذكار للواتساب"><br>
   <img align="center" src="/github/15.jpg" alt="بوت أذكار للواتساب"><br>
   <img align="center" src="/github/16.jpg" alt="بوت أذكار للواتساب"><br>
+
 </p>
 
