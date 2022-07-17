@@ -83,22 +83,22 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 <p align="center">
 
-  <img align="center" src="/github/1.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/2.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/3.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/4.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/5.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/6.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/7.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/8.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/9.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/10.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/11.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/12.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/13.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/14.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/15.jpg" alt="بوت أذكار للواتساب"><br>
-  <img align="center" src="/github/16.jpg" alt="بوت أذكار للواتساب"><br>
+  <img align="center" src="/github/1.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/2.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/3.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/4.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/5.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/6.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/7.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/8.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/9.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/10.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/11.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/12.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/13.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/14.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/15.jpg" alt="بوت أذكار للواتساب"><br><br>
+  <img align="center" src="/github/16.jpg" alt="بوت أذكار للواتساب"><br><br>
 
 </p>
 
