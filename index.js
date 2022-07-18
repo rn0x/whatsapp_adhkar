@@ -1,4 +1,10 @@
-const { default: makeWASocket, DisconnectReason, useSingleFileAuthState, makeInMemoryStore } = require('@adiwajshing/baileys');
+const {
+    default: makeWASocket,
+    DisconnectReason,
+    useSingleFileAuthState,
+    makeInMemoryStore,
+    jidDecode
+} = require('@adiwajshing/baileys');
 const { Boom } = require('@hapi/boom');
 const { state, saveState } = useSingleFileAuthState('session.json');
 const pino = require('pino');
@@ -69,16 +75,26 @@ async function whatsapp_altaqwaa() {
                     if (e.output.payload.message === 'Connection Closed') {
 
                         fs.removeSync('./session.json');
-                        whatsapp_altaqwaa();
+                        whatsapp_altaqwaa().catch(error => Error(error));
                     }
 
                 });
             } else if (contact_status === DisconnectReason.connectionClosed) {
                 console.log("Connection closed, reconnecting....");
-                whatsapp_altaqwaa();
+                whatsapp_altaqwaa().catch(error => Error(error));
             } else if (contact_status === DisconnectReason.connectionLost) {
                 console.log("Connection Lost from Server, reconnecting...");
-                whatsapp_altaqwaa();
+                await client.logout().catch(e => {
+
+                    console.log(e.output.payload.message);
+
+                    if (e.output.payload.message === 'Connection Closed') {
+
+                        fs.removeSync('./session.json');
+                        whatsapp_altaqwaa().catch(error => Error(error));
+                    }
+
+                });
             } else if (contact_status === DisconnectReason.connectionReplaced) {
                 console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
                 await client.logout().catch(e => console.log(e.output.payload.message));
@@ -91,16 +107,17 @@ async function whatsapp_altaqwaa() {
                     if (e.output.payload.message === 'Connection Closed') {
 
                         fs.removeSync('./session.json');
-                        whatsapp_altaqwaa();
+                        whatsapp_altaqwaa().catch(error => Error(error));
                     }
 
                 });
             } else if (contact_status === DisconnectReason.restartRequired) {
                 console.log("Restart Required, Restarting...");
-                whatsapp_altaqwaa();
+                await client.logout().catch(e => console.log(e.output.payload.message));
+                whatsapp_altaqwaa().catch(error => Error(error));
             } else if (contact_status === DisconnectReason.timedOut) {
                 console.log("Connection TimedOut, Reconnecting...");
-                whatsapp_altaqwaa();
+                whatsapp_altaqwaa().catch(error => Error(error));
             } else client.end(`Unknown DisconnectReason: ${contact_status}|${connection}`)
 
         }
@@ -113,13 +130,9 @@ async function whatsapp_altaqwaa() {
 
     });
 
-
-
-    client.ev.on('creds.update', saveState);
-
     client.ev.on('messages.upsert', async m => {
 
-        if (!m.messages[0].key.fromMe && m.type === 'notify') {
+        if (!m.messages[0].key.fromMe && m.type === 'notify' && m.messages[0].key.remoteJid !== "status@broadcast") {
 
             let type = Object.keys(m.messages[0].message || {})[0]
             let messages = m.messages[0].message
@@ -128,7 +141,7 @@ async function whatsapp_altaqwaa() {
             let GetMenu = await getMenu(from).catch(error => Error(error));
             await Hi(client, body, from, m.messages[0].pushName ? m.messages[0].pushName : 'بدون إسم', m.messages[0]);
 
-            await menu_number[GetMenu || 0].menu_name.exec({
+            await menu_number[GetMenu]?.menu_name.exec({
                 body: body,
                 messages: messages,
                 download_msg: m.messages[0],
@@ -139,23 +152,39 @@ async function whatsapp_altaqwaa() {
                 client: client,
             });
 
-          //  await client.sendReadReceipt(from, m.messages[0].key.participant, [from]);
+            //  await client.sendReadReceipt(from, m.messages[0].key.participant, [from]);
             await client.readMessages([m.messages[0].key]);
-            console.log(`replying to: ${from}\nmessage: ${(body !== '') ? body : 'null'}`);
+            console.log(`User: ${from}`);
         }
 
     });
 
     broadcast(client);
 
+    client.decodeJid = (jid) => {
+        if (!jid) return jid
+        if (/:\d+@/gi.test(jid)) {
+            let decode = jidDecode(jid) || {}
+            return decode.user && decode.server && decode.user + '@' + decode.server || jid
+        } else return jid
+    }
+    client.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = client.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+        }
+    })
+
+    client.ev.on('creds.update', saveState);
+
 }
 
 
 async function getMenu(from) {
 
-    let db_menu = await fs.readJson('./db/Menu.json').catch(error => Error(error));
+    let db_menu = await fs.readJson(`./db/user/${from}.json`).catch(async e => await returnMenu(from, 0));
 
-    if (Object.keys(db_menu).includes(from)) {
+    if (Object.keys(db_menu || {}).includes(from)) {
 
         return db_menu[from].menu_name;
 
@@ -163,13 +192,10 @@ async function getMenu(from) {
 
     else {
 
-        returnMenu(from, 0);
         return 0
     }
 
 }
-
-
 
 
 whatsapp_altaqwaa().catch(error => Error(error));
