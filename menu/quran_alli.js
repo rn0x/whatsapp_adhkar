@@ -1846,7 +1846,7 @@ const quran_alli = {
             quran_menu += '6- خالد الجليل \n\n\n'
             quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, from, { text: message }, id).catch((error) => Error(error));
+            await client.sendMessage(from, { text: quran_menu }, id).catch((error) => Error(error));
 
         }
 
