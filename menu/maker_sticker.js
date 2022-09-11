@@ -24,24 +24,24 @@ const maker_sticker = {
             await client.sendMessage(from, { sticker: imagePath }, { quoted: id });
             await client.sendMessage(from, { text: 'استمتع بالملصق الخاص بك 🎁' }).catch((error) => Error(error));
             await client.sendMessage(from, { text: sticker_menu }).catch((error) => Error(error));
-            returnMenu(from, 7)
+            returnMenu(from, 3)
 
         }
 
-        else if (body === '*') {
+        // else if (body === '*') {
 
-            returnMenu(from, 7)
+        //     returnMenu(from, 3)
 
-            let sticker_menu = '1- ملصق عشوائي 🔄 \n'
-            sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
-            sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
-            sticker_menu += '4- ملصقات مساء الخير 🌑 \n'
-            sticker_menu += '5- صانع الملصقات 🪧 \n\n\n'
-            sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
+        //     let sticker_menu = '1- ملصق عشوائي 🔄 \n'
+        //     sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
+        //     sticker_menu += '3- ملصقات صباح الخير ☀️ \n'
+        //     sticker_menu += '4- ملصقات مساء الخير 🌑 \n'
+        //     sticker_menu += '5- صانع الملصقات 🪧 \n\n\n'
+        //     sticker_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, { text: sticker_menu }, { quoted: id }).catch((error) => Error(error));
+        //     await client.sendMessage(from, { text: sticker_menu }, { quoted: id }).catch((error) => Error(error));
 
-        }
+        // }
 
     }
 

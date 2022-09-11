@@ -3,6 +3,7 @@ const { video } = require('./video.js');
 const { photo } = require('./photo.js');
 const fs = require('fs-extra');
 const Error = require('../lib/error.js');
+const Hijri_calendar = require('../lib/Hijri_calendar/index.js');
 
 const menu = {
 
@@ -17,12 +18,24 @@ const menu = {
       returnMenu(from, 1)
 
       let quran_menu = 'قم بإختيار القارئ 🔊 \n\n'
-      quran_menu += '1- أدريس أبكر \n'
-      quran_menu += '2- ماهر المعيقلي \n'
-      quran_menu += '3- عبدالله الموسى \n'
-      quran_menu += '4- علي جابر \n'
-      quran_menu += '5- عبدالرحمن السديس \n'
-      quran_menu += '6- خالد الجليل \n\n\n'
+      quran_menu += '1- عبدالباسط عبدالصمد \n'
+      quran_menu += '2- عبدالله الكندري \n'
+      quran_menu += '3- عبدالله المطرود \n'
+      quran_menu += '4- عبدالرحمن العوسي \n'
+      quran_menu += '5- شيخ أبو بكر الشاطري \n'
+      quran_menu += '6- فارس عباد \n'
+      quran_menu += '7- إدريس أبكر \n'
+      quran_menu += '8- خالد الجليل \n'
+      quran_menu += '9- ماهر المعيقلي \n'
+      quran_menu += '10- محمود علي البنا \n'
+      quran_menu += '11- محمود خليل الحصري \n'
+      quran_menu += '12- محمد صديق المنشاوي \n'
+      quran_menu += '13- محمد اللحيدان \n'
+      quran_menu += '14- ناصر القطامي \n'
+      quran_menu += '15- سعد الغامدي \n'
+      quran_menu += '16- صلاح بو خاطر \n'
+      quran_menu += '17- وديع اليمني \n'
+      quran_menu += '18- ياسر الدوسري \n\n\n'
       quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
       await client.sendMessage(from, { text: quran_menu }, { quoted: id }).catch((error) => Error(error));
@@ -31,7 +44,7 @@ const menu = {
 
     else if (body === '2') {
 
-      returnMenu(from, 6)
+      returnMenu(from, 2)
 
       let adhkar_menu = '1- أذكار الصباح ☀️ \n'
       adhkar_menu += '2- أذكار المساء 🌑 \n'
@@ -67,7 +80,7 @@ const menu = {
 
     else if (body === '5') {
 
-      returnMenu(from, 7)
+      returnMenu(from, 3)
 
       let sticker_menu = '1- ملصق عشوائي 🔄 \n'
       sticker_menu += '2- ملصقات يوم الجمعة 🕌 \n'
@@ -91,7 +104,7 @@ const menu = {
 
     else if (body === '7') {
 
-      returnMenu(from, 9)
+      returnMenu(from, 5)
       fs.writeJsonSync(`./db/Group/${from}.json`, [])
       let menu_group = '1- نشر قروبك ✉️ \n'
       menu_group += '2- قائمة القروبات ⚜️\n'
@@ -104,7 +117,7 @@ const menu = {
 
     else if (body === '8') {
 
-      returnMenu(from, 12)
+      returnMenu(from, 8)
       let msg = 'مشروع يهدف إلى خدمة القرآن الكريم وحفّاظِهِ وقارئيه، عن طريق توفير مَتْنٍ مختصرٍ شاملٍ لسور القرآن، وتوفير محتواه مقروؤاً ومرئياً \n\n'
       msg += '*محتوياتُ (البِطَاقَات):*\n\n'
       msg += 'وضعتُ ثمانيةَ (8) عناصرَ موحَّدَةً في كلِّ بطاقةِ تعريفٍ بالسورةِ، وجعلتُهَا مرتبةً ومُرَقَّمَةً، وكتبتُها بعباراتٍ واضحةٍ، وجُمَلٍ مختصرةٍ، وأسلوبٍ ميسرٍ ليسهُلَ حفظُهَا.\n\n'
@@ -124,7 +137,7 @@ const menu = {
     }
     else if (body === '9') {
 
-      returnMenu(from, 15)
+      returnMenu(from, 9)
       let hisn_almuslim_json = fs.readJsonSync('./menu/hisn_almuslim.json')
       let key = Object.keys(hisn_almuslim_json);
       let msg = 'من فضلك قم بإرسال رقم الدعاء او الذكر من القائمة التالية ✉️\n\n'
@@ -139,6 +152,19 @@ const menu = {
       msg += '\n\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
       await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
+
+    }
+
+    else if (body === '10') {
+
+      let azkar = fs.readJsonSync('./menu/azkar.json');
+      let random = azkar[Math.floor(Math.random() * azkar.length)];
+      let title = random?.description
+      let text = random?.zekr
+      let fileName = './Hijri_calendar.png'
+      await Hijri_calendar(title, text, fileName).then(async e => {
+        await client.sendMessage(from, { image: fs.readFileSync(e) }, { quoted: id }).catch((error) => Error(error));
+      });
 
     }
 

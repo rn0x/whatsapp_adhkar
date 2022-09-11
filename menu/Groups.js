@@ -11,7 +11,7 @@ const Groups = {
 
         if (body === '1') {
 
-            returnMenu(from,   10)
+            returnMenu(from,   6)
 
             let group_name = 'من فضلك ادخل إسم المجموعة 💬'
             await client.sendMessage(from, { text: group_name }, { quoted: id }).catch((error) => Error(error));

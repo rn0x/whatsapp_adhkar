@@ -15,7 +15,7 @@ const Group_Name = {
             fs.writeJsonSync(`./db/Group/${from}.json`, db_groups)
 
             await client.sendMessage(from, { text: group_name }, { quoted: id }).catch((error) => Error(error));
-            returnMenu(from,   11)
+            returnMenu(from,   7)
         }
 
         else if (fs.existsSync(`./db/Group/${from}.json`) === false) {

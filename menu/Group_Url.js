@@ -31,7 +31,7 @@ const Group_Url = {
             fs.writeJsonSync('./db/GroupsMenu.json', GroupsMenu)
             await client.sendMessage(from, { text: msg }, { quoted: id }).catch((error) => Error(error));
             fs.writeJsonSync(`./db/Group/${from}.json`, [])
-            returnMenu(from,   9)
+            returnMenu(from,   5)
             await client.sendMessage(from, { text: menu_group }, { quoted: id }).catch((error) => Error(error));
         }
 
