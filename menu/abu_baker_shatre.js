@@ -1716,15 +1716,27 @@ const abu_baker_shatre = {
             returnMenu(from, 1)
 
             let quran_menu = 'قم بإختيار القارئ 🔊 \n\n'
-            quran_menu += '1- أدريس أبكر \n'
-            quran_menu += '2- ماهر المعيقلي \n'
-            quran_menu += '3- عبدالله الموسى \n'
-            quran_menu += '4- علي جابر \n'
-            quran_menu += '5- عبدالرحمن السديس \n'
-            quran_menu += '6- خالد الجليل \n\n\n'
+            quran_menu += '1- عبدالباسط عبدالصمد \n'
+            quran_menu += '2- عبدالله الكندري \n'
+            quran_menu += '3- عبدالله المطرود \n'
+            quran_menu += '4- عبدالرحمن العوسي \n'
+            quran_menu += '5- شيخ أبو بكر الشاطري \n'
+            quran_menu += '6- فارس عباد \n'
+            quran_menu += '7- إدريس أبكر \n'
+            quran_menu += '8- خالد الجليل \n'
+            quran_menu += '9- ماهر المعيقلي \n'
+            quran_menu += '10- محمود علي البنا \n'
+            quran_menu += '11- محمود خليل الحصري \n'
+            quran_menu += '12- محمد صديق المنشاوي \n'
+            quran_menu += '13- محمد اللحيدان \n'
+            quran_menu += '14- ناصر القطامي \n'
+            quran_menu += '15- سعد الغامدي \n'
+            quran_menu += '16- صلاح بو خاطر \n'
+            quran_menu += '17- وديع اليمني \n'
+            quran_menu += '18- ياسر الدوسري \n\n\n'
             quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, from, { text: message }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, from, { text: quran_menu }, { quoted: id }).catch((error) => Error(error));
 
         }
 
