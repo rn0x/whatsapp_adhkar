@@ -1,12 +1,12 @@
 const returnMenu = require('../lib/returnMenu.js');
 const Error = require('../lib/error.js');
-const fs = require('fs');
+
 
 const abdullah_mtrod = {
 
     async exec({ from, client, body, id }) {
 
-        if (body === 'الفاتحة' || body === '1' || body === '١') {
+        if (body === 'الفاتحة'|| body === '1' || body === '١' ) { 
 
             let message = 'إسم السورة بالعربي: الفاتحة \n'
             message += 'إسم السورة بالإنجليزي: The Opening \n'
@@ -17,11 +17,12 @@ const abdullah_mtrod = {
             message += 'مكان النزول: مكية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/001.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/001.mp3" }, fileName: '001.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+            
+        
         }
 
-        else if (body === 'البقرة' || body === '2' || body === '٢') {
+        else if (body === 'البقرة' || body === '2' || body === '٢') { 
 
             let message = 'إسم السورة بالعربي: البقرة \n'
             message += 'إسم السورة بالإنجليزي: The Cow \n'
@@ -32,11 +33,11 @@ const abdullah_mtrod = {
             message += 'مكان النزول: مدنية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, fileName: '002.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
-        else if (body === 'آل عمران' || body === '3' || body === '٣') {
+        else if (body === 'آل عمران' || body === '3' || body === '٣' ) {
 
             let message = 'إسم السورة بالعربي: آل عمران \n'
             message += 'إسم السورة بالإنجليزي: The Family of Imraan \n'
@@ -47,8 +48,8 @@ const abdullah_mtrod = {
             message += 'مكان النزول: مدنية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/003.mp3" }, fileName: '003.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النساء' || body === '4' || body === '٤') {
@@ -62,8 +63,8 @@ const abdullah_mtrod = {
             message += 'مكان النزول: مدنية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/004.mp3" }, fileName: '004.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المائدة' || body === '5' || body === '٥') {
@@ -75,10 +76,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 2837 \n'
             message += 'عدد الحروف: 11892 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/005.mp3" }, fileName: '005.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الأنعام' || body === '6' || body === '٦') {
@@ -90,13 +91,13 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 3055 \n'
             message += 'عدد الحروف: 12418 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/006.mp3" }, fileName: '006.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
-        else if (body === 'الأعراف' || body === '7' || body === '٧') {
+        else if (body === 'الأعراف' || body === '7'|| body === '٧') {
 
             let message = 'إسم السورة بالعربي: الأعراف \n'
             message += 'إسم السورة بالإنجليزي: The Heights \n'
@@ -105,10 +106,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 3344 \n'
             message += 'عدد الحروف: 14071 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/007.mp3" }, fileName: '007.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الأنفال' || body === '8' || body === '٨') {
@@ -120,10 +121,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1243 \n'
             message += 'عدد الحروف: 5299 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/008.mp3" }, fileName: '008.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'التوبة' || body === '9' || body === '٩') {
@@ -135,10 +136,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 2506 \n'
             message += 'عدد الحروف: 10873 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/009.mp3" }, fileName: '009.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'يونس' || body === '10' || body === '١٠') {
@@ -150,10 +151,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1841 \n'
             message += 'عدد الحروف: 7425 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/010.mp3" }, fileName: '010.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'هود' || body === '11' || body === '١١') {
@@ -165,10 +166,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1947 \n'
             message += 'عدد الحروف: 7633 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/011.mp3" }, fileName: '011.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'يوسف' || body === '12' || body === '١٢') {
@@ -180,10 +181,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1795 \n'
             message += 'عدد الحروف: 7125 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/012.mp3" }, fileName: '012.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الرعد' || body === '13' || body === '١٣') {
@@ -195,10 +196,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 854 \n'
             message += 'عدد الحروف: 3450 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/013.mp3" }, fileName: '013.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'إبراهيم' || body === '14' || body === '١٤') {
@@ -210,10 +211,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 831 \n'
             message += 'عدد الحروف: 3461 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/014.mp3" }, fileName: '014.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الحجر' || body === '15' || body === '١٥') {
@@ -225,10 +226,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 658 \n'
             message += 'عدد الحروف: 2797 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/015.mp3" }, fileName: '015.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النحل' || body === '16' || body === '١٦') {
@@ -240,10 +241,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1845 \n'
             message += 'عدد الحروف: 7642 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/016.mp3" }, fileName: '016.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الإسراء' || body === '17' || body === '١٧') {
@@ -255,10 +256,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1559 \n'
             message += 'عدد الحروف: 6480 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/017.mp3" }, fileName: '017.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الكهف' || body === '18' || body === '١٩') {
@@ -270,10 +271,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1583 \n'
             message += 'عدد الحروف: 6425 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/018.mp3" }, fileName: '018.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
         else if (body === 'مريم' || body === '19' || body === '١٩') {
 
@@ -284,10 +285,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 972 \n'
             message += 'عدد الحروف: 3835 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/019.mp3" }, fileName: '019.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'طه' || body === '20' || body === '٢٠') {
@@ -299,10 +300,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1354 \n'
             message += 'عدد الحروف: 5288 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/020.mp3" }, fileName: '020.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الأنبياء' || body === '21' || body === '٢١') {
@@ -314,10 +315,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1174 \n'
             message += 'عدد الحروف: 4925 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/021.mp3" }, fileName: '021.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الحج' || body === '22' || body === '٢٢') {
@@ -329,10 +330,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1279 \n'
             message += 'عدد الحروف: 5196 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/022.mp3" }, fileName: '022.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المؤمنون' || body === '23' || body === '٢٣') {
@@ -344,10 +345,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1840 \n'
             message += 'عدد الحروف: 4802 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/023.mp3" }, fileName: '023.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النور' || body === '24' || body === '٢٤') {
@@ -358,10 +359,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 64 \n'
             message += 'عدد الكلمات: 1317 \n'
             message += 'عدد الحروف: 5596 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/024.mp3" }, fileName: '024.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الفرقان' || body === '25' || body === '٢٥') {
@@ -372,10 +373,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 77 \n'
             message += 'عدد الكلمات: 896 \n'
             message += 'عدد الحروف: 3786 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/025.mp3" }, fileName: '025.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الشعراء' || body === '26' || body === '٢٦') {
@@ -387,10 +388,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1322 \n'
             message += 'عدد الحروف: 5517 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/026.mp3" }, fileName: '026.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النمل' || body === '27' || body === '٢٧') {
@@ -402,10 +403,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1165 \n'
             message += 'عدد الحروف: 4679 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/027.mp3" }, fileName: '027.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'القصص' || body === '28' || body === '٢٨') {
@@ -417,10 +418,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1441 \n'
             message += 'عدد الحروف: 5791 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/028.mp3" }, fileName: '028.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'العنكبوت' || body === '29' || body === '٢٩') {
@@ -431,10 +432,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 69 \n'
             message += 'عدد الكلمات: 982 \n'
             message += 'عدد الحروف: 4200 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/029.mp3" }, fileName: '029.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الروم' || body === '30' || body === '٣٠') {
@@ -446,10 +447,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 819 \n'
             message += 'عدد الحروف: 3388 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/030.mp3" }, fileName: '030.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'لقمان' || body === '31' || body === '٣١') {
@@ -461,10 +462,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 550 \n'
             message += 'عدد الحروف: 2121 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/031.mp3" }, fileName: '031.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'السجدة' || body === '32' || body === '٣٢') {
@@ -475,10 +476,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 30 \n'
             message += 'عدد الكلمات: 374 \n'
             message += 'عدد الحروف: 1523 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/032.mp3" }, fileName: '032.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الأحزاب' || body === '33' || body === '٣٣') {
@@ -490,10 +491,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1303 \n'
             message += 'عدد الحروف: 5618 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/033.mp3" }, fileName: '033.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'سبأ' || body === '34' || body === '٣٤') {
@@ -505,10 +506,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 884 \n'
             message += 'عدد الحروف: 3510 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/034.mp3" }, fileName: '034.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'فاطر' || body === '35' || body === '٣٥') {
@@ -520,10 +521,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 780 \n'
             message += 'عدد الحروف: 3159 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/035.mp3" }, fileName: '035.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'يس' || body === '36' || body === '٣٦') {
@@ -535,10 +536,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 733 \n'
             message += 'عدد الحروف: 2988 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/036.mp3" }, fileName: '036.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الصافات' || body === '37' || body === '٣٧') {
@@ -550,10 +551,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 865 \n'
             message += 'عدد الحروف: 3790 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/037.mp3" }, fileName: '037.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'ص' || body === '38' || body === '٣٨') {
@@ -565,10 +566,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 735 \n'
             message += 'عدد الحروف: 2991 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/038.mp3" }, fileName: '038.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الزمر' || body === '39' || body === '٣٩') {
@@ -580,10 +581,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1177 \n'
             message += 'عدد الحروف: 4741 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/039.mp3" }, fileName: '039.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'غافر' || body === '40' || body === '٤٠') {
@@ -595,10 +596,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 1228 \n'
             message += 'عدد الحروف: 4984 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/040.mp3" }, fileName: '040.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'فصلت' || body === '41' || body === '٤١') {
@@ -610,10 +611,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 796 \n'
             message += 'عدد الحروف: 3282 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/041.mp3" }, fileName: '041.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الشورى' || body === '42' || body === '٤٢') {
@@ -625,10 +626,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 860 \n'
             message += 'عدد الحروف: 3431 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/042.mp3" }, fileName: '042.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الزخرف' || body === '43' || body === '٤٣') {
@@ -640,10 +641,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 825 \n'
             message += 'عدد الحروف: 3703 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/043.mp3" }, fileName: '043.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الدخان' || body === '44' || body === '٤٤') {
@@ -655,10 +656,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 346 \n'
             message += 'عدد الحروف: 1439 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/044.mp3" }, fileName: '044.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الجاثية' || body === '45' || body === '٤٥') {
@@ -670,10 +671,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 488 \n'
             message += 'عدد الحروف: 2014 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/045.mp3" }, fileName: '045.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الأحقاف' || body === '46' || body === '٤٦') {
@@ -685,10 +686,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 646 \n'
             message += 'عدد الحروف: 2602 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/046.mp3" }, fileName: '046.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'محمد' || body === '47' || body === '٤٧') {
@@ -700,10 +701,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 542 \n'
             message += 'عدد الحروف: 2360 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/047.mp3" }, fileName: '047.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الفتح' || body === '48' || body === '٤٨') {
@@ -715,10 +716,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 560 \n'
             message += 'عدد الحروف: 2456 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/048.mp3" }, fileName: '048.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الحجرات' || body === '49' || body === '٤٩') {
@@ -730,10 +731,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 353 \n'
             message += 'عدد الحروف: 1493 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/049.mp3" }, fileName: '049.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
 
@@ -746,10 +747,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 373 \n'
             message += 'عدد الحروف: 1473 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/050.mp3" }, fileName: '050.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الذاريات' || body === '51' || body === '٥١') {
@@ -761,10 +762,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 360 \n'
             message += 'عدد الحروف: 1510 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/051.mp3" }, fileName: '051.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الطور' || body === '52' || body === '٥٢') {
@@ -776,10 +777,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 312 \n'
             message += 'عدد الحروف: 1293 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/052.mp3" }, fileName: '052.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النجم' || body === '53' || body === '٥٣') {
@@ -791,10 +792,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 359 \n'
             message += 'عدد الحروف: 1405 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/053.mp3" }, fileName: '053.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'القمر' || body === '54' || body === '٥٤') {
@@ -806,10 +807,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 342 \n'
             message += 'عدد الحروف: 1438 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/054.mp3" }, fileName: '054.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الرحمن' || body === '55' || body === '٥٥') {
@@ -821,10 +822,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 352 \n'
             message += 'عدد الحروف: 1585 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/055.mp3" }, fileName: '055.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الواقعة' || body === '56' || body === '٥٦') {
@@ -836,10 +837,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 379 \n'
             message += 'عدد الحروف: 1692 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/056.mp3" }, fileName: '056.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الحديد' || body === '57' || body === '٥٧') {
@@ -851,10 +852,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 575 \n'
             message += 'عدد الحروف: 2475 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/057.mp3" }, fileName: '057.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المجادلة' || body === '58' || body === '٥٨') {
@@ -866,10 +867,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 475 \n'
             message += 'عدد الحروف: 1991 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/058.mp3" }, fileName: '058.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الحشر' || body === '59' || body === '٥٩') {
@@ -881,10 +882,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 447 \n'
             message += 'عدد الحروف: 1913 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/059.mp3" }, fileName: '059.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الممتحنة' || body === '60' || body === '٦٠') {
@@ -896,10 +897,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 352 \n'
             message += 'عدد الحروف: 1519 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/060.mp3" }, fileName: '060.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الصف' || body === '61' || body === '٦١') {
@@ -911,10 +912,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 226 \n'
             message += 'عدد الحروف: 936 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/061.mp3" }, fileName: '061.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الجمعة' || body === '62' || body === '٦٢') {
@@ -926,10 +927,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 177 \n'
             message += 'عدد الحروف: 749 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/062.mp3" }, fileName: '062.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المنافقون' || body === '63' || body === '٦٣') {
@@ -941,10 +942,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 180 \n'
             message += 'عدد الحروف: 780 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/063.mp3" }, fileName: '063.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'التغابن' || body === '64' || body === '٦٤') {
@@ -956,10 +957,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 242 \n'
             message += 'عدد الحروف: 1066 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/064.mp3" }, fileName: '064.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الطلاق' || body === '65' || body === '٦٥') {
@@ -971,10 +972,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 279 \n'
             message += 'عدد الحروف: 1170 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/065.mp3" }, fileName: '065.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'التحريم' || body === '66' || body === '٦٦') {
@@ -986,10 +987,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 254 \n'
             message += 'عدد الحروف: 1067 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/066.mp3" }, fileName: '066.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الملك' || body === '67' || body === '٦٧') {
@@ -1001,10 +1002,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 337 \n'
             message += 'عدد الحروف: 1316 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/067.mp3" }, fileName: '067.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'القلم' || body === '68' || body === '٦٨') {
@@ -1016,10 +1017,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 301 \n'
             message += 'عدد الحروف: 1258 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/068.mp3" }, fileName: '068.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الحاقة' || body === '69' || body === '٦٩') {
@@ -1030,10 +1031,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 52 \n'
             message += 'عدد الكلمات: 261 \n'
             message += 'عدد الحروف: 1107 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/069.mp3" }, fileName: '069.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المعارج' || body === '70' || body === '٧٠') {
@@ -1045,10 +1046,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 217 \n'
             message += 'عدد الحروف: 947 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/070.mp3" }, fileName: '070.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'نوح' || body === '71' || body === '٧١') {
@@ -1060,10 +1061,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 227 \n'
             message += 'عدد الحروف: 950 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/071.mp3" }, fileName: '071.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الجن' || body === '72' || body === '٧٢') {
@@ -1075,10 +1076,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 286 \n'
             message += 'عدد الحروف: 1089 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/072.mp3" }, fileName: '072.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المزمل' || body === '73' || body === '٧٣') {
@@ -1090,10 +1091,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 200 \n'
             message += 'عدد الحروف: 840 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/073.mp3" }, fileName: '073.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المدثر' || body === '74' || body === '٧٤') {
@@ -1105,10 +1106,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 256 \n'
             message += 'عدد الحروف: 1015 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/074.mp3" }, fileName: '074.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'القيامة' || body === '75' || body === '٧٥') {
@@ -1120,10 +1121,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 164 \n'
             message += 'عدد الحروف: 664 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/075.mp3" }, fileName: '075.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الإنسان' || body === '76' || body === '٧٦') {
@@ -1135,10 +1136,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 243 \n'
             message += 'عدد الحروف: 1165 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/076.mp3" }, fileName: '076.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المرسلات' || body === '77' || body === '٧٧') {
@@ -1150,10 +1151,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 181 \n'
             message += 'عدد الحروف: 815 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/077.mp3" }, fileName: '077.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النبأ' || body === '78' || body === '٧٨') {
@@ -1165,10 +1166,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 174 \n'
             message += 'عدد الحروف: 766 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/078.mp3" }, fileName: '078.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النازعات' || body === '79' || body === '٧٩') {
@@ -1180,10 +1181,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 179 \n'
             message += 'عدد الحروف: 762 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/079.mp3" }, fileName: '079.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'عبس' || body === '80' || body === '٨٠') {
@@ -1195,10 +1196,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 133 \n'
             message += 'عدد الحروف: 538 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/080.mp3" }, fileName: '080.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'التكوير' || body === '81' || body === '٨١') {
@@ -1210,10 +1211,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 104 \n'
             message += 'عدد الحروف: 425 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/081.mp3" }, fileName: '081.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الانفطار' || body === '82' || body === '٨٢') {
@@ -1225,10 +1226,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 81 \n'
             message += 'عدد الحروف: 326 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/082.mp3" }, fileName: '082.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المطففين' || body === '83' || body === '٨٣') {
@@ -1240,10 +1241,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 169 \n'
             message += 'عدد الحروف: 740 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/083.mp3" }, fileName: '083.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الانشقاق' || body === '84' || body === '٨٤') {
@@ -1255,10 +1256,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 108 \n'
             message += 'عدد الحروف: 436 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/084.mp3" }, fileName: '084.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'البروج' || body === '85' || body === '٨٥') {
@@ -1270,10 +1271,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 109 \n'
             message += 'عدد الحروف: 459 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/085.mp3" }, fileName: '085.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الطارق' || body === '86' || body === '٨٦') {
@@ -1285,10 +1286,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 61 \n'
             message += 'عدد الحروف: 249 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/086.mp3" }, fileName: '086.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الأعلى' || body === '87' || body === '٨٧') {
@@ -1300,10 +1301,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 72 \n'
             message += 'عدد الحروف: 293 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/087.mp3" }, fileName: '087.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الغاشية' || body === '88' || body === '٨٨') {
@@ -1315,10 +1316,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 92 \n'
             message += 'عدد الحروف: 378 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/088.mp3" }, fileName: '088.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الفجر' || body === '89' || body === '٨٩') {
@@ -1330,10 +1331,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 139 \n'
             message += 'عدد الحروف: 573 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/089.mp3" }, fileName: '089.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'البلد' || body === '90' || body === '٩٠') {
@@ -1344,10 +1345,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 20 \n'
             message += 'عدد الكلمات: 82 \n'
             message += 'عدد الحروف: 335 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/090.mp3" }, fileName: '090.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الشمس' || body === '91' || body === '٩١') {
@@ -1359,10 +1360,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 54 \n'
             message += 'عدد الحروف: 249 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/091.mp3" }, fileName: '091.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الليل' || body === '92' || body === '٩٢') {
@@ -1374,10 +1375,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 71 \n'
             message += 'عدد الحروف: 312 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/092.mp3" }, fileName: '092.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الضحى' || body === '93' || body === '٩٣') {
@@ -1389,10 +1390,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 40 \n'
             message += 'عدد الحروف: 164 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/093.mp3" }, fileName: '093.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الشرح' || body === '94' || body === '٩٤') {
@@ -1404,10 +1405,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 27 \n'
             message += 'عدد الحروف: 102 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/094.mp3" }, fileName: '094.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'التين' || body === '95' || body === '٩٥') {
@@ -1419,10 +1420,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 34 \n'
             message += 'عدد الحروف: 156 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/095.mp3" }, fileName: '095.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'العلق' || body === '96' || body === '٩٦') {
@@ -1434,10 +1435,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 72 \n'
             message += 'عدد الحروف: 281 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/096.mp3" }, fileName: '096.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'القدر' || body === '97' || body === '٩٧') {
@@ -1449,10 +1450,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 30 \n'
             message += 'عدد الحروف: 112 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/097.mp3" }, fileName: '097.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'البينة' || body === '98' || body === '٩٨') {
@@ -1464,10 +1465,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 94 \n'
             message += 'عدد الحروف: 412 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/098.mp3" }, fileName: '098.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الزلزلة' || body === '99' || body === '٩٩') {
@@ -1479,10 +1480,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 36 \n'
             message += 'عدد الحروف: 156 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/099.mp3" }, fileName: '099.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'العاديات' || body === '100' || body === '١٠٠') {
@@ -1494,10 +1495,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 40 \n'
             message += 'عدد الحروف: 164 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/100.mp3" }, fileName: '100.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
         else if (body === 'القارعة' || body === '101' || body === '١٠١') {
 
@@ -1507,10 +1508,10 @@ const abdullah_mtrod = {
             message += 'عدد الآيات: 11 \n'
             message += 'عدد الكلمات: 36 \n'
             message += 'عدد الحروف: 158 \n'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/101.mp3" }, fileName: '101.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'التكاثر' || body === '102' || body === '١٠٢') {
@@ -1522,10 +1523,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 28 \n'
             message += 'عدد الحروف: 122 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/102.mp3" }, fileName: '102.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'العصر' || body === '103' || body === '١٠٣') {
@@ -1537,10 +1538,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 14 \n'
             message += 'عدد الحروف: 70 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/103.mp3" }, fileName: '103.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الهمزة' || body === '104' || body === '١٠٤') {
@@ -1552,10 +1553,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 33 \n'
             message += 'عدد الحروف: 133 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/104.mp3" }, fileName: '104.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الفيل' || body === '105' || body === '١٠٥') {
@@ -1567,10 +1568,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 23 \n'
             message += 'عدد الحروف: 96 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/105.mp3" }, fileName: '105.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'قريش' || body === '106' || body === '١٠٦') {
@@ -1582,10 +1583,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 17 \n'
             message += 'عدد الحروف: 73 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/106.mp3" }, fileName: '106.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الماعون' || body === '107' || body === '١٠٧') {
@@ -1597,10 +1598,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 25 \n'
             message += 'عدد الحروف: 112 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/107.mp3" }, fileName: '107.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الكوثر' || body === '108' || body === '١٠٨') {
@@ -1612,10 +1613,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 10 \n'
             message += 'عدد الحروف: 42 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/108.mp3" }, fileName: '108.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الكافرون' || body === '109' || body === '١٠٩') {
@@ -1627,10 +1628,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 27 \n'
             message += 'عدد الحروف: 95 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/109.mp3" }, fileName: '109.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'النصر' || body === '110' || body === '١١٠') {
@@ -1642,10 +1643,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 19 \n'
             message += 'عدد الحروف: 79 \n'
             message += 'مكان النزول: مدنية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/110.mp3" }, fileName: '110.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'المسد' || body === '111' || body === '١١١') {
@@ -1657,10 +1658,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 29 \n'
             message += 'عدد الحروف: 81 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/111.mp3" }, fileName: '111.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الإخلاص' || body === '112' || body === '١١٢') {
@@ -1672,10 +1673,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 15 \n'
             message += 'عدد الحروف: 47 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/112.mp3" }, fileName: '112.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الفلق' || body === '113' || body === '١١٣') {
@@ -1687,10 +1688,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 23 \n'
             message += 'عدد الحروف: 71 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/113.mp3" }, fileName: '113.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+        
         }
 
         else if (body === 'الناس' || body === '114' || body === '١١٤') {
@@ -1702,10 +1703,10 @@ const abdullah_mtrod = {
             message += 'عدد الكلمات: 20 \n'
             message += 'عدد الحروف: 80 \n'
             message += 'مكان النزول: مكية'
-
+        
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server8.mp3quran.net/mtrod/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
-
+            await client.sendMessage(from, { document: { url: "http://server8.mp3quran.net/mtrod/114.mp3" }, fileName: '114.mp3', mimetype: 'audio/mp4', ptt: false }, { quoted: id }).catch((error) => Error(error));
+        
         }
 
 
@@ -1715,27 +1716,15 @@ const abdullah_mtrod = {
             returnMenu(from, 1)
 
             let quran_menu = 'قم بإختيار القارئ 🔊 \n\n'
-            quran_menu += '1- عبدالباسط عبدالصمد \n'
-            quran_menu += '2- عبدالله الكندري \n'
-            quran_menu += '3- عبدالله المطرود \n'
-            quran_menu += '4- عبدالرحمن العوسي \n'
-            quran_menu += '5- شيخ أبو بكر الشاطري \n'
-            quran_menu += '6- فارس عباد \n'
-            quran_menu += '7- إدريس أبكر \n'
-            quran_menu += '8- خالد الجليل \n'
-            quran_menu += '9- ماهر المعيقلي \n'
-            quran_menu += '10- محمود علي البنا \n'
-            quran_menu += '11- محمود خليل الحصري \n'
-            quran_menu += '12- محمد صديق المنشاوي \n'
-            quran_menu += '13- محمد اللحيدان \n'
-            quran_menu += '14- ناصر القطامي \n'
-            quran_menu += '15- سعد الغامدي \n'
-            quran_menu += '16- صلاح بو خاطر \n'
-            quran_menu += '17- وديع اليمني \n'
-            quran_menu += '18- ياسر الدوسري \n\n\n'
+            quran_menu += '1- أدريس أبكر \n'
+            quran_menu += '2- ماهر المعيقلي \n'
+            quran_menu += '3- عبدالله الموسى \n'
+            quran_menu += '4- علي جابر \n'
+            quran_menu += '5- عبدالرحمن السديس \n'
+            quran_menu += '6- خالد الجليل \n\n\n'
             quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, from, { text: quran_menu }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, from, { text: message }, { quoted: id }).catch((error) => Error(error));
 
         }
 

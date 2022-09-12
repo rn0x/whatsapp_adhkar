@@ -1,6 +1,6 @@
 const returnMenu = require('../lib/returnMenu.js');
 const Error = require('../lib/error.js');
-const fs = require('fs');
+
 
 const wdee_alimny = {
 
@@ -17,7 +17,8 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/001.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/001.mp3" }, fileName: '001.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
+            
         
         }
 
@@ -32,7 +33,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, fileName: '002.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -47,7 +48,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/003.mp3" }, fileName: '003.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -62,7 +63,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
 
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/004.mp3" }, fileName: '004.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -77,7 +78,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/005.mp3" }, fileName: '005.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -92,7 +93,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/006.mp3" }, fileName: '006.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -107,7 +108,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/007.mp3" }, fileName: '007.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -122,7 +123,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/008.mp3" }, fileName: '008.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -137,7 +138,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/009.mp3" }, fileName: '009.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -152,7 +153,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/010.mp3" }, fileName: '010.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -167,7 +168,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/011.mp3" }, fileName: '011.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -182,7 +183,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/012.mp3" }, fileName: '012.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -197,7 +198,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/013.mp3" }, fileName: '013.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -212,7 +213,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/014.mp3" }, fileName: '014.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -227,7 +228,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/015.mp3" }, fileName: '015.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -242,7 +243,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/016.mp3" }, fileName: '016.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -257,7 +258,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/017.mp3" }, fileName: '017.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -272,7 +273,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/018.mp3" }, fileName: '018.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
         else if (body === 'مريم' || body === '19' || body === '١٩') {
@@ -286,7 +287,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/019.mp3" }, fileName: '019.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -301,7 +302,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/020.mp3" }, fileName: '020.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -316,7 +317,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/021.mp3" }, fileName: '021.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -331,7 +332,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/022.mp3" }, fileName: '022.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -346,7 +347,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/023.mp3" }, fileName: '023.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -360,7 +361,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 5596 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/024.mp3" }, fileName: '024.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -374,7 +375,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 3786 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/025.mp3" }, fileName: '025.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -389,7 +390,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/026.mp3" }, fileName: '026.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -404,7 +405,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/027.mp3" }, fileName: '027.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -419,7 +420,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/028.mp3" }, fileName: '028.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -433,7 +434,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 4200 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/029.mp3" }, fileName: '029.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -448,7 +449,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/030.mp3" }, fileName: '030.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -463,7 +464,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/031.mp3" }, fileName: '031.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -477,7 +478,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 1523 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/032.mp3" }, fileName: '032.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -492,7 +493,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/033.mp3" }, fileName: '033.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -507,7 +508,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/034.mp3" }, fileName: '034.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -522,7 +523,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/035.mp3" }, fileName: '035.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -537,7 +538,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/036.mp3" }, fileName: '036.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -552,7 +553,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/037.mp3" }, fileName: '037.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -567,7 +568,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/038.mp3" }, fileName: '038.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -582,7 +583,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/039.mp3" }, fileName: '039.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -597,7 +598,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/040.mp3" }, fileName: '040.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -612,7 +613,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/041.mp3" }, fileName: '041.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -627,7 +628,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/042.mp3" }, fileName: '042.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -642,7 +643,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/043.mp3" }, fileName: '043.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -657,7 +658,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/044.mp3" }, fileName: '044.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -672,7 +673,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/045.mp3" }, fileName: '045.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -687,7 +688,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/046.mp3" }, fileName: '046.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -702,7 +703,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/047.mp3" }, fileName: '047.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -717,7 +718,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/048.mp3" }, fileName: '048.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -732,7 +733,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/049.mp3" }, fileName: '049.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -748,7 +749,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/050.mp3" }, fileName: '050.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -763,7 +764,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/051.mp3" }, fileName: '051.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -778,7 +779,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/052.mp3" }, fileName: '052.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -793,7 +794,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/053.mp3" }, fileName: '053.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -808,7 +809,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/054.mp3" }, fileName: '054.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -823,7 +824,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/055.mp3" }, fileName: '055.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -838,7 +839,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/056.mp3" }, fileName: '056.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -853,7 +854,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/057.mp3" }, fileName: '057.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -868,7 +869,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/058.mp3" }, fileName: '058.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -883,7 +884,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/059.mp3" }, fileName: '059.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -898,7 +899,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/060.mp3" }, fileName: '060.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -913,7 +914,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/061.mp3" }, fileName: '061.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -928,7 +929,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/062.mp3" }, fileName: '062.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -943,7 +944,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/063.mp3" }, fileName: '063.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -958,7 +959,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/064.mp3" }, fileName: '064.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -973,7 +974,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/065.mp3" }, fileName: '065.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -988,7 +989,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/066.mp3" }, fileName: '066.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1003,7 +1004,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/067.mp3" }, fileName: '067.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1018,7 +1019,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/068.mp3" }, fileName: '068.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1032,7 +1033,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 1107 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/069.mp3" }, fileName: '069.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1047,7 +1048,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/070.mp3" }, fileName: '070.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1062,7 +1063,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/071.mp3" }, fileName: '071.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1077,7 +1078,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/072.mp3" }, fileName: '072.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1092,7 +1093,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/073.mp3" }, fileName: '073.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1107,7 +1108,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/074.mp3" }, fileName: '074.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1122,7 +1123,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/075.mp3" }, fileName: '075.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1137,7 +1138,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/076.mp3" }, fileName: '076.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1152,7 +1153,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/077.mp3" }, fileName: '077.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1167,7 +1168,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/078.mp3" }, fileName: '078.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1182,7 +1183,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/079.mp3" }, fileName: '079.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1197,7 +1198,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/080.mp3" }, fileName: '080.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1212,7 +1213,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/081.mp3" }, fileName: '081.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1227,7 +1228,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/082.mp3" }, fileName: '082.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1242,7 +1243,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/083.mp3" }, fileName: '083.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1257,7 +1258,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/084.mp3" }, fileName: '084.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1272,7 +1273,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/085.mp3" }, fileName: '085.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1287,7 +1288,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/086.mp3" }, fileName: '086.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1302,7 +1303,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/087.mp3" }, fileName: '087.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1317,7 +1318,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/088.mp3" }, fileName: '088.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1332,7 +1333,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/089.mp3" }, fileName: '089.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1346,7 +1347,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 335 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/090.mp3" }, fileName: '090.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1361,7 +1362,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/091.mp3" }, fileName: '091.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1376,7 +1377,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/092.mp3" }, fileName: '092.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1391,7 +1392,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/093.mp3" }, fileName: '093.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1406,7 +1407,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/094.mp3" }, fileName: '094.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1421,7 +1422,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/095.mp3" }, fileName: '095.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1436,7 +1437,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/096.mp3" }, fileName: '096.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1451,7 +1452,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/097.mp3" }, fileName: '097.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1466,7 +1467,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/098.mp3" }, fileName: '098.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1481,7 +1482,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/099.mp3" }, fileName: '099.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1496,7 +1497,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/100.mp3" }, fileName: '100.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
         else if (body === 'القارعة' || body === '101' || body === '١٠١') {
@@ -1509,7 +1510,7 @@ const wdee_alimny = {
             message += 'عدد الحروف: 158 \n'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/101.mp3" }, fileName: '101.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1524,7 +1525,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/102.mp3" }, fileName: '102.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1539,7 +1540,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/103.mp3" }, fileName: '103.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1554,7 +1555,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/104.mp3" }, fileName: '104.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1569,7 +1570,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/105.mp3" }, fileName: '105.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1584,7 +1585,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/106.mp3" }, fileName: '106.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1599,7 +1600,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/107.mp3" }, fileName: '107.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1614,7 +1615,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/108.mp3" }, fileName: '108.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1629,7 +1630,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/109.mp3" }, fileName: '109.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1644,7 +1645,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مدنية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/110.mp3" }, fileName: '110.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1659,7 +1660,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/111.mp3" }, fileName: '111.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1674,7 +1675,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/112.mp3" }, fileName: '112.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1689,7 +1690,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/113.mp3" }, fileName: '113.mp3', mimetype: 'audio/mp4', ptt: false}, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1704,7 +1705,7 @@ const wdee_alimny = {
             message += 'مكان النزول: مكية'
         
             await client.sendMessage(from, { text: message }, { quoted: id }).catch((error) => Error(error));
-            await client.sendMessage(from, { audio: { url: "http://server6.mp3quran.net/wdee3/002.mp3" }, mimetype: 'audio/mp4', ptt: true }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, { document: { url: "http://server6.mp3quran.net/wdee3/114.mp3" }, fileName: '114.mp3', mimetype: 'audio/mp4', ptt: false }, { quoted: id }).catch((error) => Error(error));
         
         }
 
@@ -1715,27 +1716,15 @@ const wdee_alimny = {
             returnMenu(from, 1)
 
             let quran_menu = 'قم بإختيار القارئ 🔊 \n\n'
-            quran_menu += '1- عبدالباسط عبدالصمد \n'
-            quran_menu += '2- عبدالله الكندري \n'
-            quran_menu += '3- عبدالله المطرود \n'
-            quran_menu += '4- عبدالرحمن العوسي \n'
-            quran_menu += '5- شيخ أبو بكر الشاطري \n'
-            quran_menu += '6- فارس عباد \n'
-            quran_menu += '7- إدريس أبكر \n'
-            quran_menu += '8- خالد الجليل \n'
-            quran_menu += '9- ماهر المعيقلي \n'
-            quran_menu += '10- محمود علي البنا \n'
-            quran_menu += '11- محمود خليل الحصري \n'
-            quran_menu += '12- محمد صديق المنشاوي \n'
-            quran_menu += '13- محمد اللحيدان \n'
-            quran_menu += '14- ناصر القطامي \n'
-            quran_menu += '15- سعد الغامدي \n'
-            quran_menu += '16- صلاح بو خاطر \n'
-            quran_menu += '17- وديع اليمني \n'
-            quran_menu += '18- ياسر الدوسري \n\n\n'
+            quran_menu += '1- أدريس أبكر \n'
+            quran_menu += '2- ماهر المعيقلي \n'
+            quran_menu += '3- عبدالله الموسى \n'
+            quran_menu += '4- علي جابر \n'
+            quran_menu += '5- عبدالرحمن السديس \n'
+            quran_menu += '6- خالد الجليل \n\n\n'
             quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, from, { text: quran_menu }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from, from, { text: message }, { quoted: id }).catch((error) => Error(error));
 
         }
 
