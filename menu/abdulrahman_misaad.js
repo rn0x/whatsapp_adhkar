@@ -1736,7 +1736,7 @@ const abdulrahman_misaad = {
             quran_menu += '18- ياسر الدوسري \n\n\n'
             quran_menu += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
 
-            await client.sendMessage(from, from, { text: quran_menu }, { quoted: id }).catch((error) => Error(error));
+            await client.sendMessage(from ,{ text: quran_menu }, { quoted: id }).catch((error) => Error(error));
 
         }
 
