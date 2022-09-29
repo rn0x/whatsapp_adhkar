@@ -1,41 +1,24 @@
-const returnMenu = require('../lib/returnMenu.js');
-const Error = require('../lib/error.js');
-const fs = require('fs-extra');
+import fs from 'fs-extra';
+import CrateDatabase from '../module/CrateDatabase.js';
 
+export default async function Hi(from, pushname, body, e) {
 
-module.exports = async function Hi(client, body, from, pushname, id) {
+    if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
 
-  if (body === 'hi' || body === 'Hi' || body === 'خدمة' || body === 'خدمه' || body === '#') {
-
-    returnMenu(from, 0);
-
-
-
-    let getallGroups = await client.groupFetchAllParticipating()
-    let number_groups = Object.keys(getallGroups).length;
-    let new_user = fs.readJsonSync('./db/new_user.json')
-    let number_user = new_user.length;
-    let mesg = ` مرحباً بك ${pushname} 👋  \n\n`
-    mesg += 'من فضلك قم بكتابة *رقم* الخدمة ✉️ \n\n\n'
-    mesg += '1- قائمة القرآن الكريم 📖 \n'
-    mesg += '2- قائمة الأذكار 📿 \n'
-    mesg += '3- فيديوهات قرآن عشوائية 🎥 \n'
-    mesg += '4- صورة عشوائية 🖼️ \n'
-    mesg += '5- قائمة الملصقات 🪧 \n'
-    mesg += '6- محاضرات و توعية 🌾 \n'
-    mesg += '7- قائمة القروبات ⚜️ \n'
-    mesg += '8- بطاقات القرآن 🎴 \n'
-    mesg += '9- حصن المسلم 🏰 \n'
-    mesg += '10- التقويم الهجري 📅 \n\n\n\n'
-    mesg += 'إحصائيات البوت \n'
-    mesg += `عدد القروبات : ${number_groups}\n`
-    mesg += `عدد جهات الإتصال : ${number_user}\n\n`
-    mesg += 'بمجرد إضافة البوت لقروبك سيبدأ بنشر الرسائل بشكل تلقائي ⚠️\n\n'
-    mesg += 'يمكنك متابعة البوت على تيليجرام عبر الحساب @adhk2r_bot 🤖\n\n'
-    mesg += 'قروب أذكار المسلم على تيليجرام : https://t.me/tqw24h\n'
-    mesg += 'بوت أذكار على تيليجرام : https://t.me/adhk2r_bot'
-
-    await client.sendMessage(from, { text: mesg }, { quoted: id }).catch((error) => Error(error));
-
-  }
+        await CrateDatabase({ from: from, menu: 'main' });
+        let message = `السلام عليكم ورحمه الله وبركاته \n`
+        message += `${pushname} حياك الله \n\n`
+        message += '▪️ لطلب مادة ما من المواد أدناه كل ما عليك إرسال *رقم* المادة باللغة العربية أو الإنجليزية \n\n'
+        message += '*مثال: 1* \n\n'
+        message += '1- القرآن الكريم \n'
+        message += '2- الباحث القرآني \n'
+        message += '3- الباحث الحديثي \n'
+        message += '4- بطاقات القرآن الكريم (صور مصممة وصوتية) \n'
+        message += '5- صحيح البخاري (صور مصممة) \n'
+        message += '6- حصن المسلم \n'
+        message += '7- التقويم الهجري \n'
+        message += '8- فيديوهات عشوائية'
+        await e.reply(message).catch(e => console.log(e));
+    }
+    
 }

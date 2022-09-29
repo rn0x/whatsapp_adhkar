@@ -1,5 +1,4 @@
 node_modules
 package-lock.json
-db
-session.json
-Hijri_calendar.png
+database
+.wwebjs_auth

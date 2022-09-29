@@ -1,31 +1,32 @@
 {
   "name": "whatsapp_adhkar",
-  "version": "1.2.5",
-  "description": "بوت أذكار للواتساب [ صور , فيديو أذكار , ملصقات , قرآن ]",
+  "version": "2.0.0",
+  "description": "بوت أذكار للواتساب يحتوي على العديد من الخدمات منها القرآن الكريم و الآذكار و الباحث القرآني الخ..",
   "main": "index.js",
-  "type": "commonjs",
-  "author": {
-    "name": "rn0x",
-    "email": "rn0xx711@gmail.com",
-    "url": "https://github.com/rn0x"
-  },
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
+  "author": {
+    "name": "rn0x",
+    "url": "https://github.com/rn0x"
+  },
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys": "^4.3.0",
-    "@adiwajshing/keyed-db": "^0.2.4",
-    "@hapi/boom": "^10.0.0",
     "fs-extra": "^10.1.0",
+    "html-to-text": "^8.2.1",
     "moment-hijri": "^2.1.2",
-    "moment-timezone": "^0.5.34",
-    "pino": "^8.1.0",
+    "node-fetch": "^3.2.10",
     "puppeteer": "^17.1.3",
     "qrcode-terminal": "^0.12.0",
-    "wa-sticker-formatter": "^4.3.2"
+    "whatsapp-web.js": "^1.17.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/html-to-text": "^8.1.1",
+    "@types/moment-hijri": "^2.1.0",
+    "@types/qrcode-terminal": "^0.12.0"
   },
   "repository": {
     "type": "git",
@@ -34,8 +35,5 @@
   "bugs": {
     "url": "https://github.com/rn0x/whatsapp_adhkar/issues"
   },
-  "homepage": "https://github.com/rn0x/whatsapp_adhkar#readme",
-  "devDependencies": {
-    "@types/fs-extra": "^9.0.13"
-  }
+  "homepage": "https://github.com/rn0x/whatsapp_adhkar#readme"
 }
