@@ -57,8 +57,8 @@ export default async function scheduling_messages(client, MessageMedia) {
                         message += `${item?.text}\n\n_________\n\n`
 
                     }
-                    await client.sendMessage(item, file, { sendMediaAsDocument: false }).catch(error => console.log(error));
                     await client.sendMessage(item, message);
+                    await client.sendMessage(item, file, { sendMediaAsDocument: false }).catch(error => console.log(error));
                 }
 
             }
