@@ -21,13 +21,22 @@
 - إرسال رسائل مجدولة لجميع القروبات المنظم لها (قرآن كريم , أذكار ,فيديوهات عشوائية , تذكير الجمعة)
 
 <br><br>
+**رابط تجربة البوت** 
+- https://api.whatsapp.com/send/?phone=966582585889&text=خدمة
 
+# متطلبات التشغيل 
+
+- git
+- nodejs 16 ^
+- Google Chrome 
 
 # طريقة التثبيت لـ (Linux)
+
 
 ```bash
    > sudo apt-get install nodejs
    > sudo apt-get install git
+   > sudo apt-get install google-chrome-stable
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
@@ -52,6 +61,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```bash
    > choco install nodejs.install
    > choco install git
+   > choco install googlechrome
    > git clone https://github.com/rn0x/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
