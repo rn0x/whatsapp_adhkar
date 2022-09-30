@@ -13,6 +13,14 @@ async function whatsapp_adhkar() {
 
     try {
 
+        let folder_database = fs.existsSync('./database');
+
+        if (folder_database === false) {
+
+            fs.mkdirSync('./database'); // إنشاء مجلد قاعدة البيانات اذ لم يكن موجود
+
+        }
+
         console.log('Starting Whatsapp Adhkar :', moment_hijri().locale('en-EN').format('LT'));
 
         const { Client, Location, List, Buttons, LocalAuth, MessageMedia } = whatsapp;
@@ -98,7 +106,7 @@ async function whatsapp_adhkar() {
 
             await client.sendSeen(from);
             console.log(`${from} - ${mimetype ? mimetype : 'message'}`);
-            
+
 
         });
 
@@ -116,7 +124,7 @@ async function whatsapp_adhkar() {
             if (recipientIds?.includes(me)) {
 
                 await CrateDatabase({ from: chatId, pushname: pushname, number: number, isGroup: isGroup });
-                
+
             }
 
         });
