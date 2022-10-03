@@ -9,7 +9,7 @@ export default {
         let mp3quran = fs.readJsonSync('./files/json/mp3quran.json');
         let adhkar = fs.readJsonSync('./files/json/adhkar.json');
 
-        if (body === '1' || body === '1'.toLocaleString('ar-EG')) {
+        if (body === '1' || body === Number('1').toLocaleString('ar-EG')) {
 
             await CrateDatabase({ from: from, menu: 'quran' });
             let message = '*قم بإرسال رقم القارئ 🔊* \n\n'
@@ -25,21 +25,21 @@ export default {
 
         }
 
-        else if (body === '2' || body === '2'.toLocaleString('ar-EG')) {
+        else if (body === '2' || body === Number('2').toLocaleString('ar-EG')) {
             await CrateDatabase({ from: from, menu: 'searchQuran' });
             let message = 'من فضلك قم بإرسال الكلمة للبحث عنها في الآيات وعرض تفسيرها \n\n\n'
             message += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
             await e.reply(message).catch(e => console.log(e));
         }
 
-        else if (body === '3' || body === '3'.toLocaleString('ar-EG')) {
+        else if (body === '3' || body === Number('3').toLocaleString('ar-EG')) {
             await CrateDatabase({ from: from, menu: 'searchHadith' });
             let message = 'من فضلك قم بإرسال الكلمة للبحث عن الحديث و عرض الراوي و المحدث و المصدر و خلاصة حكم المحدث \n\n\n'
             message += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
             await e.reply(message).catch(e => console.log(e));
         }
 
-        else if (body === '4' || body === '4'.toLocaleString('ar-EG')) {
+        else if (body === '4' || body === Number('4').toLocaleString('ar-EG')) {
             await CrateDatabase({ from: from, menu: 'albitaqat' });
             let message = 'للحصول على البطاقة قم بإرسال رقم السورة او إسمها\n'
             message += 'مثال 18 او الكهف \n\n'
@@ -47,7 +47,7 @@ export default {
             await e.reply(message).catch(e => console.log(e));
         }
 
-        else if (body === '5' || body === '5'.toLocaleString('ar-EG')) {
+        else if (body === '5' || body === Number('5').toLocaleString('ar-EG')) {
 
             let readJson = fs.readJsonSync('./files/json/Sahih_al-Bukhari.json');
             let random = readJson[Math.floor(Math.random() * readJson.length)];
@@ -57,7 +57,7 @@ export default {
         }
 
 
-        else if (body === '6' || body === '6'.toLocaleString('ar-EG')) {
+        else if (body === '6' || body === Number('6').toLocaleString('ar-EG')) {
 
             await CrateDatabase({ from: from, menu: 'adhkar' });
             let message = 'قم بإرسال رقم الفئة ⬇️ \n\n'
@@ -72,7 +72,7 @@ export default {
             await e.reply(message).catch(e => console.log(e));
         }
 
-        else if (body === '7' || body === '7'.toLocaleString('ar-EG')) {
+        else if (body === '7' || body === Number('7').toLocaleString('ar-EG')) {
 
             let adhkar = fs.readJsonSync('./files/json/adhkar.json');
             let random = adhkar[Math.floor(Math.random() * adhkar.length)];
@@ -93,7 +93,7 @@ export default {
 
         }
 
-        else if (body === '8' || body === '8'.toLocaleString('ar-EG')) {
+        else if (body === '8' || body === Number('8').toLocaleString('ar-EG')) {
 
             let readJson = fs.readJsonSync('./files/json/video.json');
             let random = readJson[Math.floor(Math.random() * readJson.length)];
