@@ -8,7 +8,7 @@ export default {
 
         albitaqat.forEach(async element => {
 
-            if (body === String(element?.id) || body === String(element?.id?.toLocaleString('ar-EG'))) {
+            if (body === String(element?.id) || body === String(element?.id?.toLocaleString('ar-EG') || body === element?.surah)) {
 
                 let num = 1
                 let num2 = 1
