@@ -32,9 +32,9 @@ export default async function getUnreadMessages(client, MessageMedia) {
                         let mimetype = download?.mimetype;
                         let data = download?.data;
                         let filename = download?.filename;
-                        await CrateDatabase({ from: isGroup ? chatId : from, pushname: pushname, number: number, isGroup: isGroup });
+                        await CrateDatabase({ from: isGroup ? chatId : from, pushname: pushname, number: number, isGroup: isGroup }).catch(error => console.log(error));
                         await Hi(from, pushname, body, item2);
-                        let GetMenu = await getMenu(from);
+                        let GetMenu = await getMenu(from).catch(error => console.log(error));
                         await menu[GetMenu]?.module?.exec({
                             from: from,
                             pushname: pushname,

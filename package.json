@@ -1,6 +1,6 @@
 {
   "name": "whatsapp_adhkar",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "بوت أذكار للواتساب يحتوي على العديد من الخدمات منها القرآن الكريم و الآذكار و الباحث القرآني الخ..",
   "main": "index.js",
   "type": "module",

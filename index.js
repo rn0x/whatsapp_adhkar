@@ -68,7 +68,7 @@ async function whatsapp_adhkar() {
             let chat = await e?.getChat();
             let contact = await e?.getContact();
             let download = await e?.downloadMedia();
-            let quotedMsg = await e.getQuotedMessage();
+            let quotedMsg = await e?.getQuotedMessage()
             let body = e?.body;
             let message_type = e?.type;
             let from = e?.from;
@@ -79,11 +79,11 @@ async function whatsapp_adhkar() {
             let pushname = isGroup ? chat?.name : contact?.pushname;
             let number = isGroup ? chat?.id?.user : contact?.number;
             let mimetype = download?.mimetype;
-            let data = download?.data;
+            let data = download?.data; 
             let filename = download?.filename;
-            await CrateDatabase({ from: isGroup ? chatId : from, pushname: pushname, number: number, isGroup: isGroup });
+            await CrateDatabase({ from: isGroup ? chatId : from, pushname: pushname, number: number, isGroup: isGroup }).catch(error => console.log(error));
             await Hi(from, pushname, body, e);
-            let GetMenu = await getMenu(from);
+            let GetMenu = await getMenu(from).catch(error => console.log(error));
             await menu[GetMenu]?.module?.exec({
                 from: from,
                 pushname: pushname,
@@ -123,7 +123,7 @@ async function whatsapp_adhkar() {
 
             if (recipientIds?.includes(me)) {
 
-                await CrateDatabase({ from: chatId, pushname: pushname, number: number, isGroup: isGroup });
+                await CrateDatabase({ from: chatId, pushname: pushname, number: number, isGroup: isGroup }).catch(error => console.log(error));
 
             }
 
@@ -155,8 +155,11 @@ async function whatsapp_adhkar() {
             console.log('CHANGE STATE', state);
         });
 
-        client.on('disconnected', (reason) => {
+        client.on('disconnected',async (reason) => {
             console.log('Whatsapp Adhkar was logged out', reason);
+            await client.destroy();
+            await whatsapp_adhkar();
+
         });
 
         await scheduling_messages(client, MessageMedia);

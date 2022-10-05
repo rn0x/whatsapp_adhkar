@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Vazirmatn_Regular";
+    src        : url(./font/Vazirmatn-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Quran";
+    src        : url(./font/Quran.ttf) format("truetype");
+}
+
+body,
+html {
+    margin: 0 0 0 0;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background: url(./image/2.svg);
+    direction: rtl;
+}
+
+#logo {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#Content{
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 10px;
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow   : 0px 8px 10px 0px rgba(0, 0, 0, 0.082);
+    margin-bottom: 20px;
+}
+
+#quran {
+    text-align: center;
+    font-family: 'Quran';
+    font-size: 25px;
+    color: #0c3b70;
+}
+
+.Content_q {
+    text-align: center;
+    font-family: 'Vazirmatn_Regular';
+    background-color: #d2e3ff;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow   : 0px 8px 10px 0px rgba(0, 0, 0, 0.082);
+    border-radius: 15px;
+    border       : 0.5px;
+    border-style : solid;
+    border-color : #c5c5c5;
+}
+
+#Content_q_en {
+    direction: ltr;
+}
+
+.Content_q_title{
+    color: #0c3b70;
+    font-size: 22px;
+}
+.Content_q_text{
+    color: #222222;
+    font-size: 17px;
+}
+
+
+.bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.bottom p {
+    text-align: left;
+    color: #ffffff;
+    font-family: 'Vazirmatn_Regular';
+    direction: ltr;
+}
