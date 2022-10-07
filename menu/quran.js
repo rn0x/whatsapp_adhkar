@@ -12,7 +12,7 @@ export default {
 
             if (body === String(element?.id) || body === String(element?.id?.toLocaleString('ar-EG'))) {
 
-                await CrateDatabase({ from: from, menu: `q${element?.id}` });
+                await CrateDatabase({ from: from, menu: `q${element?.id}` }).catch(error => console.log(error));
                 let message = 'قم بإرسال إسم السورة او رقمها ✉️ \n\n'
 
                 for (let item of quran) {

@@ -11,7 +11,7 @@ export default {
 
         if (body === '1' || body === Number('1').toLocaleString('ar-EG')) {
 
-            await CrateDatabase({ from: from, menu: 'quran' });
+            await CrateDatabase({ from: from, menu: 'quran' }).catch(error => console.log(error));
             let message = '*قم بإرسال رقم القارئ 🔊* \n\n'
             for (let item of mp3quran) {
 
@@ -26,21 +26,21 @@ export default {
         }
 
         else if (body === '2' || body === Number('2').toLocaleString('ar-EG')) {
-            await CrateDatabase({ from: from, menu: 'searchQuran' });
+            await CrateDatabase({ from: from, menu: 'searchQuran' }).catch(error => console.log(error));
             let message = 'من فضلك قم بإرسال الكلمة للبحث عنها في الآيات وعرض تفسيرها \n\n\n'
             message += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
             await e.reply(message).catch(e => console.log(e));
         }
 
         else if (body === '3' || body === Number('3').toLocaleString('ar-EG')) {
-            await CrateDatabase({ from: from, menu: 'searchHadith' });
+            await CrateDatabase({ from: from, menu: 'searchHadith' }).catch(error => console.log(error));
             let message = 'من فضلك قم بإرسال الكلمة للبحث عن الحديث و عرض الراوي و المحدث و المصدر و خلاصة حكم المحدث \n\n\n'
             message += '\n\n*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
             await e.reply(message).catch(e => console.log(e));
         }
 
         else if (body === '4' || body === Number('4').toLocaleString('ar-EG')) {
-            await CrateDatabase({ from: from, menu: 'albitaqat' });
+            await CrateDatabase({ from: from, menu: 'albitaqat' }).catch(error => console.log(error));
             let message = 'للحصول على البطاقة قم بإرسال رقم السورة او إسمها\n'
             message += 'مثال 18 او الكهف \n\n'
             message += '*【 للرجوع للقائمة الرئيسية أرسل #️ 】*'
@@ -59,7 +59,7 @@ export default {
 
         else if (body === '6' || body === Number('6').toLocaleString('ar-EG')) {
 
-            await CrateDatabase({ from: from, menu: 'adhkar' });
+            await CrateDatabase({ from: from, menu: 'adhkar' }).catch(error => console.log(error));
             let message = 'قم بإرسال رقم الفئة ⬇️ \n\n'
 
             for (let item of adhkar) {

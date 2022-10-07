@@ -10,10 +10,10 @@ export default {
 
             if (body === String(element?.id) || body === String(element?.id?.toLocaleString('ar-EG'))) {
 
-                let message = `${element?.category} 🤲\n\n`
+                let message = ` ـ ❁ …\n\n\n*${element?.category}*\n\n`
                 for (let item of element?.array) {
 
-                    message += `${item?.text}\n\n_________\n\n`
+                    message += `\n\n_________\n\n${item?.text}`
 
                 }
 

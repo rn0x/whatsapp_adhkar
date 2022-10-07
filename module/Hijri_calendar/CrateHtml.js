@@ -24,10 +24,11 @@ export default function CrateHtml(today, Hijri, Gregorian, title, text) {
             <p id="d3a_top">${title}</p>
             <p id="d3a_text">${text}</p>
         </div>
+        
         <div id="bottom">
-            <p id="telegram">Telegram : @tqw24h</p>
-            <img id="logo" src="data:image/png;base64, ${logo.toString('base64')}">
+            <p id="telegram"> </p>
         </div>
+        
     </body>
     </html>`
     return html

@@ -3,7 +3,7 @@ import { convert } from 'html-to-text';
 
 export default async function searchHadith(text) {
 
-    let response = await fetch(`https://dorar.net/dorar_api.json?skey=${text}`, { method: 'GET' });
+    let response = await fetch(`https://dorar.net/dorar_api.json?skey=${text}`, { method: 'GET' }).catch(error => console.log(error));
     let data = await response?.json();
     let html_to_text = convert(data?.ahadith?.result, {
         wordwrap: 130

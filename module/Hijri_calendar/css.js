@@ -73,6 +73,7 @@ export default function css() {
         margin-left: 25px;
         margin-right: 25px;
         margin-top: 20px;
+        margin-bottom: 30px;
         text-align: center;
         padding: 5px;
     }
@@ -93,7 +94,6 @@ export default function css() {
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: baseline;
-        background-color: #c9c9c9;
         margin-top: 50px;
         margin-bottom: 0px;
         padding: 5px;
@@ -111,7 +111,6 @@ export default function css() {
     #telegram{
         margin: auto 0 auto 0;
     }`
-
 
     return code
 

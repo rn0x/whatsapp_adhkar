@@ -39,7 +39,7 @@ export default async function Hijri_calendar(title, text, filename) {
 
     let browser = await launch({
         executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    });
+    }).catch(error => console.log(error));
     let page = await browser.newPage();
     let today = moment_hijri().locale('ar-SA').format('dddd'); // اليوم
     let Hijri = moment_hijri().locale('ar-SA').format('iD iMMMM iYYYY'); // التاريخ الهجري

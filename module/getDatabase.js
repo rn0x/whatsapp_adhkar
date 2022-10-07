@@ -13,7 +13,7 @@ export default async function getDatabase(type) {
 
     for (let item of database) {
 
-        let id = item.split('.json')[0]
+        let id = item?.split('.json')[0]
         let existsSync = fs.existsSync(`./database/${item}`);
 
         if (existsSync) {

@@ -9,7 +9,7 @@ export default async function screenshot({ quran: quran, tafser1: tafser1, tafse
         let __dirname = path.resolve();
         let browser = await launch({
             executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-        });
+        }).catch(error => console.log(error));
         let page = await browser.newPage();
         let html = `file:${path.join(__dirname, './module/searchQuran/index.html')}`;
         await page.goto(html, { waitUntil: 'load' });
