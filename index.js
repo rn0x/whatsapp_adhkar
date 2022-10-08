@@ -63,6 +63,7 @@ async function whatsapp_adhkar() {
 
     client.on('message', async e => {
 
+        if (e?.from === 'status@broadcast') return
         let chat = await e?.getChat().catch(error => console.log(error));
         let contact = await e?.getContact().catch(error => console.log(error));
         let download = await e?.downloadMedia().catch(error => console.log(error));
@@ -104,7 +105,6 @@ async function whatsapp_adhkar() {
 
         await client.sendSeen(from).catch(error => console.log(error));
         console.log(`${from} - ${mimetype ? mimetype : 'message'}`);
-
 
     });
 
@@ -162,7 +162,11 @@ async function whatsapp_adhkar() {
 
     await scheduling_messages(client, MessageMedia).catch(error => console.log(error));
 
-    await client.initialize().catch(error => console.log(error));
+    await client.initialize().catch(async (error) => {
+        console.log('await client.initialize() : ',error)
+        await client.destroy().catch(error => console.log(error));
+        await whatsapp_adhkar().catch(error => console.log(error));
+    });
 
 }
 

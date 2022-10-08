@@ -6,14 +6,16 @@ import menu from './menu.js';
 export default async function getUnreadMessages(client, MessageMedia) {
 
     let getChat = await client.getChats().catch(error => console.log(error));
-    for (let item of getChat) {
+    for (let item of getChat ? getChat : []) {
 
         if (item.unreadCount !== 0) {
 
             let fetchMessages = await item?.fetchMessages({ limit: item.unreadCount }).catch(error => console.log(error));
-            for (let item2 of fetchMessages) {
+
+            for (let item2 of fetchMessages ? fetchMessages : []) {
                 if (item2?.ack === 1) {
                     //console.log(item2?.ack);
+                    if (item2?.from === 'status@broadcast') return
                     let chat = await item2?.getChat().catch(error => console.log(error));
                     let contact = await item2?.getContact().catch(error => console.log(error));
                     let download = await item2?.downloadMedia().catch(error => console.log(error));
