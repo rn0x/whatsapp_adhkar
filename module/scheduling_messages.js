@@ -14,6 +14,7 @@ export default async function scheduling_messages(client, MessageMedia) {
         let time_quran = ["10:00 AM"];
         let time_adhkar = ["10:00 PM"];
         let time_video = ["4:00 PM"];
+        let time_albitaqat = ["1:00 PM"];
 
         if (time_quran.includes(time)) {
 
@@ -68,6 +69,45 @@ export default async function scheduling_messages(client, MessageMedia) {
                 let random = video[Math.floor(Math.random() * video.length)];
                 let file = await MessageMedia.fromUrl(random?.path).catch(e => console.log(e));
                 await client.sendMessage(item, file, { caption: random?.caption }).catch(error => console.log(error));
+            }
+        }
+
+        else if (time_albitaqat.includes(time)) {
+
+            let albitaqatJson = fs.readJsonSync('./files/json/albitaqat.json');
+            for (let item of group) {
+                let random = albitaqatJson[Math.floor(Math.random() * albitaqatJson.length)];
+                let num = 1
+                let num2 = 1
+                let message = `*【 سورة ${random?.surah} 】* \n\n`
+                message += `*• أياتها:*\n\n`
+                message += `${random?.ayaatiha}\n`
+                message += `\n*• معني أسمها:*\n\n`
+                message += `${random?.maeni_asamuha}\n`
+                message += `\n*• سبب تسميتها:*\n\n`
+                message += `${random?.sabab_tasmiatiha}\n`
+                message += `\n*• أسماؤها:*\n\n`
+                message += `${random?.asmawuha}\n`
+                message += `\n*• مقصدها العام:*\n\n`
+                message += `${random?.maqsiduha_aleamu}\n`
+                message += `\n*• سبب نزولها:*\n\n`
+                message += `${random?.sabab_nuzuliha}\n`
+                message += `\n*• فضلها:*`
+                for (let item of random?.fadluha) {
+
+                    message += `\n\n${num++}- ${item}`
+
+                }
+                message += `\n\n*• مناسباتها:*`
+                for (let item of random?.munasabatiha) {
+
+                    message += `\n\n${num2++}- ${item}`
+
+                }
+                let file_image = await MessageMedia.fromUrl(random?.image).catch(e => console.log(e));
+                await client.sendMessage(item, file_image, { caption: message }).catch(error => console.log(error));
+                let file_audio = await MessageMedia.fromUrl(random?.audio).catch(e => console.log(e));
+                await client.sendMessage(item, file_audio).catch(error => console.log(error));
             }
         }
 
