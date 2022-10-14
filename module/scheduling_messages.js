@@ -126,8 +126,12 @@ export default async function scheduling_messages(client, MessageMedia) {
             caption += '• التبكير للمسجد والذهاب ماشيًا \n'
             caption += '• الإنشغال بالذكر ولقرآن إلى الجمعة \n'
             caption += '• الصلاة على النبي ﷺ'
-            let file = MessageMedia.fromFilePath('./files/image/aljumuea.jpg')
-            await client.sendMessage(item, file, { caption: caption }).catch(error => console.log(error));
+            let file = MessageMedia.fromFilePath('./files/image/aljumuea.jpg');
+
+            for (let item of group) {
+
+                await client.sendMessage(item, file, { caption: caption }).catch(error => console.log(error));
+            }
         }
 
     }, 60000);
