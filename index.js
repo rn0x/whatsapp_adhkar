@@ -29,11 +29,12 @@ async function whatsapp_adhkar() {
             headless: true,
             args: [
                 '--no-sandbox',
+                '--disable-setuid-sandbox',
                 '--disable-dev-shm-usage',
                 '--shm-size=1gb'
             ],
             timeout: 60000,
-            executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            //  executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
         }
     });
 
@@ -163,7 +164,7 @@ async function whatsapp_adhkar() {
     await scheduling_messages(client, MessageMedia).catch(error => console.log(error));
 
     await client.initialize().catch(async (error) => {
-        console.log('await client.initialize() : ',error)
+        console.log('await client.initialize() : ', error)
         await client.destroy().catch(error => console.log(error));
         await whatsapp_adhkar().catch(error => console.log(error));
     });
