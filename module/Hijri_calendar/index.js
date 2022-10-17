@@ -38,21 +38,21 @@ console.log(calendar);
 export default async function Hijri_calendar(title, text, filename) {
 
     let browser = await launch({
-        executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
     }).catch(error => console.log(error));
-    let page = await browser.newPage();
+    let page = await browser?.newPage();
     let today = moment_hijri().locale('ar-SA').format('dddd'); // اليوم
     let Hijri = moment_hijri().locale('ar-SA').format('iD iMMMM iYYYY'); // التاريخ الهجري
     let Gregorian = moment_hijri().locale('ar-SA').format('LL'); // التاريخ الميلادي
     let Html = CrateHtml(today, Hijri, Gregorian, title, text); // return code html
-    await page.setViewport({ width: 500, height: 50 });
-    await page.setContent(Html, {
+    await page?.setViewport({ width: 500, height: 50 });
+    await page?.setContent(Html, {
         waitUntil: 'load',
         timeout: 0
     }); // file index.html || code html 
-    await page.addStyleTag({ content: css() }); // file css
-    await page.screenshot({ path: filename, fullPage: true });
-    await browser.close();
+    await page?.addStyleTag({ content: css() }); // file css
+    await page?.screenshot({ path: filename, fullPage: true });
+    await browser?.close();
     return {
         filename: filename,
         today: today,

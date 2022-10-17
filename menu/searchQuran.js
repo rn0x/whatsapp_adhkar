@@ -35,7 +35,7 @@ export default {
                     message += `${english}`
                     await client.sendMessage(from, file, { caption: message, quotedMessageId: message_id }).catch(error => console.log(error));
 
-                })
+                }).catch(error => console.log(error));
             }
 
         }
