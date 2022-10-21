@@ -59,7 +59,7 @@ async function whatsapp_adhkar() {
 
     client.on('ready', async () => {
         console.log('Whatsapp Adhkar is ready!');
-        await getUnreadMessages(client, MessageMedia);
+        await getUnreadMessages(client, MessageMedia).catch(error => console.log(error))
     });
 
     client.on('message', async e => {
