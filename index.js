@@ -34,7 +34,7 @@ async function whatsapp_adhkar() {
                 '--shm-size=1gb'
             ],
             timeout: 60000,
-            //  executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" ? "/usr/bin/google-chrome-stable" : process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : undefined,
         }
     });
 
