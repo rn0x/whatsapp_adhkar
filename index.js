@@ -80,7 +80,7 @@ async function whatsapp_adhkar() {
         let message_id = e?.id?._serialized;
         let isGroup = chat?.isGroup;
         let pushname = isGroup ? chat?.name : contact?.pushname;
-        let number = isGroup ? chat?.id?.user : contact?.number;
+        let number = isGroup ? chat?.id?.user : contact?.number ? contact?.number : contact?.id?.user;
         let mimetype = download?.mimetype;
         let data = download?.data;
         let filename = download?.filename;
