@@ -2,11 +2,13 @@ import getDatabase from './getDatabase.js';
 import fs from 'fs-extra';
 import moment_hijri from 'moment-hijri';
 import file_size from './file_size.js';
+import path from "path";
 
 export default async function scheduling_messages(client, MessageMedia) {
 
     setInterval(async () => {
 
+        let __dirname = path.resolve();
         let time = moment_hijri().locale('en-EN').format('LT');
         let today = moment_hijri().locale('ar-SA').format('dddd');
         let group = await getDatabase('group');
@@ -18,8 +20,8 @@ export default async function scheduling_messages(client, MessageMedia) {
 
         if (time_quran.includes(time)) {
 
-            let mp3quran = fs.readJsonSync('./files/json/mp3quran.json');
-            let quran = fs.readJsonSync('./files/json/Quran.json');
+            let mp3quran = fs.readJsonSync(path.join(__dirname, './files/json/mp3quran.json'));
+            let quran = fs.readJsonSync(path.join(__dirname, './files/json/Quran.json'));
 
             for (let item of group) {
 
@@ -46,7 +48,7 @@ export default async function scheduling_messages(client, MessageMedia) {
 
         else if (time_adhkar.includes(time)) {
 
-            let adhkar = fs.readJsonSync('./files/json/adhkar.json');
+            let adhkar = fs.readJsonSync(path.join(__dirname, './files/json/adhkar.json'));
             for (let item of group) {
                 let random = adhkar[Math.floor(Math.random() * adhkar.length)];
                 let file = await MessageMedia.fromUrl(random?.audio).catch(e => console.log(e));
@@ -64,7 +66,7 @@ export default async function scheduling_messages(client, MessageMedia) {
 
         else if (time_video.includes(time)) {
 
-            let video = fs.readJsonSync('./files/json/video.json');
+            let video = fs.readJsonSync(path.join(__dirname, './files/json/video.json'));
             for (let item of group) {
                 let random = video[Math.floor(Math.random() * video.length)];
                 let file = await MessageMedia.fromUrl(random?.path).catch(e => console.log(e));
@@ -74,7 +76,7 @@ export default async function scheduling_messages(client, MessageMedia) {
 
         else if (time_albitaqat.includes(time)) {
 
-            let albitaqatJson = fs.readJsonSync('./files/json/albitaqat.json');
+            let albitaqatJson = fs.readJsonSync(path.join(__dirname, './files/json/albitaqat.json'));
             for (let item of group) {
                 let random = albitaqatJson[Math.floor(Math.random() * albitaqatJson.length)];
                 let num = 1
@@ -126,7 +128,7 @@ export default async function scheduling_messages(client, MessageMedia) {
             caption += '• التبكير للمسجد والذهاب ماشيًا \n'
             caption += '• الإنشغال بالذكر ولقرآن إلى الجمعة \n'
             caption += '• الصلاة على النبي ﷺ'
-            let file = MessageMedia.fromFilePath('./files/image/aljumuea.jpg');
+            let file = MessageMedia.fromFilePath(path.join(__dirname, './files/image/aljumuea.jpg'));
 
             for (let item of group) {
 

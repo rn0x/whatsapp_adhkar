@@ -1,13 +1,15 @@
 import fs from 'fs-extra';
 import CrateDatabase from '../module/CrateDatabase.js';
 import Hijri_calendar from '../module/Hijri_calendar/index.js';
+import path from "path";
 
 export default {
 
     async exec({ from, body, e, pushname, message_id, MessageMedia, client }) {
 
-        let mp3quran = fs.readJsonSync('./files/json/mp3quran.json');
-        let adhkar = fs.readJsonSync('./files/json/adhkar.json');
+        let __dirname = path.resolve();
+        let mp3quran = fs.readJsonSync(path.join(__dirname, './files/json/mp3quran.json'));
+        let adhkar = fs.readJsonSync(path.join(__dirname, './files/json/adhkar.json'));
 
         if (body === '1' || body === Number('1').toLocaleString('ar-EG')) {
 
@@ -49,7 +51,7 @@ export default {
 
         else if (body === '5' || body === Number('5').toLocaleString('ar-EG')) {
 
-            let readJson = fs.readJsonSync('./files/json/Sahih_al-Bukhari.json');
+            let readJson = fs.readJsonSync(path.join(__dirname, './files/json/Sahih_al-Bukhari.json'));
             let random = readJson[Math.floor(Math.random() * readJson.length)];
             let file = await MessageMedia.fromUrl(random?.path).catch(e => console.log(e));
             await client.sendMessage(from, file, { caption: random?.caption, quotedMessageId: message_id })
@@ -74,7 +76,7 @@ export default {
 
         else if (body === '7' || body === Number('7').toLocaleString('ar-EG')) {
 
-            let adhkar = fs.readJsonSync('./files/json/adhkar.json');
+            let adhkar = fs.readJsonSync(path.join(__dirname, './files/json/adhkar.json'));
             let random = adhkar[Math.floor(Math.random() * adhkar.length)];
             let random_array = random?.array[Math.floor(Math.random() * random?.array?.length)];
             let category = random?.category;
@@ -95,7 +97,7 @@ export default {
 
         else if (body === '8' || body === Number('8').toLocaleString('ar-EG')) {
 
-            let readJson = fs.readJsonSync('./files/json/video.json');
+            let readJson = fs.readJsonSync(path.join(__dirname, './files/json/video.json'));
             let random = readJson[Math.floor(Math.random() * readJson.length)];
             let file = await MessageMedia.fromUrl(random?.path).catch(e => console.log(e));
             await client.sendMessage(from, file, { caption: random?.caption, quotedMessageId: message_id })

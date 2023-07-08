@@ -1,12 +1,14 @@
 import fs from 'fs-extra';
 import file_size from '../../module/file_size.js';
+import path from "path";
 
 export default {
 
     async exec({ from, body, message_id, MessageMedia, client, e }) {
 
-        let mp3quran = fs.readJsonSync('./files/json/mp3quran.json');
-        let quran = fs.readJsonSync('./files/json/Quran.json');
+        let __dirname = path.resolve();
+        let mp3quran = fs.readJsonSync(path.join(__dirname, './files/json/mp3quran.json'));
+        let quran = fs.readJsonSync(path.join(__dirname, './files/json/Quran.json'));
 
         quran.forEach(async (event, index) => {
 

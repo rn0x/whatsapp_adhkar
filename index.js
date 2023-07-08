@@ -9,14 +9,17 @@ import Hi from './menu/Hi.js';
 import moment_hijri from 'moment-hijri';
 import scheduling_messages from './module/scheduling_messages.js';
 import system_distros from "./module/system_distros.js";
+import path from "path";
 
 async function whatsapp_adhkar() {
 
-    let folder_database = fs.existsSync('./database');
+    const __dirname = path.resolve();
+    const config = fs.readJsonSync(path.join(__dirname, './config.json'));
+    let folder_database = fs.existsSync(path.join(__dirname, './database'));
 
     if (folder_database === false) {
 
-        fs.mkdirSync('./database'); // إنشاء مجلد قاعدة البيانات اذ لم يكن موجود
+        fs.mkdirSync(path.join(__dirname, './database')); // إنشاء مجلد قاعدة البيانات اذ لم يكن موجود
 
     }
 
@@ -35,7 +38,7 @@ async function whatsapp_adhkar() {
                 '--shm-size=1gb'
             ],
             timeout: 60000,
-            executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" && system?.id !== 'alpine' ? "/usr/bin/google-chrome-stable" : process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : undefined,
+            executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" && system?.id !== 'alpine' ? "/usr/bin/google-chrome-stable" : process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : config?.executablePath,
         }
     });
 
@@ -131,7 +134,7 @@ async function whatsapp_adhkar() {
     client.on('group_leave', async (e) => {
         // User has left or been kicked from the group.
         let chatId = e?.chatId;
-        let database = fs.existsSync(`./database/${chatId}.json`);
+        let database = fs.existsSync(path.join(__dirname, `./database/${chatId}.json`));
         let recipientIds = e?.recipientIds;
         let info = client?.info
         let me = info?.me?._serialized ? info?.me?._serialized : info?.wid?._serialized;
@@ -140,7 +143,7 @@ async function whatsapp_adhkar() {
 
             if (database) {
 
-                fs.removeSync(`./database/${chatId}.json`);
+                fs.removeSync(path.join(__dirname, `./database/${chatId}.json`));
                 console.log(`You have been kicked out of the group ${chatId}`);
 
             }

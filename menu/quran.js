@@ -1,12 +1,14 @@
 import fs from 'fs-extra';
 import CrateDatabase from '../module/CrateDatabase.js';
+import path from "path";
 
 export default {
 
     async exec({ from, e, body }) {
 
-        let mp3quran = fs.readJsonSync('./files/json/mp3quran.json');
-        let quran = fs.readJsonSync('./files/json/Quran.json');
+        let __dirname = path.resolve();
+        let mp3quran = fs.readJsonSync(path.join(__dirname, './files/json/mp3quran.json'));
+        let quran = fs.readJsonSync(path.join(__dirname, './files/json/Quran.json'));
 
         mp3quran.forEach(async element => {
 

@@ -1,9 +1,11 @@
 import fs from 'fs-extra';
+import path from "path";
 
 export default {
 
     async exec({ from, e, body, message_id, MessageMedia, client }) {
 
+        let __dirname = path.resolve();
         let albitaqat = fs.readJsonSync('./files/json/albitaqat.json');
 
         albitaqat.forEach(async element => {

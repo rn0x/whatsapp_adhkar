@@ -1,10 +1,12 @@
 import fs from 'fs-extra';
+import path from "path";
 
 export default {
 
     async exec({ from, e, body, message_id, MessageMedia, client}) {
 
-        let adhkar = fs.readJsonSync('./files/json/adhkar.json');
+        let __dirname = path.resolve();
+        let adhkar = fs.readJsonSync(path.join(__dirname, './files/json/adhkar.json'));
 
         adhkar.forEach(async element => {
 

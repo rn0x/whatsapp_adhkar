@@ -1,8 +1,10 @@
 import fs from 'fs-extra';
+import path from "path";
 
 export default async function CrateDatabase({ from: from, pushname: pushname, number: number, isGroup: isGroup, menu: menu }) {
 
-    let database = fs.existsSync(`./database/${from}.json`);
+    let __dirname = path.resolve();
+    let database = fs.existsSync(path.join(__dirname, `./database/${from}.json`));
 
     if (database === false && from && pushname && number) {
 
@@ -15,12 +17,12 @@ export default async function CrateDatabase({ from: from, pushname: pushname, nu
             menu: 'main'
         }
 
-        fs.writeJsonSync(`./database/${from}.json`, opj, { spaces: '\t' });
+        fs.writeJsonSync(path.join(__dirname, `./database/${from}.json`), opj, { spaces: '\t' });
     }
 
     else {
 
-        let user = fs.readJsonSync(`./database/${from}.json`);
+        let user = fs.readJsonSync(path.join(__dirname, `./database/${from}.json`));
 
         if (pushname) {
 
@@ -31,7 +33,7 @@ export default async function CrateDatabase({ from: from, pushname: pushname, nu
 
             user.menu = menu;
         }
-        
-        fs.writeJsonSync(`./database/${from}.json`, user, { spaces: '\t' });
+
+        fs.writeJsonSync(path.join(__dirname, `./database/${from}.json`), user, { spaces: '\t' });
     }
 }
