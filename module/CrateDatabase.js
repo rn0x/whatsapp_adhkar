@@ -31,6 +31,7 @@ export default async function CrateDatabase({ from: from, pushname: pushname, nu
 
             user.menu = menu;
         }
+        
         fs.writeJsonSync(`./database/${from}.json`, user, { spaces: '\t' });
     }
 }
