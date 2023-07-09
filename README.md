@@ -88,7 +88,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ### 🌱 ACTIVAR EN KOYEB 
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/moh7386/whatsapp_adhkar&branch=master&name=gatabot-md)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/moh7386/whatsapp_adhkar&branch=main&name=azkar)
 # الترخيص 
 
 [MIT](https://github.com/rn0x/whatsapp_adhkar/blob/main/LICENSE)
