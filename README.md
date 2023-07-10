@@ -11,7 +11,7 @@
 بوت أذكار يحتوي على العديد من الخدمات المهمه لكل مسلم ومنها
 
 - القرآن الكريم (158 قارئ)
-- الباحث القرآني نص + صورة - [**مثال**](https://github.com/rn0x/whatsapp_adhkar/blob/main/files/image/searchQuran.png)
+- الباحث القرآني نص + صورة - [**مثال**](https://github.com/Alsarmad/whatsapp_adhkar/blob/main/files/image/searchQuran.png)
 - الباحث الحديثي 
 - بطاقات القرآن الكريم
 - صحيح البخاري (صور مصممة)
@@ -26,7 +26,8 @@
 
 - git
 - nodejs 16 ^
-- Google Chrome 
+- Google Chrome
+- ضع مسار متصفح كروم في ملف config.json
 
 # طريقة التثبيت لـ (Linux)
 
@@ -35,7 +36,7 @@
    > sudo apt-get install nodejs
    > sudo apt-get install git
    > sudo apt-get install google-chrome-stable
-   > git clone https://github.com/rn0x/whatsapp_adhkar
+   > git clone https://github.com/Alsarmad/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
    > npm start
@@ -60,7 +61,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
    > choco install nodejs.install
    > choco install git
    > choco install googlechrome
-   > git clone https://github.com/rn0x/whatsapp_adhkar
+   > git clone https://github.com/Alsarmad/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
    > npm start
@@ -80,7 +81,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
   apk add --no-cache \
   chromium
    > apk add --update nodejs npm git
-   > git clone https://github.com/rn0x/whatsapp_adhkar
+   > git clone https://github.com/Alsarmad/whatsapp_adhkar
    > cd whatsapp_adhkar
    > npm i
    > npm start
@@ -89,4 +90,4 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 # الترخيص 
 
-[MIT](https://github.com/rn0x/whatsapp_adhkar/blob/main/LICENSE)
+[MIT](https://github.com/Alsarmad/whatsapp_adhkar/blob/main/LICENSE)
