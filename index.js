@@ -8,7 +8,6 @@ import menu from './module/menu.js';
 import Hi from './menu/Hi.js';
 import moment_hijri from 'moment-hijri';
 import scheduling_messages from './module/scheduling_messages.js';
-import system_distros from "./module/system_distros.js";
 import path from "path";
 
 async function whatsapp_adhkar() {
@@ -26,7 +25,6 @@ async function whatsapp_adhkar() {
     console.log('Starting Whatsapp Adhkar :', moment_hijri().locale('en-EN').format('LT'));
 
     const { Client, Location, List, Buttons, LocalAuth, MessageMedia } = whatsapp;
-    const system = await system_distros();
     const client = new Client({
         authStrategy: new LocalAuth(),
         puppeteer: {
@@ -38,7 +36,7 @@ async function whatsapp_adhkar() {
                 '--shm-size=1gb'
             ],
             timeout: 60000,
-            executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" && system?.id !== 'alpine' ? "/usr/bin/google-chrome-stable" : process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : config?.executablePath,
+            executablePath: config?.executablePath,
         }
     });
 
