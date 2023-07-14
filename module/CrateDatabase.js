@@ -6,7 +6,7 @@ export default async function CrateDatabase({ from: from, pushname: pushname, nu
     let __dirname = path.resolve();
     let database = fs.existsSync(path.join(__dirname, `./database/${from}.json`));
 
-    if (database === false && from && pushname && number) {
+    if (database === false) {
 
         let opj = {
             from: from,
