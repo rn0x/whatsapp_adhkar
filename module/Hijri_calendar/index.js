@@ -42,6 +42,7 @@ export default async function Hijri_calendar(title, text, filename) {
     let __dirname = path.resolve();
     let config = fs.readJSONSync(path.join(__dirname, './config.json'));
     let browser = await launch({
+        headless: "new",
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
         executablePath: config?.executablePath
     }).catch(error => console.log(error));

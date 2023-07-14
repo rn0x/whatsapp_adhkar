@@ -10,6 +10,7 @@ export default async function screenshot({ quran: quran, tafser1: tafser1, tafse
         let __dirname = path.resolve();
         let config = fs.readJSONSync(path.join(__dirname, './config.json'));
         let browser = await launch({
+            headless: "new",
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
             executablePath: config?.executablePath
         }).catch(error => console.log(error));
