@@ -4,7 +4,6 @@ import moment_hijri from 'moment-hijri';
 import CrateHtml from './CrateHtml.js';
 import css from './css.js';
 import path from "path";
-import system_distros from "../system_distros.js";
 
 /**
  * @example 
@@ -40,12 +39,11 @@ console.log(calendar);
 
 export default async function Hijri_calendar(title, text, filename) {
 
-    const system = await system_distros();
     let __dirname = path.resolve();
     let config = fs.readJSONSync(path.join(__dirname, './config.json'));
     let browser = await launch({
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        executablePath: process.platform === "win32" || process.platform === "win64" ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" : process.platform === "linux" && system?.id !== 'alpine' ? "/usr/bin/google-chrome-stable" : process.platform === "darwin" ? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" : config?.executablePath
+        executablePath: config?.executablePath
     }).catch(error => console.log(error));
     let page = await browser?.newPage();
     let today = moment_hijri().locale('ar-SA').format('dddd'); // اليوم
