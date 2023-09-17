@@ -15,16 +15,16 @@
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^11.1.1",
-    "html-to-text": "^8.2.1",
+    "html-to-text": "^9.0.5",
     "moment-hijri": "^2.1.2",
-    "node-fetch": "^3.2.10",
-    "puppeteer": "^20.8.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^21.2.1",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.21.0"
+    "whatsapp-web.js": "^1.22.1"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "@types/html-to-text": "^8.1.1",
+    "@types/fs-extra": "^11.0.2",
+    "@types/html-to-text": "^9.0.2",
     "@types/moment-hijri": "^2.1.0",
     "@types/qrcode-terminal": "^0.12.0"
   },
