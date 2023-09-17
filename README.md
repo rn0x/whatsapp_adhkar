@@ -27,7 +27,34 @@
 - git
 - nodejs 16 ^
 - Google Chrome
-- ضع مسار متصفح كروم في ملف config.json
+- ضع مسار متصفح كروم في ملف config.json 
+
+مسارات المتصفح لإغلب الأنظمة 
+
+
+```
+linux:
+
+/usr/bin/google-chrome-stable
+
+or 
+
+/usr/bin/chromium
+
+or 
+
+/snap/bin/chromium
+
+windows:
+
+
+C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
+
+
+MacOS:
+
+/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+```
 
 # طريقة التثبيت لـ (Linux)
 
