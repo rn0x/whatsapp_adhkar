@@ -9,10 +9,12 @@ import Hi from './menu/Hi.js';
 import moment_hijri from 'moment-hijri';
 import scheduling_messages from './module/scheduling_messages.js';
 import path from "path";
+import fixClient from './module/fixClient.js';
 
 async function whatsapp_adhkar() {
 
     const __dirname = path.resolve();
+    await fixClient(__dirname);
     const config = fs.readJsonSync(path.join(__dirname, './config.json'));
     let folder_database = fs.existsSync(path.join(__dirname, './database'));
 
@@ -169,6 +171,7 @@ async function whatsapp_adhkar() {
         await client.destroy().catch(error => console.log(error));
         await whatsapp_adhkar().catch(error => console.log(error));
     });
+    
 
 }
 
