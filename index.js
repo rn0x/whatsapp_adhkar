@@ -14,7 +14,7 @@ import fixClient from './module/fixClient.js';
 async function whatsapp_adhkar() {
 
     const __dirname = path.resolve();
-    await fixClient(__dirname);
+    // await fixClient(__dirname);
     const config = fs.readJsonSync(path.join(__dirname, './config.json'));
     let folder_database = fs.existsSync(path.join(__dirname, './database'));
 
