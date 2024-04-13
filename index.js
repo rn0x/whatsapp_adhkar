@@ -29,13 +29,23 @@ async function whatsapp_adhkar() {
     const { Client, Location, List, Buttons, LocalAuth, MessageMedia } = whatsapp;
     const client = new Client({
         authStrategy: new LocalAuth(),
+        webVersionCache: {
+            type: "remote",
+            remotePath:
+                "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2410.1.html"
+        },
         puppeteer: {
             headless: true,
             args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--shm-size=1gb'
+                "--no-sandbox",
+                "--disable-extensions",
+                "--disable-setuid-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-accelerated-2d-canvas",
+                "--no-first-run",
+                "--no-zygote",
+                "--single-process",
+                "--disable-gpu",
             ],
             timeout: 60000,
             executablePath: config?.executablePath,
@@ -171,7 +181,7 @@ async function whatsapp_adhkar() {
         await client.destroy().catch(error => console.log(error));
         await whatsapp_adhkar().catch(error => console.log(error));
     });
-    
+
 
 }
 
