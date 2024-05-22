@@ -114,7 +114,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
    > npm start
 ```
 
+### 🌱 ACTIVAR EN KOYEB 
 
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/moh7386/whatsapp_adhkar&branch=main&name=azkar)
 # الترخيص 
 
 [MIT](https://github.com/Alsarmad/whatsapp_adhkar/blob/main/LICENSE)
