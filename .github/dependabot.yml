@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"  # نظام الحزمة (على سبيل المثال npm, bundler, composer)
+    directory: "/"  # مكان ملفات الحزمة في المشروع
+    schedule:
+      interval: "weekly"  # جدولة تحديثات Dependabot (يمكن أن تكون daily, weekly, monthly)
